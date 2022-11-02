@@ -1,0 +1,72 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Grid test
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post" action="/v01/multiple-upload/manual-find-found02">
+
+
+<h1 class="govuk-heading-l">Select the area</h1>
+
+<div class="govuk-inset-text">
+  for BRID_02
+</div>
+
+
+<p>Use the tab or arrow keys to move around the map. Click or use the spacebar to select or unselect a square.</p>
+<div id="map"></div><!-- // #map -->
+
+<div class="govuk-!-padding-bottom-2"></div>
+
+  <label for="size">Grid size:</label>
+
+  <select name="gridSize" id="size">
+    <option value="20">20px</option>
+    <option value="40">40px</option>
+    <option value="50" selected>50px</option>
+    <option value="100">100px</option>
+    <option value="150">150px</option>
+    <option value="200">200px</option>
+  </select>
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+
+</div>
+
+
+</form>
+
+
+{% endblock %}
+
+
+{% block footer %}
+  <!-- Javascript -->
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script src="/public/javascripts/gridtest.js"></script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <form class="form" action="/v01/replace-location-answer" method="post">
+
+            <div class="govuk-form-group">
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      How do you want to add your new locations?
+    </h1>
+  </legend>
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="how-add-location" name="how-add-location" type="radio" value="addto">
+      <label class="govuk-label govuk-radios__label" for="how-add-location">
+        Add new locations to current locations. If locations already exist, they will be updated.
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="how-add-location-2" name="how-add-location" type="radio" value="replace">
+      <label class="govuk-label govuk-radios__label" for="how-add-location-2">
+        Remove all current locations and replace with new locations
+      </label>
+    </div>
+  </div>
+
+</fieldset>
+</div>
+
+
+              <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

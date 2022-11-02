@@ -1,0 +1,120 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Which flood warnings do you need?
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+{% if data.status=="signedIn" %}
+{% set destinationURL = '/'+folder+'/subscribe/check'  %}
+{% else %}
+{% set destinationURL = '/'+folder+'/subscribe/email' if data.fromCheck != 'true' else '/'+folder+'/subscribe/check'  %}
+{% endif %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+       
+       <form action="{{ destinationURL }}">
+    
+        {#permit|dump#}
+            <h1 class="govuk-heading-l">    
+                Your areas of interest
+            </h1>
+            <h3 class="govuk-heading-s">    
+            {% if data.warnings=="severe"%}
+          
+            Warnings and severe flood warnings
+            {% endif %}
+            {% if data.warnings=="minor"%}
+            Minor flood warnings
+            {% endif %}
+            {% if data.warnings=="minor" or data.warnings=="severe"%}
+            {% else %}
+            Warnings, severe flood warnings, and minor warnings
+            {% endif %}
+        </h3>
+            {#permit|dump#}
+
+            <dl class="govuk-summary-list">
+
+                {% set addressCount = 0 %}
+
+                {% for id, uprn in data.savedAddresses %}
+
+                    {% if uprn | length %}
+
+                        {% set addressCount = addressCount + 1 %}
+
+                        {% set address = data | addressFromID(id) %}
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__value">
+                                {{ address | formattedAddress }}
+                            </dt>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="list?savedAddresses[{{ id }}]=&selected-address=">
+                                    Remove<span class="govuk-visually-hidden"> address</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                    {% endif %}
+
+                {% endfor %}
+                {% if data.areaSelected=="areaSelected"%}
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__value">
+                        {{ data['areaName'] }}
+                                        </dt>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#'>
+                            Remove<span class="govuk-visually-hidden">Remove</span>
+                        </a>
+                    </dd>
+                </div>
+                {% endif %}
+
+            </dl>
+
+            <p>
+                <a href="address-area?selected-address=&addressLookupPostcode=&address-lookup-name-number=">Add another location</a>
+            </p>
+
+            {% if addressCount == 0 %}
+                
+                {{ 'postcode' | redirect | safe }}
+                
+            {% endif %}
+
+           
+
+
+        </br>
+        </br>
+
+
+            {{ govukButton ({
+                html: 'Continue'
+            }) }}
+
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

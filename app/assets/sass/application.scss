@@ -1,0 +1,131 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+@import "patterns/_search";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.app-preview-map {
+    height: 420px;
+    position: absolute; top: 0; bottom: 0; width: 100%;
+}
+
+// gridtest
+#map {
+    width: 800px;
+    height: 500px;
+    background-image:url("/public/images/map.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size:0;
+    line-height: 0;
+  }
+
+  #map2 {
+    width: 800px;
+    height: 500px;
+    background-image:url("/public/images/map2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size:0;
+    line-height: 0;
+  }
+
+.gridsq {
+    width: 98px;
+    height: 98px;
+    display:inline-block;
+    border-color: rgba(50, 50, 50, 0.2);
+    /* border-width set in JS */
+    border-style: solid;
+    border-collapse:collapse;
+    padding:0;
+    margin:0;
+  }
+
+  .gridsq:focus{
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 2px;
+  }
+
+  .on{
+    background-color: rgba(0, 255, 0, 0.2);
+    background-image:url("/public/images/grid_tick.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position:center center;
+    border-color: rgba(0,0,0,1.00);
+  }
+
+
+a.app-link-destructive {
+    color: $govuk-error-colour !important;
+    &:visited {
+        color: $govuk-error-colour !important;
+    }
+}
+
+.app-nobreak {
+    white-space: nowrap;
+}
+.email-banner {
+    background: #0b0c0c;
+    max-width: 74%;
+  }
+
+ .app-address-link {
+      padding: govuk-spacing(2) 0;
+      display: inline-block;
+  }
+
+
+.defra-flood-status-red {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    background-color:#F6D7D2;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+    border-left: 10px solid #d4351c;
+}
+
+.defra-flood-status-amber {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    background-color:#F8E8CF;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+    border-left: 10px solid #E38C33;
+}

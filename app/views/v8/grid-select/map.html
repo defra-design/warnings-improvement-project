@@ -1,0 +1,61 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Grid test
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<form method="post" action="/{{folder}}/grid-select/name">
+
+
+<h1 class="govuk-heading-l">Select the area you are interested in</h1>
+
+<p>Use the tab or arrow keys to move around the map. Click or use the spacebar to select or unselect a square.</p>
+<div id="map"></div><!-- // #map -->
+
+  <label for="size">Grid size:</label>
+
+  <select name="gridSize" id="size">
+    <option value="20">20px</option>
+    <option value="40">40px</option>
+    <option value="50" selected>50px</option>
+    <option value="100">100px</option>
+    <option value="150">150px</option>
+    <option value="200">200px</option>
+  </select>
+
+  <p>If you know the coordinates of your area, you can <a href="#"  target="_blank">use coordinates instead</a>.</p>
+</br>
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  {{ govukButton({
+    text: "Back to location search",
+    classes: "govuk-button--secondary",
+    href: "../address/address-area"
+  }) }}
+</div>
+
+
+</form>
+
+
+{% endblock %}
+
+
+{% block footer %}
+  <!-- Javascript -->
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script src="/public/javascripts/gridtest.js"></script>
+{% endblock %}
+

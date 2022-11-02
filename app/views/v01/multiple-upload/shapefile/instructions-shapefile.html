@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v01/multiple-upload/shapefile/upload-shapefile" method="post">
+
+      <h1 class="govuk-heading-xl">
+        How to upload a shapefile
+      </h1>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <p class="govuk-body">
+            <a href="#" class="govuk-link" >Download and fill in the templates (.zip)</a> or use your own shapefile
+      </p>
+        </li>
+        <li>your ESRI shapefiles must be included in a single .zip file</li>
+        <li>the .zip file must contain the following files:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>.shp (main file)</li>
+            <li>.shx (index file)</li>
+            <li>.dbf (database file)</li>
+          </ul>
+        </li>
+        <li>each file must have the same prefix, for example:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>locations.shp</li>
+            <li>locations.shx</li>
+            <li>locations.dbf</li>
+          </ul>
+        </li>
+
+        <li>other file types can be included in the .zip file but are not essential</li>
+        <li>all shapefiles should use Ordnance Survey British National Grid references, for example, OSGB_1936_National_Grid</li>
+      </ul>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I need help doing things online
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    copy here about how to get help with assisted digital
+  </div>
+</details>
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    </div>
+  </div>
+
+{% endblock %}

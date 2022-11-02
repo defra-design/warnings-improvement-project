@@ -1,0 +1,282 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v01/multiple-upload/spreadsheet-postcode/upload-spreadsheet" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        Select an address to match the postcode
+      </h1>
+
+      <p class="govuk-body">
+                We found these locations based on the information you uploaded but the first line of the address did not match. Select an address for each location.
+              </p>
+
+</div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-full">
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">6 locations</caption>
+
+
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">
+                        <b>Location name</b>
+                  </th>
+
+
+              <th scope="col" class="govuk-table__header">Full address</th>
+              <th scope="col" class="govuk-table__header govuk-table__header">Postcode</th>
+              <th scope="col" class="govuk-table__header govuk-table__header">Select an address</th>
+              <th scope="col" class="govuk-table__header govuk-table__header"></th>
+            </tr>
+          </thead>
+
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__cell">
+                      BRID_11
+              </th>
+
+              <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+              <td class="govuk-table__cell govuk-table__cell">YO15 3JZ</td>
+              <td class="govuk-table__cell govuk-table__cell">Address found</td>
+
+
+
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                        <ul class="govuk-summary-list__actions-list">
+                          <li class="govuk-summary-list__actions-list-item">
+                            <a class="govuk-link" href="/v01/multiple-upload/spreadsheet-postcode/postcode-lookup"><span aria-hidden="true">Edit</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                          </li>
+                        </ul>
+                      </dd>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                      BRID_12
+              </th>
+
+
+
+              <td class="govuk-table__cell ">Belgrave road, Bridlington</td>
+              <td class="govuk-table__cell govuk-table__cell">YO15 3JP</td>
+              <td class="govuk-table__cell govuk-table__cell">
+                <select class="govuk-select" id="sort" name="sort">
+                <option value="published">25A, Belgrave road, Bridlington</option>
+                <option value="updated" selected>25B, Belgrave road, Bridlington</option>
+                <option value="views">25C, Belgrave road, Bridlington</option>
+                <option value="comments">25D, Belgrave road, Bridlington</option>
+                <option value="comments">Address not shown</option>
+                </select>
+                </td>
+
+
+
+
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                        <ul class="govuk-summary-list__actions-list">
+                          <li class="govuk-summary-list__actions-list-item">
+                              <a class="govuk-link" href="/v01/multiple-upload/spreadsheet-postcode/postcode-lookup"><span aria-hidden="true">Edit</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                          </li>
+                        </ul>
+                      </dd>
+
+
+
+
+
+
+
+                                  <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                      <th scope="row" class="govuk-table__header">
+                                              BRID_13
+                                      </th>
+
+                                      <td class="govuk-table__cell govuk-table__cell">South Marine Drive, Bridlington</td>
+                                      <td class="govuk-table__cell govuk-table__cell">YO15 3JJ</td>
+                                      <td class="govuk-table__cell govuk-table__cell">
+                                        <select class="govuk-select" id="sort" name="sort">
+                                        <option value="published">52, South Marine Drive, Bridlington</option>
+                                        <option value="updated" selected>53, South Marine Drive, Bridlington</option>
+                                        <option value="views">54, South Marine Drive, Bridlington</option>
+                                        <option value="comments">55, South Marine Drive, Bridlington</option>
+                                        <option value="comments">Address not shown</option>
+                                        </select>
+                                        </td>
+
+
+
+                                      <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                <ul class="govuk-summary-list__actions-list">
+                                                  <li class="govuk-summary-list__actions-list-item">
+                                                    <a class="govuk-link" href="/v01/multiple-upload/spreadsheet-postcode/postcode-lookup"><span aria-hidden="true">Edit</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                  </li>
+                                                </ul>
+                                              </dd>
+
+
+
+
+                                              <tbody class="govuk-table__body">
+                                                <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">
+                                                          BRID_14
+                                                  </th>
+
+                                                  <td class="govuk-table__cell govuk-table__cell">Roundhay Ave, Bridlington</td>
+                                                  <td class="govuk-table__cell govuk-table__cell">YO15 3JY</td>
+                                                  <td class="govuk-table__cell govuk-table__cell">
+                                                    <select class="govuk-select" id="sort" name="sort">
+                                                    <option value="published">44, Roundhay Avenue, Bridlington</option>
+                                                    <option value="updated" selected>45, Roundhay Avenue, Bridlington</option>
+                                                    <option value="views">46, Roundhay Avenue, Bridlington</option>
+                                                    <option value="comments">47, Roundhay Avenue, Bridlington</option>
+                                                    <option value="comments">Address not shown</option>
+                                                    </select>
+                                                    </td>
+
+
+
+                                                  <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                    <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                            <ul class="govuk-summary-list__actions-list">
+                                                              <li class="govuk-summary-list__actions-list-item">
+                                                                <a class="govuk-link" href="/v01/multiple-upload/spreadsheet-postcode/postcode-lookup"><span aria-hidden="true">Edit</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                              </li>
+                                                            </ul>
+                                                          </dd>
+
+
+
+                                                          <tbody class="govuk-table__body">
+                                                            <tr class="govuk-table__row">
+                                                              <th scope="row" class="govuk-table__header">
+
+                                                                      BRID_15
+
+
+                                                              </th>
+
+                                                              <td class="govuk-table__cell govuk-table__cell">Belgrave mansions, Bridlington</td>
+                                                              <td class="govuk-table__cell govuk-table__cell">YO15 3JL</td>
+                                                              <td class="govuk-table__cell govuk-table__cell">
+                                                                <select class="govuk-select" id="sort" name="sort">
+                                                                <option value="published">17 Belgrave mansions, Bridlington</option>
+                                                                <option value="updated" selected>18 Belgrave mansions, Bridlington</option>
+                                                                <option value="views">19 Belgrave mansions, Bridlington</option>
+                                                                <option value="comments">20 Belgrave mansions, Bridlington</option>
+                                                                <option value="comments">Address not shown</option>
+                                                                </select>
+                                                                </td>
+
+
+
+                                                              <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                                <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                                        <ul class="govuk-summary-list__actions-list">
+                                                                          <li class="govuk-summary-list__actions-list-item">
+                                                                            <a class="govuk-link" href="/v01/multiple-upload/spreadsheet-postcode/postcode-lookup"><span aria-hidden="true">Edit</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                                          </li>
+                                                                        </ul>
+                                                                      </dd>
+
+
+                                                                      <tbody class="govuk-table__body">
+                                                                        <tr class="govuk-table__row">
+                                                                          <th scope="row" class="govuk-table__header">
+
+                                                                                  BRID_16
+
+                                                                          </th>
+
+                                                                          <td class="govuk-table__cell govuk-table__cell">Woodcroft court, Bridlington</td>
+                                                                          <td class="govuk-table__cell govuk-table__cell">YO15 3JN</td>
+                                                                          <td class="govuk-table__cell govuk-table__cell">
+                                                                            <select class="govuk-select" id="sort" name="sort">
+                                                                            <option value="published">Flat 3, Woodcroft court, Bridlington</option>
+                                                                            <option value="updated" selected>Flat 4, Woodcroft court, Bridlington</option>
+                                                                            <option value="views">Flat 5, Woodcroft court, Bridlington</option>
+                                                                            <option value="comments">Flat 6, Woodcroft court, Bridlington</option>
+                                                                            <option value="comments">Address not shown</option>
+                                                                            </select>
+                                                                            </td>
+
+
+
+                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                                            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                                                    <ul class="govuk-summary-list__actions-list">
+                                                                                      <li class="govuk-summary-list__actions-list-item">
+                                                                                        <a class="govuk-link" href="/v01/multiple-upload/spreadsheet-postcode/postcode-lookup"><span aria-hidden="true">Edit</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                                                      </li>
+                                                                                    </ul>
+                                                                                  </dd>
+
+
+
+        </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/v01/multiple-upload/spreadsheet-postcode/uploaded-locations-partial"
+        }) }}
+
+        <div class="govuk-!-padding-bottom-1"></div>
+
+        <a class="govuk-link" href="/v01/multiple-upload/spreadsheet-postcode/uploaded-locations-partial"><span aria-hidden="true">Skip this step</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+
+          </div>
+        </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Search for a location
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post" action="/v01/manual-add-answer">
+
+                <h1 class="govuk-heading-l">How do you want to manually find location</h1>
+
+                
+
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "manual-add",
+  fieldset: {
+    legend: {
+
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "postcode",
+      text: "Postcode lookup"
+    },
+    {
+      value: "grid",
+      text: "Select the location area on a map"
+    },
+    {
+      value: "nearby",
+      text: "Link your location to a nearby address"
+    }
+
+  ]
+}) }}
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+{% endblock %}

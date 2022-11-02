@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% set title = "Search for a location" %}
+
+{% block pageTitle %}
+Get flood warnings by phone, text or email
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v01/location-format-answer" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "location-format",
+        name: "location-format",
+        fieldset: {
+          legend: {
+            text: "What format do you have your locations in?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "spreadsheet-postcodes",
+            text: "a spreadsheet with addresses and postcodes"
+          },
+          {
+            value: "spreadsheet-grid-reference",
+            text: "a spreadsheet with X and Y coordinates"
+          },
+          {
+            value: "shapefile",
+            text: "ESRI shapefile (points, lines or areas)"
+          },
+          {
+            value: "manual",
+            text: "none of the above, enter addresses manually"
+          }
+        ]
+      }) }}
+
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </div>
+  </div>
+
+{% endblock %}

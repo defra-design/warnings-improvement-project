@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Search for a location
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post" action="/v01/multiple-upload/manual-find-found03">
+
+                <h1 class="govuk-heading-l">Link the location to a nearby address</h1>
+
+                <div class="govuk-inset-text">
+                  for BRID_03
+                </div>
+
+                {{ govukInput ({
+                    id: 'location-query',
+                    name: 'location-query',
+                    classes: 'govuk-input--width-10',
+                    label: {
+                        text: 'Postcode'
+                    }
+                }) }}
+
+                <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+      Select an address
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+      <option value="published">11 Belgrave Road, Bridlington, YO15 3JP</option>
+      <option value="updated" selected>12 Belgrave Road, Bridlington, YO15 3JP</option>
+      <option value="views">13 Belgrave Road, Bridlington, YO15 3JP</option>
+      <option value="comments">14 Belgrave Road, Bridlington, YO15 3JP</option>
+    </select>
+  </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
