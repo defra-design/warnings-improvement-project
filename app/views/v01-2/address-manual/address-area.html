@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% set title = "Search for a location" %}
+
+{% block pageTitle %}
+    {{title}} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="#" method="post">
+
+
+
+{{ govukRadios({
+  name: "manual",
+  fieldset: {
+    legend: {
+      text: "Find your area of interest",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Choose how you would like to search."
+  },
+  items: [
+    {
+      value: "postcode",
+      text: "Address with postcode",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "place",
+      text: "Place name, town or keyword",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

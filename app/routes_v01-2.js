@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-var folder = "v01"
+var folder = "v01-2"
 var servicename = "Get flood warnings by phone, text or email"
 var paymentMethod = "govpay"  // or "govpay"
 
@@ -274,24 +274,24 @@ router.post('/location/catigories-check', function (req, res) {
     // Check whether the variable matches a condition
     if (locationFormat == "spreadsheet-postcodes"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/instructions-postcode')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/instructions-postcode')
     }
 
     // Check whether the variable matches a condition
     if (locationFormat == "spreadsheet-grid-reference"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/spreadsheet-gridref/instructions-gridreference')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-gridref/instructions-gridreference')
     }
 
     // Check whether the variable matches a condition
     if (locationFormat == "manual"){
       // Send user to next page
-      res.redirect('/v01/address-manual/address-area')
+      res.redirect('/v01-2/address-manual/address-area')
     }
 
      else {
       // Send user to ineligible page
-      res.redirect('/v01/multiple-upload/shapefile/instructions-shapefile')
+      res.redirect('/v01-2/multiple-upload/shapefile/instructions-shapefile')
     }
 
   })
@@ -416,12 +416,12 @@ router.post('/location/catigories-check', function (req, res) {
 
   // Choose address or area ==============================================================
 
-  router.post('/v01/manual-add-answer', function (req, res) {
+  router.post('/v01-2/manual-add-answer', function (req, res) {
 
     if (Manual == "postcode") {
-      res.redirect("/v01/address-manual/postcode")
+      res.redirect("/v01-2/address-manual/postcode")
     } else {
-      res.redirect("/v01/location/search")
+      res.redirect("/v01-2/location/search")
     }
   })
 
@@ -435,18 +435,73 @@ router.post('/location/catigories-check', function (req, res) {
     // Check whether the variable matches a condition
     if (AddMethod == "postcode"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/postcode-lookup-manual')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/postcode-lookup-manual')
     }
 
     // Check whether the variable matches a condition
     if (AddMethod == "grid"){
       // Send user to next page
-      res.redirect('/v01/location/search')
+      res.redirect('/v01-2/location/search')
     }
 
      else {
       // Send user to ineligible page
-      res.redirect('/v01/location/nearby-location')
+      res.redirect('/v01-2/location/nearby-location')
+    }
+
+  })
+
+
+
+  // Run this code when a form is submitted to 'next-action-answer'
+  router.post('/next-action-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'next-action'
+    var NextAction = req.session.data['next-action']
+
+    // Check whether the variable matches a condition
+    if (NextAction == "continue"){
+      // Send user to next page
+      res.redirect('/v01-2/multiple-upload/flood-warning')
+    }
+
+    // Check whether the variable matches a condition
+    if (NextAction == "not-found"){
+      // Send user to next page
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/locations-not-found')
+    }
+
+
+     else {
+      // Send user to ineligible page
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/upload-spreadsheet')
+    }
+
+  })
+
+
+  // Run this code when a form is submitted to 'find-location-answer'
+  router.post('/find-location-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'find-location'
+    var findLocation = req.session.data['find-location']
+
+    // Check whether the variable matches a condition
+    if (findLocation == "manual"){
+      // Send user to next page
+      res.redirect('/v01-2/multiple-upload/manual-find')
+    }
+
+    // Check whether the variable matches a condition
+    if (findLocation == "revised"){
+      // Send user to next page
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/upload-spreadsheet3')
+    }
+
+
+     else {
+      // Send user to ineligible page
+      res.redirect('/v01-2/multiple-upload/flood-warning')
     }
 
   })

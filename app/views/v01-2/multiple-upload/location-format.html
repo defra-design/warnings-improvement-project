@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% set title = "Search for a location" %}
+
+{% block pageTitle %}
+Get flood warnings by phone, text or email
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v01-2/location-format-answer" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "location-format",
+        name: "location-format",
+        fieldset: {
+          legend: {
+            text: "How do you want to upload your locations?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "spreadsheet-postcodes",
+            text: "addresses and postcodes in a spreadsheet"
+          },
+          {
+            value: "spreadsheet-grid-reference",
+            text: "X and Y coordinates in a spreadsheet"
+          },
+          {
+            value: "shapefile",
+            text: "ESRI shapefile (points, lines or areas)"
+          },
+          {
+            value: "manual",
+            text: "I do not have a file to upload, I want to find my locations indiviually"
+          }
+        ]
+      }) }}
+
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v01/multiple-upload/spreadsheet-postcode/upload-spreadsheet" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        Postcode lookup
+      </h1>
+
+      <div class="govuk-inset-text">
+  For BRID_11
+</div>
+
+<h2 class="govuk-heading-m">
+  Postcode
+</h2>
+
+<p>YO15 3JP <a href="#">Change</a></p>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Select an address
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published">3, Roundhay road, Bridlington</option>
+    <option value="updated" selected>4, Roundhay road, Bridlington</option>
+    <option value="views">5, Roundhay road, Bridlington</option>
+    <option value="comments">6, Roundhay road, Bridlington</option>
+  </select>
+</div>
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/v01/multiple-upload/spreadsheet-postcode/first-line-found"
+        }) }}
+
+
+          </div>
+        </div>
+
+
+
+
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Partly matched locations – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -26,11 +26,11 @@
 
 
       <h1 class="govuk-heading-l">
-        Locations partially matched
+        Partly matched locations
       </h1>
 
       <p class="govuk-body">
-                We found these locations based on the information you uploaded but the first line of the address did not match. Select an address for each location.
+        We found these possible matches based on the information you uploaded but the first line of the address did not match the postcode. Select the first line of the address to match the postcode for each location.
               </p>
 
 </div class="govuk-grid-column-two-thirds">
@@ -51,7 +51,7 @@
 
               <th scope="col" class="govuk-table__header">Full address</th>
               <th scope="col" class="govuk-table__header govuk-table__header">Postcode</th>
-              <th scope="col" class="govuk-table__header govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header">Select an address</th>
               <th scope="col" class="govuk-table__header govuk-table__header"></th>
             </tr>
           </thead>
@@ -63,17 +63,9 @@
                       BRID_11
               </th>
 
-              <td class="govuk-table__cell">Roundhay, Bridlington</td>
+              <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
               <td class="govuk-table__cell govuk-table__cell">YO15 3JZ</td>
-              <td class="govuk-table__cell govuk-table__cell">
-                <select class="govuk-select" id="sort" name="sort">
-                <option value="published">3, Roundhay road, Bridlington</option>
-                <option value="updated" selected>4, Roundhay road, Bridlington</option>
-                <option value="views">5, Roundhay road, Bridlington</option>
-                <option value="comments">6, Roundhay road, Bridlington</option>
-                <option value="comments">Address not shown</option>
-                </select>
-                </td>
+              <td class="govuk-table__cell govuk-table__cell">Address found</td>
 
 
 
@@ -100,10 +92,10 @@
               <td class="govuk-table__cell govuk-table__cell">
                 <select class="govuk-select" id="sort" name="sort">
                 <option value="published">25A, Belgrave road, Bridlington</option>
-                <option value="updated" >25B, Belgrave road, Bridlington</option>
+                <option value="updated" selected>25B, Belgrave road, Bridlington</option>
                 <option value="views">25C, Belgrave road, Bridlington</option>
                 <option value="comments">25D, Belgrave road, Bridlington</option>
-                <option value="comments" selected>Address not shown</option>
+                <option value="comments">Address not shown</option>
                 </select>
                 </td>
 
@@ -137,7 +129,7 @@
                                       <td class="govuk-table__cell govuk-table__cell">
                                         <select class="govuk-select" id="sort" name="sort">
                                         <option value="published">52, South Marine Drive, Bridlington</option>
-                                        <option value="updated" selected>11 addresses found</option>
+                                        <option value="updated" selected>53, South Marine Drive, Bridlington</option>
                                         <option value="views">54, South Marine Drive, Bridlington</option>
                                         <option value="comments">55, South Marine Drive, Bridlington</option>
                                         <option value="comments">Address not shown</option>
@@ -169,8 +161,8 @@
                                                   <td class="govuk-table__cell govuk-table__cell">YO15 3JY</td>
                                                   <td class="govuk-table__cell govuk-table__cell">
                                                     <select class="govuk-select" id="sort" name="sort">
-                                                    <option value="published" selected >3 addresses found</option>
-                                                    <option value="updated">45, Roundhay Avenue, Bridlington</option>
+                                                    <option value="published">44, Roundhay Avenue, Bridlington</option>
+                                                    <option value="updated" selected>45, Roundhay Avenue, Bridlington</option>
                                                     <option value="views">46, Roundhay Avenue, Bridlington</option>
                                                     <option value="comments">47, Roundhay Avenue, Bridlington</option>
                                                     <option value="comments">Address not shown</option>
@@ -204,8 +196,8 @@
                                                               <td class="govuk-table__cell govuk-table__cell">YO15 3JL</td>
                                                               <td class="govuk-table__cell govuk-table__cell">
                                                                 <select class="govuk-select" id="sort" name="sort">
-                                                                <option value="published"selected>10 addresses found</option>
-                                                                <option value="updated">18 Belgrave mansions, Bridlington</option>
+                                                                <option value="published">17 Belgrave mansions, Bridlington</option>
+                                                                <option value="updated" selected>18 Belgrave mansions, Bridlington</option>
                                                                 <option value="views">19 Belgrave mansions, Bridlington</option>
                                                                 <option value="comments">20 Belgrave mansions, Bridlington</option>
                                                                 <option value="comments">Address not shown</option>
@@ -237,11 +229,11 @@
                                                                           <td class="govuk-table__cell govuk-table__cell">YO15 3JN</td>
                                                                           <td class="govuk-table__cell govuk-table__cell">
                                                                             <select class="govuk-select" id="sort" name="sort">
-                                                                            <option value="addressfound" selected>5 addresses found</option>
-                                                                            <option value="flat4">Flat 4, Woodcroft court, Bridlington</option>
-                                                                            <option value="flat5">Flat 5, Woodcroft court, Bridlington</option>
-                                                                            <option value="flat6">Flat 6, Woodcroft court, Bridlington</option>
-                                                                            <option value="addressnotshown">Address not shown</option>
+                                                                            <option value="published">Flat 3, Woodcroft court, Bridlington</option>
+                                                                            <option value="updated" selected>Flat 4, Woodcroft court, Bridlington</option>
+                                                                            <option value="views">Flat 5, Woodcroft court, Bridlington</option>
+                                                                            <option value="comments">Flat 6, Woodcroft court, Bridlington</option>
+                                                                            <option value="comments">Address not shown</option>
                                                                             </select>
                                                                             </td>
 
