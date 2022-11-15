@@ -22,7 +22,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form class="form" action="/v01/multiple-upload/spreadsheet-postcode/upload-spreadsheet" method="post">
+
 
 
   <h1 class="govuk-heading-l">
@@ -240,22 +240,17 @@
 
           </tbody>
         </table>
+<div class="govuk-button-group">
+<form class="form" action="/v01-2/multiple-upload/spreadsheet-postcode/uploaded-locations3">
 
-
-
-
-
-
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        {{ govukButton({
-          text: "Continue",
-          href: "/v01-2/multiple-upload/spreadsheet-postcode/uploaded-locations3"
-        }) }}
-
-        <div class="govuk-!-padding-bottom-1"></div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
 
         <a class="govuk-link" href="/v01-2/multiple-upload/spreadsheet-postcode/uploaded-locations2">Skip this step</a>
+</div>
+
+
 
           </div>
         </div>
