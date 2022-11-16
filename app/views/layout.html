@@ -56,8 +56,28 @@
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Live flood warnings"
+      },
+      {
+        href: "/v01-2/multiple-upload/manage-all-locations",
+        text: "Manage locations"
+      },
+      {
+        href: "#3",
+        text: "Manage flood warnings"
+      },
+
+      {
+        href: "#4",
+        text: "Manage contacts"
+      }
+    ]
+    }) }}
+
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
