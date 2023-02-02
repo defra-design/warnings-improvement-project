@@ -18,6 +18,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/step-by-step-related";
 @import "patterns/task-list";
 @import "patterns/_search";
+@import "patterns/filter";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -128,4 +129,31 @@ a.app-link-destructive {
     margin-bottom: 20px;
     clear: both;
     border-left: 10px solid #E38C33;
+}
+
+.govuk-form-group--success {
+  padding-left: 15px;
+  border-left: 5px solid #307D3E;
+}
+
+.govuk-inset-text--success {
+  border-left: 5px solid #307D3E;
+
+
+
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.25;
+  color: #0b0c0c;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  clear: both;
+  border-left: 10px solid #307D3E;
+
+
+
 }

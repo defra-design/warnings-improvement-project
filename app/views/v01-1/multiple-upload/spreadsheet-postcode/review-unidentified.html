@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Review and edit the locations not found</h1>
+
+
+
+                    <p class="govuk-body">Some of your locations have not been found.</p>
+                      <div class="govuk-!-padding-bottom-1"></div>
+                      <p class="govuk-body">If the address is new, the postcode may not have been added to the database yet. You can find the location manually or try again in a few weeks.</p>
+                        <div class="govuk-!-padding-bottom-1"></div>
+
+
+
+                    <h2 class="govuk-heading-m">
+                      Download all the locations not found
+                    </h2>
+
+                    <p class="govuk-body">If the address is not new, check for:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                  <li>typing mistakes</li>
+                  <li>details missing, make sure you have included a full address and postcode</li>
+                </ul>
+                <p class="govuk-body">If that still doesn't work, you can manually find each location.</p>
+<a href="#" class="govuk-link govuk-link--no-visited-state">Download locations that were not found (csv, xxKB)</a>
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+<form class="form" action="/v01-1/unidentified" method="post">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "unidentified-locations",
+  name: "unidentified-locations",
+  fieldset: {
+    legend: {
+      text: "How do you want to continue?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+
+  items: [
+    {
+      value: "revised",
+      text: "Upload the revised spreadsheet with the locations not found"
+    },
+    {
+      value: "manual",
+      text: "Manually find each location using postcode lookup, link to a nearby address or select on a map"
+    }
+  ]
+}) }}
+
+<button class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Conintue
+</button>
+
+
+
+        </div>
+
+</div>
+
+{% endblock %}

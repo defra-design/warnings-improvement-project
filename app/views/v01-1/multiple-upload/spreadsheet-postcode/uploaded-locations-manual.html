@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Your uploaded locations</h1>
+
+                  <h3 class="govuk-heading-m">1,254 <p>locations found</p></h3>
+                  <h3 class="govuk-heading-m">3 <p>locations manually found</p></h3>
+                    <h3 class="govuk-heading-m">63 <p>locations not found</p></h3>
+
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+
+<form class="form" action="/v01-1/location-add-answer" method="post">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "more-locations",
+  name: "more-locations",
+  fieldset: {
+    legend: {
+      text: "What do you want to do next?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+
+  items: [
+    {
+      value: "yes",
+      text: "Check if your 1257 locations are in flood warning areas"
+    },
+    {
+      value: "no",
+      text: "Review the locations not found or edit the locations manually found"
+    }
+  ]
+}) }}
+
+<a href="/v01-1/multiple-upload/location-format" class="govuk-link">Add more locations</a>
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+</div>
+
+{% endblock %}

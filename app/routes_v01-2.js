@@ -307,12 +307,12 @@ router.post('/location/catigories-check', function (req, res) {
     // Check whether the variable matches a condition
     if (Morelocation == "yes"){
       // Send user to the page where they can add more locations
-      res.redirect('/v01/multiple-upload/flood-warning')
+      res.redirect('/v01-2/multiple-upload/flood-warning')
     }
 
      else {
       // Send user to the next page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/review-unidentified')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/review-unidentified')
     }
 
   })
@@ -326,12 +326,12 @@ router.post('/location/catigories-check', function (req, res) {
     // Send user to the page where they can add more locations
     if (Morelocation1 == "yes"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/flood-warning')
+      res.redirect('/v01-2/multiple-upload/flood-warning')
     }
 
      else {
       // Send user to next page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/review-unidentified')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/review-unidentified')
     }
 
   })
@@ -346,18 +346,18 @@ router.post('/location/catigories-check', function (req, res) {
     // Check whether the variable matches a condition
     if (unidentifiedLocations == "revised"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/upload-spreadsheet2')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/upload-spreadsheet2')
     }
 
     // Check whether the variable matches a condition
     if (unidentifiedLocations == "remove"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/uploaded-locations-removed')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/uploaded-locations-removed')
     }
 
      else {
       // Send user to ineligible page
-      res.redirect('/v01/multiple-upload/manual-find')
+      res.redirect('/v01-2/multiple-upload/manual-find')
     }
 
   })
@@ -372,12 +372,12 @@ router.post('/location/catigories-check', function (req, res) {
     // Check whether the variable matches a condition
     if (AddMethod == "add-to-existing"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/uploading')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/uploading')
     }
 
      else {
       // Send user to ineligible page
-      res.redirect('/v01/multiple-upload/spreadsheet-postcode/are-you-sure-remove-unidentified')
+      res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/are-you-sure-remove-unidentified')
     }
 
   })
@@ -393,23 +393,23 @@ router.post('/location/catigories-check', function (req, res) {
     // Check whether the variable matches a condition
     if (AddMethod == "addto"){
       // Send user to next page
-      res.redirect('/v01/multiple-upload/shapefile/uploading')
+      res.redirect('/v01-2/multiple-upload/shapefile/uploading')
     }
 
      else {
       // Send user to ineligible page
-      res.redirect('/v01/multiple-upload/shapefile/are-you-sure')
+      res.redirect('/v01-2/multiple-upload/shapefile/are-you-sure')
     }
 
   })
 
   // Route to check if address or area has been selected
-  router.post('/v01/multiple-upload/shapefile/are-you-sure', function (req, res) {
+  router.post('/v01-2/multiple-upload/shapefile/are-you-sure', function (req, res) {
 
     if (req.body['submit']=="true") {
-      res.redirect("/v01/multiple-upload/shapefile/uploading")
+      res.redirect("/v01-2/multiple-upload/shapefile/uploading")
     } else {
-      res.redirect("/v01/multiple-upload/shapefile/replace")
+      res.redirect("/v01-2/multiple-upload/shapefile/replace")
     }
   })
 
@@ -462,7 +462,7 @@ router.post('/location/catigories-check', function (req, res) {
     // Check whether the variable matches a condition
     if (NextAction == "continue"){
       // Send user to next page
-      res.redirect('/v01-2/multiple-upload/flood-warning')
+      res.redirect('/v02-1/choosewarnings-default/overview-flood')
     }
 
     // Check whether the variable matches a condition

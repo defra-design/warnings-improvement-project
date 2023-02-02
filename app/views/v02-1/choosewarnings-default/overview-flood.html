@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check if locations are in flood risk areas – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v02-1/choosewarnings-default/uploading" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        Check if your 2000 locations are in flood warning areas
+      </h1>
+
+<h2 class="govuk-heading-m">
+  Types of flooding
+</h2>
+
+<p>You can sign up for warnings for flooding from:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>rivers  (fluvial flooding)</li>
+  <li>the sea (coastal flooding)</li>
+  <li>groundwater</li>
+
+  </ul>
+  <p>Your local council should give information about surface water flooding  (flash flooding). You cannot sign up for warnings about surface water flooding using this service.
+  </p>
+
+  <h2 class="govuk-heading-m">
+    Flood extent and flood risk
+  </h2>
+
+
+    <p>Flood extent predicts the area of the flood that could occur at a particular location.
+
+    <p>Flood risk is based on a combination of likelihood and impact – how likely it is that flooding will happen and the effect that will have on people, buildings and services.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Flood warnings areas
+    </h2>
+
+
+      <p>Flood warning areas are geographical areas where flooding is expected, for which you can get flood warnings. They usually cover areas where people live or work, such as cities, towns, villages or hamlets. Not all locations are covered by a flood warning area.
+</p>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    You may still be at risk even if you are not in a flood warning area. You can increase the area around your location to improve your chances of it being covered by a flood warning. You can also link your location to a nearby flood warning area.
+  </strong>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Check locations
+</button>
+
+    </div>
+  </div>
+
+{% endblock %}

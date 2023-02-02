@@ -11,8 +11,9 @@ router.use('/v4', require('./routes_v4')),
 router.use('/v5', require('./routes_v5')),
 router.use('/v6', require('./routes_v6')),
 router.use('/v7', require('./routes_v7')),
-router.use('/v01', require('./routes_v01')),
-router.use('/v01-2', require('./routes_v01-2'))
+router.use('/v01-1', require('./routes_v01-1')),
+router.use('/v01-2', require('./routes_v01-2')),
+router.use('/v02-1', require('./routes_v02-1'))
 
 
 

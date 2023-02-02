@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Flood warnings available for your locations</h1>
+
+                  <h3 class="govuk-heading-m">1820<p>locations are in flood warnings areas</p></h3>
+
+                  <h3 class="govuk-heading-m">180 <br>
+                    <label class="govuk-body">locations are not in flood warning areas and at low risk of flooding</label>
+                    <a class="govuk-caption-m" href="#">Review locations that are not in flood warning areas</a>
+                  </h3>
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<form class="form" action="/v02-1/choosewarnings-default/flood-options" method="post">
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Set flood warnings
+</button>
+
+
+</div>
+
+{% endblock %}

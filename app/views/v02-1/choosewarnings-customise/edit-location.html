@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<form action="/v02-1/choosewarnings-customise/edit-location-associated" >
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+      <h1 class="govuk-heading-l">
+        BRID_11
+        <label class="govuk-label">4 Royal Crescent, Bridlington , YO15 2PF</label>
+      </h1>
+
+
+      <h2 class="govuk-heading-m">
+        Increase the area for this location
+        </h2>
+
+
+      <p class="govuk-body">Increasing the area around your location will improve your chances of it being covered by a flood warning.
+      </p>
+
+
+      <div class="govuk-inset-text">
+        BRID_11 has a
+
+        <b>50 </b>
+
+
+         metre increase in area and does not overlap with any flood alert or flood warning areas.
+      </div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="weight">
+    Increase area by
+  </label>
+
+
+
+  <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="metres-individual" name="metres-individual" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">metres</div>
+<div class="govuk-!-padding-left-3">
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" >
+    Update
+    </button> </div>
+
+  </div>
+</div>
+
+<h2 class="govuk-heading-m">
+  Alternatively, link to a nearby flood warning area
+  </h2>
+
+
+<p class="govuk-body">You can link your location to a nearby flood warning area or flood alert area.
+</p>
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What are flood warning areas and flood alert areas?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p><b>Flood warning area</b><br>
+      Flood warning areas are geographical areas where flooding is expected, for which you can get flood warnings and severe flood warnings. They usually cover areas where people live or work, such as cities, towns, villages or hamlets. Not all locations are covered by a flood warning
+  area.</p>
+
+  <p><b>Flood alert areas</b><br>
+    Flood alert areas are geographical areas where flooding may be possible, for which you can get flood alerts. A flood alert area may match a flood warning area or may cross a number of flood warning
+areas. Flood alerts are issued earlier than flood warnings to provide advance notice of the possibility of flooding. They may be issued when there is less confidence that flooding will happen.</p>
+
+
+  </div>
+</details>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+
+        <table class="govuk-table">
+
+
+
+
+
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Flood alert or warning area</th>
+              <th scope="col" class="govuk-table__header">River/Coastal</th>
+              <th scope="col" class="govuk-table__header govuk-table__header">Distance from your location</th>
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    <b>North Sea coast at Bridlington</b><br>Flood alert area
+                    </label>
+                  </div>
+              </th>
+              <td class="govuk-table__cell ">Coastal</td>
+              <td class="govuk-table__cell govuk-table__cell">45 metres</td>
+
+
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                        <b>Bridlington - Harbour Road and Floral Pavilion</b><br>Flood alert area
+                        </label>
+                      </div>
+                  </th>
+                  <td class="govuk-table__cell ">Coastal</td>
+                  <td class="govuk-table__cell govuk-table__cell">190 metres</td>
+
+
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            <b>North Sea coast at Bridlington - South pier</b><br>Flood alert area
+                            </label>
+                          </div>
+                      </th>
+                      <td class="govuk-table__cell ">Coastal</td>
+                      <td class="govuk-table__cell govuk-table__cell">800 metres</td>
+
+
+
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                <b>Gypsey Race and the Wolds</b><br>Flood alert area
+                                </label>
+                              </div>
+                          </th>
+                          <td class="govuk-table__cell ">Gypsey Race (upstream of your location)</td>
+                          <td class="govuk-table__cell govuk-table__cell">900 metres</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+
+
+
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+<div class="govuk-!-padding-bottom-9"></div>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
