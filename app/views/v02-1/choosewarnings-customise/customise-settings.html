@@ -48,7 +48,31 @@
           Flood alerts warn that flooding may be possible. They are usually issued from two days to two hours before flooding might happen. Alerts can help you be prepared to act on your flood plan.</p>
         </div>
       </details>
-
+      <script language="JavaScript">
+            function toggleFA(source) {
+              checkboxes = document.getElementsByName('FA');
+              for(var i=0, n=checkboxes.length;i<n;i++) {
+                checkboxes[i].checked = source.checked;
+              }
+            }
+        </script>
+              <script language="JavaScript">
+                function toggleFW(source) {
+                  checkboxes = document.getElementsByName('FW');
+                  for(var i=0, n=checkboxes.length;i<n;i++) {
+                    checkboxes[i].checked = source.checked;
+                  }
+                }
+            </script>
+          <script language="JavaScript">
+                    function toggleSFW(source) {
+                    checkboxes = document.getElementsByName('SFW');
+                    for(var i=0, n=checkboxes.length;i<n;i++) {
+                     checkboxes[i].checked = source.checked;
+                  }
+                }
+            </script>
+       
       <div class="govuk-inset-text">
   The selected locations had 3 severe flood warnings, 900 warnings and 2,700 alerts in the past 2 years.
 </div>
@@ -298,7 +322,7 @@
               <th scope="col" class="govuk-table__header">
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleSFW(this)" />
                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                     <b>All severe flood warnings</b>
                     </label>
@@ -308,7 +332,7 @@
               <th scope="col" class="govuk-table__header govuk-table__header">
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleFW(this)" />
                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                     <b>All flood warnings</b>
                     </label>
@@ -319,7 +343,7 @@
               <th scope="col" class="govuk-table__header govuk-table__header">
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleFA(this)" />
                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                     <b>All flood alerts</b>
                     </label>
@@ -341,7 +365,7 @@
               <td class="govuk-table__cell ">
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                     Severe flood warnings
                     </label>
@@ -351,7 +375,7 @@
               <td class="govuk-table__cell govuk-table__cell">
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                     Flood warnings
                     </label>
@@ -361,7 +385,7 @@
               <td class="govuk-table__cell govuk-table__cell">
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                     Flood alert
                     </label>
@@ -382,7 +406,7 @@
                   <td class="govuk-table__cell ">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                        <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
                         <label class="govuk-label govuk-checkboxes__label" for="organisation">
                         Severe flood warnings
                         </label>
@@ -392,7 +416,7 @@
                   <td class="govuk-table__cell govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                        <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
                         <label class="govuk-label govuk-checkboxes__label" for="organisation">
                         Flood warnings
                         </label>
@@ -402,7 +426,7 @@
                   <td class="govuk-table__cell govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                        <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
                         <label class="govuk-label govuk-checkboxes__label" for="organisation">
                         Flood alert
                         </label>
@@ -421,7 +445,7 @@
                       <td class="govuk-table__cell ">
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation">
                             Severe flood warnings
                             </label>
@@ -431,7 +455,7 @@
                       <td class="govuk-table__cell govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation">
                             Flood warnings
                             </label>
@@ -441,7 +465,7 @@
                       <td class="govuk-table__cell govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation">
                             Flood alert
                             </label>
@@ -461,7 +485,7 @@
                           <td class="govuk-table__cell ">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
                                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                 Severe flood warnings
                                 </label>
@@ -471,7 +495,7 @@
                           <td class="govuk-table__cell govuk-table__cell">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
                                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                 Flood warnings
                                 </label>
@@ -481,7 +505,7 @@
                           <td class="govuk-table__cell govuk-table__cell">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
                                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                 Flood alert
                                 </label>
@@ -504,7 +528,7 @@
                               <td class="govuk-table__cell ">
                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                   <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                    <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
                                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                     Severe flood warnings
                                     </label>
@@ -514,7 +538,7 @@
                               <td class="govuk-table__cell govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                   <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                    <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
                                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                     Flood warnings
                                     </label>
@@ -524,7 +548,7 @@
                               <td class="govuk-table__cell govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                   <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                    <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
                                     <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                     Flood alert
                                     </label>
