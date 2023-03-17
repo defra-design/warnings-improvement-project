@@ -5300,10 +5300,8 @@ x:-moz-any-link {
 }
 
 .moj-filter__header {
-  background-color: #ffffff;
+  background-color: #b1b4b6;
   font-size: 0;
-  border: 1px solid #b1b4b6;
-  border-bottom: 0;
   padding: 10px 20px;
   text-align: justify;
 }
