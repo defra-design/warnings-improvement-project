@@ -1,0 +1,48 @@
+{
+	"termName": "Analyse entirety",
+	"principleUrl": "analyse-the-entirety-of-the-service",
+	"sectionNumber": "305",
+	"section": "Designing (service) journeys",
+	"title": "Analyse the entirety of the service",
+	"subHeader": "When evaluating the carbon impact of your service, ensure you are analysing the full breadth of your service design encompassing online, offline and back-end design choices.",
+	"disciplines": ["Service design"],
+	"guidance": {
+		"guidanceText01": "Although the origin of this framework came from an interest in the carbon-cost of typically 'digital' services and solutions, as designers we are always aiming to design equitable services that work for everyone. This often means that some of our solutions are not 'online'. The choices we make in designing offline solutions are important to consider when evaluating the carbon-impact of our services.",
+		"guidanceText02": "For example, if we need to design offline paper solutions we must evaluate the carbon-cost of materials chosen as well as wider user-behaviour around recyclability and the carbon cost associated with this. Similarly, if we know that some of our users might rely on face-to-face interaction to use our services, we must measure the carbon cost associated with potential travel.",
+		"guidanceText03": "It is also vitally important to measure and evaluate the carbon impact of your back-end designs. How does the behaviour and ways of working from those supporting your service impact its environmental impact? You may find that you are working within the constraints of existing technologies and resource structures in back-end designs, drawing attention to the carbon cost of this can help organisations move towards more carbon-friendly solutions in the future."
+	},
+	"carbonImpact": {
+		"impactText01": "Analysing the carbon impact of your full service can encompass a huge and diverse array of factors which will be unique to your service. Some generic carbon impacts that can be considered are:",
+		"impactText02": "It currently generates more carbon through the use of fossil fuels to recycle paper that it does to make new paper.",
+		"impactText03": "- Transport produced 27% of the UK's total emissions in 2019. Of this, the majority (91%) came from road transport vehicles (111 MtCO2e)",
+		"impactText04": "- We currently send around 9.5 trillion texts every year. A single text on average equates to around 0.8g of carbon.",
+		"impactText05": "- One e-reader requires 50 times the minerals and 40 times the amount of water to manufacture than a printed book"
+	},
+	"measures": {
+		"measuresText01": "Channel usage",
+		"measuresText02": "Material recyclability",
+		"measuresText03": "Material quantity",
+		"measuresText04": "Back-end time on task",
+		"measuresText05": "Back-end number of interactions",
+		"measuresText06": "Failure demand",
+		"measuresText07": "Complaints & queries"
+	},
+	"otherAreas": {
+		"area01": "Inclusive journeys",
+		"area02": "Communication"
+	},
+	"links": {
+		"link01": {
+			"linkDescription": "How Bad are Bananas: The Carbon Footprint of Everything, Mike Berners-Lee:",
+			"linkUrl": "https://carbonliteracy.com/mike-berners-lee/"
+		},
+		"link02": {
+			"linkDescription": "Link description:",
+			"linkUrl": "https://www.gov.uk/government/statistics/transport-and-environment-statistics-autumn-2021"
+		},
+		"link03": {
+			"linkDescription": "Link description:",
+			"linkUrl": "https://www.anthropocenemagazine.org/2020/10/paper-recycling-isnt-necessarily-good-for-the-climate/"
+		}
+	}
+}

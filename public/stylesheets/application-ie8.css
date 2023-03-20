@@ -10275,6 +10275,11 @@ html.no-scroll {
   margin-bottom: 0;
 }
 
+.filter-box {
+  border: 1px solid #b1b4b6;
+  padding: 24px 16px 16px;
+}
+
 .app-preview-map {
   height: 420px;
   position: absolute;

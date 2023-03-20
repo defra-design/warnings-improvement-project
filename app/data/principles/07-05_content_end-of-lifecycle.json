@@ -1,0 +1,18 @@
+{
+  "termName": "End lifecycle",
+      "principleUrl": "end-of-lifecycle",
+      "sectionNumber": "705",
+      "section": "Content",
+      "title": "End of lifecycle",
+      "subHeader": "Pay attention to the end of content lifecycle.",
+      "disciplines": ["Content design"],
+      "guidance": {
+        "guidanceText01": "Great emphasis is placed on creating content, for user need, business requirements or vanity projects. Withdrawing or archiving content is just as important, but not usually recognised."
+      },
+      "carbonImpact": {
+        "impactText01": "Without this content expands, taking up more storage space and degrading the overall user experience."
+      },
+      "measures": {
+        "measuresText01": "Content audit - to make sure content is fit for purpose, meets a need and not duplicated"
+      }
+}

@@ -1,0 +1,19 @@
+{
+  "termName": "Group content",
+      "principleUrl": "group-related-content",
+      "sectionNumber": "704",
+      "section": "Content",
+      "title": "Group related content",
+      "subHeader": "Keep related content in one area so its easy for users to find.",
+      "disciplines": ["Content design"],
+      "guidance": {
+        "guidanceText01": "A meaningful structure is logical and will help people understand how what they are reading fits in context with the wider structure. Will also help people find what they need quickly, reducing time on page. Don't rely on your own logic, ask your readers what makes sense to them."
+      },
+      "carbonImpact": {
+        "impactText01": "Intuitive navigation helps users spend less time/energy searching for what they need."
+      },
+      "measures": {
+        "measuresText01": "Time on page",
+        "measuresText02": "Bounce rate"
+      }
+}

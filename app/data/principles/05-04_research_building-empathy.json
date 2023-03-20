@@ -1,0 +1,20 @@
+{
+      "termName": "Building empathy",
+      "principleUrl": "building-empathy-and-understanding",
+      "sectionNumber": "504",
+      "section": "Research",
+      "title": "Building empathy and understanding",
+      "subHeader": "Help policy teams build empathy and understanding with various elements so they can develop planet centred policy. Elements would include bioregions, river catchments, ecosystems and the inhabitants of those ecosystems.",
+      "disciplines": ["User research"],
+      "guidance": {
+        "guidanceText01": "Work in progress."
+      },
+      "carbonImpact": {
+        "impactText01": "Work in progress"
+      },
+      "measures": {
+        "measuresText01": "Water and air quality",
+        "measuresText02": "Flood frequency",
+        "measuresText03": "Other policy success metrics"
+      }
+}

@@ -1,0 +1,40 @@
+{
+  "termName": "Images",
+      "principleUrl": "images",
+      "sectionNumber": "605",
+      "section": "Interfaces and interactions",
+      "title": "Images",
+      "subHeader": "Images increase the weight of a web page, so only use them when they’re adding real value to users. Ensure you save images in the most efficient file format and compress them.",
+      "disciplines": ["Content design", "Interaction design"],
+      "guidance": {
+        "guidanceText01": "Image style: Consider using vector illustrations in place of photographic images. These can be as impactful as a photograph, with much smaller image sizes. If you must use a photograph,  applying blur to selected parts of the image can reduce the file size.",
+        "guidanceText02": "File format: JPG or PNG are the best file formats if you’re using photographic imagery. After saving your image into these formats, use a compression tool to further reduce their size.",
+        "guidanceText03": "Avoid using PNG-24 format images, unless your image has Alpha transparency. If using PNG-24, ensure you compress its file size using a tool such as TinyPNG.",
+        "guidanceText04": "Newer file formats such as WebP offer greater image compression, but they aren’t supported by legacy browsers.",
+        "guidanceText05": "If creating vector illustrations consider saving these in SVG or PNG format. If you have many illustrations, consider combining them into a single file and positioning with CSS to reduce the number of HTTP requests.",
+        "guidanceText06": "File size/resolution: Try and size your image to the dimensions needed within your page. Avoid loading larger images and resizing these with CSS.",
+        "guidanceText07": "Colours: Increasing the number of colours in an image results in larger file sizes. These larger files increase data transfer and energy consumption. Consider reducing the number of colours or making the image monochrome to reduce the file size."
+      },
+      "measures": {
+        "measuresText01": "Page weight"
+      },
+      "otherAreas": {
+        "area01": "Page load time affects general usability",
+        "area02": "Google’s page speed algorithms will downgrade your site and harm Search Engine Optimization efforts",
+        "area03": "Accessibility"
+      },
+      "links": {
+        "link01": {
+          "linkDescription": "GOV.UK Design System guidance for images:",
+          "linkUrl": "https://design-system.service.gov.uk/styles/images/"
+        },
+        "link02": {
+          "linkDescription": "Online compression tool for PNG and JPEG images:",
+          "linkUrl": "https://tinypng.com/"
+        },
+        "link03": {
+          "linkDescription": "Measure the carbon impact of your page using a CO2 calculator:",
+          "linkUrl": "https://www.websitecarbon.com/"
+        }
+      }
+}

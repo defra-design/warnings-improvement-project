@@ -1,0 +1,18 @@
+{
+  "termName": "Search optimisation",
+      "principleUrl": "search-engine-optimisation",
+      "sectionNumber": "701",
+      "section": "Content",
+      "title": "SEO",
+      "subHeader": "Optimise sites for search engine ranking.",
+      "disciplines": ["Content design"],
+      "guidance": {
+        "guidanceText01": "Optimising sites for search engine rankings means that people spend less time browsing the internet for the right information and sites, and less time viewing websites that aren’t right."
+      },
+      "carbonImpact": {
+        "impactText01": "Time spent searching for the right web page means energy usage."
+      },
+      "measures": {
+        "measuresText01": "SEO through tools such as Google Analytics"
+      }
+}

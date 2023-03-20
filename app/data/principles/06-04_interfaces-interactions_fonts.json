@@ -1,0 +1,43 @@
+{
+  "termName": "Fonts",
+      "principleUrl": "fonts",
+      "sectionNumber": "604",
+      "section": "Interfaces and interactions",
+      "title": "Fonts",
+      "subHeader": "Use system fonts with as few font weights as possible. If using non-system fonts, ensure they’re saved in modern font file formats with higher compression rates.",
+      "disciplines": ["Content design", "Interaction design"],
+      "guidance": {
+        "guidanceText01": "Adding many fonts and font weights can increase the page weight of your site and results in many HTTP requests. Using system fonts already installed on users’ devices reduces the need for extra downloads.",
+        "guidanceText02": "The GDS Transport typeface is integral to the identity of GOV.UK sites and is one instance where you might use a non-system font. The GDS Transport font is only licensed for us on the www.gov.uk, .service.gov.uk and .blog.gov.uk domains. For services on different domains, use an alternative system font like Helvetica or Arial.",
+        "guidanceText03": "How you save web font files is a key consideration. Web Open Font Format, or WOFF as it’s more commonly known, is a modern web font file format with higher compression than TTF and OTF file formats. Saving font files in this format and can vastly reduce the size of your fonts. The more recent WOFF2 format offers greater compression, but this isn’t as well supported by the full range of browsers."
+      },
+      "carbonImpact": {
+        "impactText01": "Using many typefaces and font weights can add up on websites. This increases data transfers and causes slow performance. A typical custom font file can be over 200kb and may only include a single weight."
+      },
+      "measures": {
+        "measuresText01": "Page weight"
+      },
+      "otherAreas": {
+        "area01": "Page load time affects general usability",
+        "area02": "Google’s page speed algorithms will downgrade your site and harm Search Engine Optimization efforts.",
+        "area03": "Accessibility"
+      },
+      "links": {
+        "link01": {
+          "linkDescription": "GOV.UK Design System – Font guidance:",
+          "linkUrl": "https://design-system.service.gov.uk/styles/typography/#font"
+        },
+        "link02": {
+          "linkDescription": "Sustainability of web fonts:",
+          "linkUrl": "https://www.mightybytes.com/blog/sustainability-web-fonts/"
+        },
+        "link03": {
+          "linkDescription": "Minimising the number of custom fonts:",
+          "linkUrl": "https://sustainablewebdesign.org/has-the-design-used-the-minimum-number-of-custom-fonts/"
+        },
+        "link04": {
+          "linkDescription": "Making the internet more sustainable:",
+          "linkUrl": "https://theconversation.com/the-internet-consumes-extraordinary-amounts-of-energy-heres-how-we-can-make-it-more-sustainable-160639"
+        }
+      }
+}

@@ -1,0 +1,24 @@
+{
+  "termName": "Behaviour",
+      "principleUrl": "behaviour",
+      "sectionNumber": "706",
+      "section": "Content",
+      "title": "Behaviour",
+      "subHeader": "Design content to help users take beneficial behaviours (section 4).",
+      "disciplines": ["Content design"],
+      "guidance": {
+        "guidanceText01": "Think about the impact language has on our perception. For example a 'closed' street often means blocked for traffic, but is now open for people. Look for ways to reframe the narrative so behaviours beneficial to carbon reduction are presented in a positive way."
+      },
+      "carbonImpact": {
+        "impactText01": "Encourage people to take positive action to reduce or minimise their carbon impact."
+      },
+      "measures": {
+        "measuresText01": "Can be subjective and hard to formally pin point to a specific metric, but behaviour change frameworks do exist that could help"
+      },
+      "links": {
+        "link01": {
+          "linkDescription": "Reframing the narrative for climate justice:",
+          "linkUrl": "https://www.sustainablesidekicks.com/2022/08/19/reframing-the-narrative-for-climate-justice/"
+        }
+      }
+}

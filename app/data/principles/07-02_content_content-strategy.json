@@ -1,0 +1,18 @@
+{
+  "termName": "Content strategy",
+      "principleUrl": "content-rationale-strategy",
+      "sectionNumber": "702",
+      "section": "Content",
+      "title": "Content rationale / strategy",
+      "subHeader": "Design content with a clear structure and make sure it aligns to a validated user need.",
+      "disciplines": ["Content design"],
+      "guidance": {
+        "guidanceText01": "Define content/screen/page goal that explains why it's needed. This approach helps to identify legacy/outdated content that is redundant or doesn't meet a user need."
+      },
+      "carbonImpact": {
+        "impactText01": "Lighter pages require less energy from servers to host and improve the user's experience by culling any unnecessary content or steps in the user's journey."
+      },
+      "measures": {
+        "measuresText01": "Page weight - set at the beginning of a project and use as a measure of success with the goal being to deliver each key page in less than the budget/limit? Useful benchmark for team as they iterate designs"
+      }
+}

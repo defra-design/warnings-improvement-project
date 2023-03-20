@@ -1,0 +1,32 @@
+{
+      "termName": "Inclusive journeys",
+      "principleUrl": "inclusive-journeys",
+      "sectionNumber": "302",
+      "section": "Designing (service) journeys",
+      "title": "Inclusive journeys",
+      "subHeader": "Design for inclusivity so everyone can complete their goals with the service.",
+      "disciplines": ["Content design", "Interaction design", "Service design"],
+      "guidance": {
+        "guidanceText01": "Inclusive design and sustainable design often go hand in hand. For example, accessible UX design principles like using one font style also support sustainable design due to the impact on page weight and the energy needed to load a webpage.",
+        "guidanceText02": "By designing inclusively, we try to make sure that everyone can complete their goal(s) first time, without the need to backtrack, ask for help or start again through other channels. Understanding the needs of our user base is critical to this. Barriers to participation that may prevent people from continuing in a service should be identified in research and designed out. Aim to remove scenarios in which someone may need to 'start again' or ask for help which will generate unncessary carbon cost. Where barriers do exist in a live service, try to seamlessly integrate channels to avoid duplicate data capture and extended time spent on task.",
+        "guidanceText03": "You will need to balance the considerations of sustainable design with designing accessibly and inclusively. We may want to rigorously implement sustainable design principles but we must remain aware of the challenges these may present to some people. We must also appreciate the wider system context for designing sustainably, such as the cost of electric cars or designed obsolesence in electrical goods."
+      },
+      "carbonImpact": {
+        "impactText01": "If people are unable to complete their goal using a service and are forced to start again in another channel, this will have an associated increase on carbon usage because of the extra time spent online.",
+        "impactText02": "Data as digital waste has a big impact on carbon emissions, so we can assume that channel integration correlates to carbon impact. If people submit data in a service, and then need to re-submit that data later in a different channel, we can assume there will be additional carbon emissions because of that duplication, and added carbon cost of data cleaning.",
+        "impactText03": "If barriers to using the service generate contact from people asking for help or complaining, this will often be stored and analysed in line with an organisation's performance data, generating a further carbon cost."
+      },
+      "measures": {
+        "measuresText01": "Failure demand",
+        "measuresText02": "Time on a task",
+        "measuresText03": "Representative usage",
+        "measuresText04": "Service ticket analysis",
+        "measuresText05": "Feedback channels"
+      },
+      "otherAreas": {
+        "area01": "Accessibility",
+        "area02": "Data",
+        "area03": "Navigation"
+      }
+      
+}

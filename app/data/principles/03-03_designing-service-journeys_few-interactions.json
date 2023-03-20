@@ -1,0 +1,36 @@
+{
+	"termName": "Few interactions",
+	"principleUrl": "few-interactions",
+	"sectionNumber": "303",
+	"section": "Designing (service) journeys",
+	"title": "Design for as few interactions as possible",
+	"subHeader": "Design services so people need minimum interactions with it to complete their goals.",
+	"disciplines": ["Service design"],
+	"guidance": {
+		"guidanceText01": "The number of times a person has to interact with a service to acheive their goals is important when considering and reducing the overall carbon impact. For example, each visit to a webpage generates energy usage costs from page loading and data transfer. Each in-person visit to a physical location could have even larger energy consumption associated.",
+		"guidanceText02": "Design so that people can complete their goals with as few interactions as possible, for example through a single visit to a webpage or a single phone call. This will help to make sure energy consumption is kept to a minimum. If switching between channels does happen, make sure this is as smooth as possible (such as not involving re-entering of information they have already provided). This should help to reduce energy consumption."
+	},
+	"carbonImpact": {
+		"impactText01": "Every interaction that someone has with a service will have an energy use asscoiated."
+	},
+	"measures": {
+		"measuresText01": "Number of interactions",
+		"measuresText02": "Time on a task",
+		"measuresText03": "Accumulative page load time"
+	},
+	"otherAreas": {
+		"area01": "Inclusive journeys",
+		"area02": "Navigation",
+		"area03": "Accessibility"
+	},
+	"links": {
+		"link01": {
+			"linkDescription": "Link description:",
+			"linkUrl": "https://sustainablewebdesign.org/have-user-journeys-been-planned-to-help-the-user-achieve-their-goals-efficiently/ https://good.services/15-principles-of-good-service-design"
+		},
+		"link02": {
+			"linkDescription": "Link description:",
+			"linkUrl": "https://sustainablewebdesign.org/is-the-experience-optimized-to-work-across-devices-and-platforms/"
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+  "termName": "Colour contrast",
+      "principleUrl": "colour-and-contrast",
+      "sectionNumber": "603",
+      "section": "Interfaces and interactions",
+      "title": "Colour and contrast",
+      "subHeader": "Select colours and contrast that balance accessibility needs and energy consumption.",
+      "disciplines": ["Interaction design"],
+      "guidance": {
+        "guidanceText01": "With an increasing number of devices using OLED displays, colour choice and contrast should be considered in your designs. With OLED technology, each pixel has its own brightness level, with brighter pixels consuming more energy.",
+        "guidanceText02": "Pixel brightness isn’t the only thing to consider. The choice of colour used by an OLED display can also impact energy consumption. In testing undertaken by Google they found that blue pixels use 20 percent more energy than red or green pixels!",
+        "guidanceText03": "Another area where colour should be considered is when creating images. Increasing the number of colours in an image typically results in larger file sizes. These larger files put more of a drain on data transfer and in turn increase energy consumption.",
+        "guidanceText04": "A popular option for reducing energy usage in OLED displays is via Dark Mode. Whilst Dark Modes can reduce energy by up to 60%, they aren't suited to all audiences, particularly those with accessibility needs. There has been some progress on Dark Modes within the GOV.UK Design System, it’s worth exploring whether this would be suitable for your service."
+      },
+      "carbonImpact": {
+        "impactText01": "Brighter colours use more power, reducing device battery levels quicker, and increasing energy usage.",
+        "impactText02": "Some colours consume more power than others, with blue using 20% more energy than red or green.",
+        "impactText03": "Dark modes can reduce energy usage by up to 60%.",
+        "impactText04": "Images with more colours increase file sizes and increase the burden on data storage."
+      },
+      "measures": {
+        "measuresText01": "Energy usage of your web pages"
+      },
+      "otherAreas": {
+        "area01": "Images / Accessibility"
+      },
+      "links": {
+        "link01": {
+          "linkDescription": "Google Android Dev Summit – The cost of a pixel colour:",
+          "linkUrl": "https://www.youtube.com/watch?v=N_6sPd0Jd3g"
+        },
+        "link02": {
+          "linkDescription": "Design System Backlog – Dark Mode:",
+          "linkUrl": "https://github.com/alphagov/govuk-design-system-backlog/issues/177"
+        },
+        "link03": {
+          "linkDescription": "Dark Modes and Accessibility:",
+          "linkUrl": "https://www.boia.org/blog/dark-mode-can-improve-text-readability-but-not-for-everyone"
+        }
+      }
+}
