@@ -58,7 +58,7 @@ router.use(function (req, res, next) {
 
 
   // Run this code when a form is submitted to 'flood-warning-answer'
-  router.post('/flood-warning-answer', function (req, res) {
+  router.get('/flood-warning-answer', function (req, res) {
 
     // Make a variable and give it the value from 'flood-warning'
     var floodWarning = req.session.data['flood-warning']
@@ -66,34 +66,34 @@ router.use(function (req, res, next) {
     // Check whether the variable matches a condition
     if (floodWarning == "customise"){
       // Send user to next page
-      res.redirect('/v02-1/choosewarnings-default/customise-settings')
+      res.redirect('/v02-1/choosewarnings/customise-settings')
     }
 
 
      else {
       // Send user to success page
-      res.redirect('/v02-1/choosewarnings-default/flood-warnings-set')
+      res.redirect('/v02-1/choosewarnings/flood-warnings-set')
     }
 
   })
 
 
   // Run this code when a form is submitted to 'flood-warning-answer'
-  router.post('/flood-warning-answer-customise', function (req, res) {
+  router.get('/flood-warning-answer-customise', function (req, res) {
 
     // Make a variable and give it the value from 'flood-warning'
-    var floodWarningCustomise = req.session.data['flood-warning-customise']
+    var floodWarningCustomise = req.session.data['floodWarningCustomise']
 
     // Check whether the variable matches a condition
-    if (floodWarningCustomise == "customise"){
+    if (floodWarningCustomise == "complex"){
       // Send user to next page
-      res.redirect('/v02-1/choosewarnings-customise/customise-settings')
+      res.redirect('/v02-1/choosewarnings/customise-settings')
     }
 
 
      else {
       // Send user to success page
-      res.redirect('/v02-1/choosewarnings-customise/flood-warnings-set')
+      res.redirect('/v02-1/choosewarnings/flood-warnings-set')
     }
 
   })

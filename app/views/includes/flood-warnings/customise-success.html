@@ -1,22 +1,4 @@
-{% extends 'layout.html' %}
 
-{% block pageTitle %}
-    Match your file
-{% endblock %}
-
-
-{% block beforeContent %}
-
-    {{ super() }}
-
-    {{ govukBackLink ({
-        text: 'Back',
-        href: 'javascript:history.back()'
-    }) }}
-
-{% endblock %}
-
-{% block content %}
 
 <div class="govuk-grid-row">
 
@@ -90,4 +72,4 @@
 
 </div>
 
-{% endblock %}
+
