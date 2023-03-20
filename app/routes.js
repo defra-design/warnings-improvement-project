@@ -42,7 +42,22 @@ router.use('/place', placeRouter)
 let locationRouter3 = require('./routes_v4/location')
 router.use('/location', locationRouter)
 
+// CLEAR SESSION ==============================================================
+router.get('/cls', function (req, res) {
+	req.session.destroy()
+	res.render('index')
+  })
 
+// set up route variable default status
+  router.get('/default', function (req, res) {
+	req.session.data = { route: 'default' }
+	res.redirect(`/v02-1/choosewarnings/overview-flood`)
+})
 
+// set up route variable customise status
+router.get('/customise', function (req, res) {
+	req.session.data = { route: 'customise' }
+	res.redirect(`/v02-1/choosewarnings/overview-flood`)
+})
 
 module.exports = router

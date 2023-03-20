@@ -119,4 +119,34 @@ router.use(function (req, res, next) {
   })
 
 
+// customise or default user journey routing ==============================================================
+
+router.get('/choosewarnings/flood-options', function (req, res) {
+	res.render(folder + '/choosewarnings/flood-options',{
+		"formAction":"/"+ folder + "/choosewarnings/flood-options-routing"
+	})
+  })
+  
+  router.post('/choosewarnings/flood-options', function (req, res) {
+	res.render(folder + '/choosewarnings/flood-options',{
+		"formAction":"/"+ folder + "/choosewarnings/flood-options-routing"
+	})
+  })
+  
+// Send permit data in session to every page ==================================
+router.all('*', function (req, res, next) {
+  res.locals.permit=res.locals.data
+  next()
+})
+  
+  // Route to check if application has started and redirect
+  router.post('/choosewarnings/flood-options-routing', function (req, res) {
+	if (req.body['floodWarningCustomise']=="complex") {
+	  res.redirect("/"+ folder + "/flood-warning-answer-customise")
+	} else {
+	  res.redirect("/"+ folder + "/flood-warning-answer")
+	}
+  })
+
+
 module.exports = router
