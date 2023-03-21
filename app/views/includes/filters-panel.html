@@ -45,41 +45,37 @@
        }) }}
  -->
 
-       
-       {{ govukCheckboxes({
-        idPrefix: 'disciplines',
-        name: 'disciplines',
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: 'Disciplines',
-            classes: 'govuk-fieldset__legend--s'
-          }
-        },
-        items: [
-          {
-            value: 'Content design',
-            text: 'Content design',
-            checked:  checked("disciplines", "Content design")
-          },
-          {
-            value: 'Interaction design',
-            text: 'Interaction design',
-            checked:  checked("disciplines", "Interaction design")
-          },
-          {
-            value: 'Service design',
-            text: 'Service design',
-            checked:  checked("disciplines", "Service design")
-          },
-          {
-            value: 'User research',
-            text: 'User research',
-            checked:  checked("disciplines", "User research")
-          }
-        ]
-      }) }}
 
+      
+       
+        {{ govukCheckboxes({
+          idPrefix: 'priority',
+          name: 'priority',
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: 'Priority',
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          items: [
+            {
+              value: 'low',
+              text: 'low',
+              checked:  checked("priority", "low")
+            },
+            {
+              value: 'medium',
+              text: 'medium',
+              checked:  checked("priority", "medium")
+            },
+            {
+              value: 'high',
+              text: 'high',
+              checked:  checked("priority", "high")
+            }
+          ]
+        }) }}
 
        <div class="govuk-button-group">
            {{ govukButton({

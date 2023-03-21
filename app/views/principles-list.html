@@ -10,18 +10,7 @@
 
 {% block beforeContent %}
 
-  <!-- navigation block -->
-  <div>
-    <!-- navigation block -->
-    {% include "includes/nav-principles.html" %}
-  </div>
 
-  <!-- {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a prototype of an internal tool – your <a class="govuk-link" href="mailto:planetcentreddesign@defra.gov.uk" subject="Sustainable Service Principles - User feedback">feedback</a> will help us to improve it.'
-  }) }} -->
 
 {% endblock %}
 
@@ -32,9 +21,7 @@
 
   <div class="govuk-grid-row">
 
-    <div class="govuk-width-container">
-      <h1 class="govuk-heading-xl">Principles</h1>
-    </div>
+
 
     <div class="govuk-grid-column-one-third">
       {% include "includes/filters-panel.html" %}
@@ -54,31 +41,146 @@
 {% endif %}
 
 
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">5 locations </caption>
 
+
+
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">
+
+
+          </th>
+
+
+      <th scope="col" class="govuk-table__header">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleSFW(this)" />
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            <b>All severe flood warnings</b>
+            </label>
+          </div>
+      </th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleFW(this)" />
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            <b>All flood warnings</b>
+            </label>
+          </div>
+      </th>
+
+
+      <th scope="col" class="govuk-table__header govuk-table__header">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleFA(this)" />
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            <b>All flood alerts</b>
+            </label>
+          </div>
+      </th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for item in data %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+
+
+
+        <h3 id="linked-data" tabindex="-1" class="govuk-heading-m">
+          <a href="{{ item.termName | lower | replace(' ', '-') }}" class="govuk-link">{{ item.title }}</a>
+        </h3>
+        {{ item.address }}
+      </th>
+
+
+
+      <td class="govuk-table__cell ">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Severe flood warnings
+            </label>
+          </div>
+        </td>
+
+      <td class="govuk-table__cell govuk-table__cell">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Flood warnings
+            </label>
+          </div>
+      </td>
+
+      <td class="govuk-table__cell govuk-table__cell">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Flood alert
+            </label>
+          </div>
+      </td>
+    </tr>
+{% endfor %}
 {% for item in data %}
+  </tbody>
+</table>
 
-<span class="govuk-caption-m">{{ item.section }}</span>
-<h3 id="linked-data" tabindex="-1" class="govuk-heading-m">
+
+<!--<h3> id="linked-data" tabindex="-1" class="govuk-heading-m">
   <a href="{{ item.termName | lower | replace(' ', '-') }}" class="govuk-link">{{ item.title }}</a>
 </h3>
+<p> {{ item.address }} </p>
+<p>{{ item.priority }}</p>
+<p>{{ item.criticalityToBusiness }}</p>
+<p>{{ item.availableWarnings }}</p>
+<p>{{ item.increasedArea }}</p>
 
-<p> {{ item.subHeader }} </p>
-
-{% for item in item.disciplines %}
-<span style="display: inline-block;">
-  {{govukTag({
-    text: item,
-    classes: item | tagStatusColour
-  })}}
-</span>
-{% endfor %}
+-->
 
 
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
 
 {% endfor %}
 
 
+<script language="JavaScript">
+  function toggleFA(source) {
+    checkboxes = document.getElementsByName('FA');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
+    <script language="JavaScript">
+      function toggleFW(source) {
+        checkboxes = document.getElementsByName('FW');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+          checkboxes[i].checked = source.checked;
+        }
+      }
+  </script>
+<script language="JavaScript">
+          function toggleSFW(source) {
+          checkboxes = document.getElementsByName('SFW');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+           checkboxes[i].checked = source.checked;
+        }
+      }
+  </script>
 
 
 {% endblock %}

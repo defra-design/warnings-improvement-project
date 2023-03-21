@@ -85,7 +85,7 @@ router.post('/principles-list/apply-filters', (req, res) => {
   if (req.session.data.clearFilters == "true") {
     req.session.data.section = ""
     req.session.data.role = ""
-    req.session.data.disciplines = ""
+    req.session.data.priority = ""
     req.session.data.filteredResults = ""
     req.session.data.clearFilters = ""
   } else {
@@ -145,7 +145,7 @@ router.post('/principles-list/apply-filters', (req, res) => {
 // ];
 
 //filters
-let disciplinesFilter = req.session.data.disciplines
+let priorityFilter = req.session.data.priority
 
 //set global scope of filtered results
 let filteredResults = [];
@@ -155,10 +155,10 @@ for (i of allData) {
   // console.log(i.disciplines);
   //if the object contains a matching value from the filter then add it to the filtered results array
 
-  if (typeof disciplinesFilter === 'undefined') {
-    disciplinesFilter= ""
+  if (typeof priorityFilter === 'undefined') {
+    priorityFilter= ""
  }  
-  if (i.disciplines.some((value) => disciplinesFilter.includes(value))) {
+  if (i.priority.some((value) =>priorityFilter.includes(value))) {
     filteredResults.push(i);
   }
 }
