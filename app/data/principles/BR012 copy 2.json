@@ -3,7 +3,7 @@
       "address": "4 Royal Crescent, Bridlington, YO15 2PF",
       "principleUrl": "BR01",
       "sectionNumber": "011",
-      "criticalityToBusiness": "A",
+      "criticalityToBusiness": ["A"],
       "section": "BR012",
       "title": "BR012",
       "subHeader": "subHeader",

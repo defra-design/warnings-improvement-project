@@ -75,7 +75,49 @@
               checked:  checked("priority", "high")
             }
           ]
+
         }) }}
+
+        
+        {{ govukCheckboxes({
+          idPrefix: 'criticalityToBusiness',
+          name: 'criticalityToBusiness',
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: 'Criticality to business',
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          items: [
+            {
+              value: 'A',
+              text: 'A',
+              checked:  checked("criticalityToBusiness", "A")
+            },
+            {
+              value: 'B',
+              text: 'B',
+              checked:  checked("criticalityToBusiness", "B")
+            },
+            {
+              value: 'C',
+              text: 'C',
+              checked:  checked("criticalityToBusiness", "C")
+            },
+            {
+              value: 'D',
+              text: 'D',
+              checked:  checked("criticalityToBusiness", "D")
+            },
+            {
+              value: 'E',
+              text: 'E',
+              checked:  checked("criticalityToBusiness", "E")
+            }
+          ]
+        }) }}
+
 
        <div class="govuk-button-group">
            {{ govukButton({

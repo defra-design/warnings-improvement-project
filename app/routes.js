@@ -86,6 +86,7 @@ router.post('/principles-list/apply-filters', (req, res) => {
     req.session.data.section = ""
     req.session.data.role = ""
     req.session.data.priority = ""
+    req.session.data.criticalityToBusiness = ""
     req.session.data.filteredResults = ""
     req.session.data.clearFilters = ""
   } else {
@@ -145,35 +146,37 @@ router.post('/principles-list/apply-filters', (req, res) => {
 // ];
 
 //filters
-let priorityFilter = req.session.data.priority
+let priorityFilter = req.session.data.priority;
+let criticalityToBusinessFilter = req.session.data.criticalityToBusiness;
 
 //set global scope of filtered results
 let filteredResults = [];
 
 //loop through each of the objects
 for (i of allData) {
-  // console.log(i.disciplines);
+  // console.log(i.priority);
   //if the object contains a matching value from the filter then add it to the filtered results array
 
   if (typeof priorityFilter === 'undefined') {
-    priorityFilter= ""
- }  
-  if (i.priority.some((value) =>priorityFilter.includes(value))) {
+    priorityFilter= "";
+  }  
+  if (i.priority.some((value) => priorityFilter.includes(value))) {
+    filteredResults.push(i);
+  }
+
+  if (typeof criticalityToBusinessFilter === 'undefined') {
+    criticalityToBusinessFilter= "";
+  }  
+
+  console.log("i.criticalityToBusiness:", i.criticalityToBusiness);
+  console.log("criticalityToBusinessFilter:", criticalityToBusinessFilter);
+
+  if (Array.isArray(i.criticalityToBusiness) && i.criticalityToBusiness.some((value) => criticalityToBusinessFilter.includes(value))) {
     filteredResults.push(i);
   }
 }
 
-// console.log(disciplinesFilter);
-
-
-
-// let disciplineFilter = req.session.data.disciplineContent
-// if (typeof disciplineFilter === 'undefined') {
-//   disciplineFilter= ""
-// }
-// if (typeof disciplineFilter.length) {
-//   filteredResults = allData.filter(el => ( disciplineFilter.indexOf(el.disciplineContent) >= 0 ))
-// }
+console.log("filteredResults:", filteredResults);
 
 
 
