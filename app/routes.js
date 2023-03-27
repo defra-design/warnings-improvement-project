@@ -70,11 +70,11 @@ router.get('/principles-list', (req, res) => {
 // })
 
 
-router.get('/:termName', (req, res) => {
-    const { termName } = req.params
-    const item = _.findWhere(data, {termName: capitalizeFirstLetter(termName.replace('-', ' '))})
-    res.render('principles.html', { item })
-})
+//router.get('/:termName', (req, res) => {
+ //   const { termName } = req.params
+ //   const item = _.findWhere(data, {termName: capitalizeFirstLetter(termName.replace('-', ' '))})
+ //   res.render('principles.html', { item })
+//})
 
 
 // Techspike routes END
