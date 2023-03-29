@@ -1,7 +1,5 @@
 <div class="filter-box">
 
-<h2 class="govuk-heading-m govuk-!-margin-bottom-3">Filter by</h2>
-
      <form  method="post" novalidate action="/customise-settings/apply-filters">
 
 <!-- 
@@ -46,8 +44,24 @@
  -->
 
 
-      
-       
+ <div class="govuk-form-group" style="padding-bottom: 1em">
+
+ <h2 class="govuk-heading-m">
+  Increase the search area around locations
+</h2>
+
+<label class="govuk-label" for="weight">
+Increase area by
+</label>
+
+<div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="metres" name="metres" type="text" spellcheck="false">
+<div class="govuk-input__suffix" aria-hidden="true">metres</div>
+
+</div>
+</div>
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-3">Filter by</h2>
+
         {{ govukCheckboxes({
           idPrefix: 'priority',
           name: 'priority',

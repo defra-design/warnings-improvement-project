@@ -55,33 +55,26 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
-router.get('/principles-list', (req, res) => {
+router.get('/customise-settings', (req, res) => {
     const sortedData = _.sortBy(data, 'principleTitle')
     const groupedData = _.groupBy(sortedData, 'sectionNumber')
     const allData = _.sortBy(data, 'sectionNumber')
     // console.log(groupedData)
-    res.render('principles-list.html', { groupedData, sortedData, allData });
+    res.render('customise-settings.html', { groupedData, sortedData, allData });
 })
 
-// router.get('/:principleTitle', (req, res) => {
-//     const { principleTitle } = req.params
-//     const item = _.findWhere(data, {principleTitle: capitalizeFirstLetter(principleTitle.replace('-', ' '))})
-//     res.render('principle.html', { item });
-// })
-
-
-//router.get('/:termName', (req, res) => {
- //   const { termName } = req.params
- //   const item = _.findWhere(data, {termName: capitalizeFirstLetter(termName.replace('-', ' '))})
- //   res.render('principles.html', { item })
-//})
-
+router.get('/locations-no-warnings', (req, res) => {
+  const sortedData = _.sortBy(data, 'principleTitle')
+  const groupedData = _.groupBy(sortedData, 'sectionNumber')
+  const allData = _.sortBy(data, 'sectionNumber')
+  // console.log(groupedData)
+  res.render('locations-no-warnings.html', { groupedData, sortedData, allData });
+})
 
 // Techspike routes END
 
 
-
-router.post('/principles-list/apply-filters', (req, res) => {
+router.post('/customise-settings/apply-filters', (req, res) => {
   if (req.session.data.clearFilters == "true") {
     req.session.data.section = ""
     req.session.data.role = ""
@@ -94,56 +87,6 @@ router.post('/principles-list/apply-filters', (req, res) => {
   console.log('success test')
   
   const allData = _.sortBy(data, 'sectionNumber')
-  // console.log(allData)
-
-  // let filteredResults = ''
-  // console.log(filteredResults)
-
-
-
-// Working filter for principles section - DO NOT DELETE - START
-
-//   let sectionFilter = req.session.data.section
-//   if (typeof sectionFilter === 'undefined') {
-//     sectionFilter= ""
-//  }
-//  if (typeof sectionFilter.length) {
-//     filteredResults = allData.filter(el => ( sectionFilter.indexOf(el.section) >= 0 ))
-//  }
-
-//   console.log(sectionFilter)
-
-// Working filter for principles section - DON NOT DELETE - END
-
-
-
-// Option 1: Only works for a single UCD discipline (content), doesn't work in conjunction with the section filter
-
-//   let disciplineFilter = req.session.data.disciplineContent
-//   if (typeof disciplineFilter === 'undefined') {
-//     disciplineFilter= ""
-//  }
-//  if (typeof disciplineFilter.length) {
-//     filteredResults = allData.filter(el => ( disciplineFilter.indexOf(el.disciplineContent) >= 0 ))
-//  }
-
-//   console.log(disciplineFilter)
-
-
-
-
-
-
-// Option 2: Chris filter example test
-
-
-//array of objects
-// let foo = [
-//   { items: ["Content design"] },
-//   { items: ["Content design", "Interaction design"] },
-//   { items: ["Content design", "Service design"] },
-//   { items: ["Service design"] }
-// ];
 
 //filters
 let priorityFilter = req.session.data.priority;
@@ -193,8 +136,15 @@ console.log("filteredResults:", filteredResults);
   req.session.data.filteredResults = filteredResults
   
 }
-  res.redirect('/principles-list') 
+  // get the URL of the page the user came from
+  const refererUrl = req.header('Referer');
+
+  // redirect the user back to the page they came from
+  res.redirect(refererUrl);
 })
+
+
+
 
 
 module.exports = router

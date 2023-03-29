@@ -1,0 +1,116 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ permit|dump }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Locations not in flood warning areas
+    </h1>
+
+
+    <p>You can increase the area around your location to improve your chances of it being covered by a flood warning. You can also link your location to a nearby flood warning area.</p>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How to increase the areas and link locations?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>You can increase the area:<br>
+        <ul>
+          <li>individually for each location by clicking the location name</li>
+          <li>for one or more locations at the same time by selecting the locations you want to change and entering the area in the box below</li>
+        </ul>
+        You can also link a location to a nearby flood warning area by clicking the location name.</p>
+      </div>
+    </details>
+
+
+  </div>
+</div>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      {% include "includes/filters-panel-area-increase.html" %}
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "includes/table-area-increase.html" %}
+      {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+      {{ govukPagination({
+        next: {
+          href: "#"
+        },
+        items: [
+          {
+            number: 1,
+            current: true,
+            href: "#"
+          },
+          {
+            number: 2,
+            href: "#"
+          },
+          {
+            number: 3,
+            href: "#"
+          }
+        ]
+      }) }}
+        <div style="padding-top:1em">
+            <button class="govuk-button" value="continue" idPrefix= "no-warning" name= "no-warning">
+            Continue
+            </button>
+        </div>
+    </div>
+  </div>
+
+
+
+<script language="JavaScript">
+  function toggleFA(source) {
+    checkboxes = document.getElementsByName('FA');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
+    <script language="JavaScript">
+      function toggleFW(source) {
+        checkboxes = document.getElementsByName('FW');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+          checkboxes[i].checked = source.checked;
+        }
+      }
+  </script>
+<script language="JavaScript">
+          function toggleSFW(source) {
+          checkboxes = document.getElementsByName('SFW');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+           checkboxes[i].checked = source.checked;
+        }
+      }
+  </script>
+
+
+{% endblock %}
