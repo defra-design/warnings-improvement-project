@@ -139,8 +139,16 @@ console.log("filteredResults:", filteredResults);
   // get the URL of the page the user came from
   const refererUrl = req.header('Referer');
 
-  // redirect the user back to the page they came from
-  res.redirect(refererUrl);
+
+  // get the value of the metres input box
+  const metres = req.body.metres;
+
+  // create the redirect URL with the metres value in the query string
+  const redirectUrl = `${refererUrl}?metres=${encodeURIComponent(metres)}`;
+
+  // redirect the user back to the page they came from with the metres value in the query string
+  res.redirect(redirectUrl);
+
 })
 
 
