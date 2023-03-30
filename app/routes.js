@@ -63,12 +63,12 @@ router.get('/customise-settings', (req, res) => {
     res.render('customise-settings.html', { groupedData, sortedData, allData });
 })
 
-router.get('/locations-no-warnings', (req, res) => {
+router.get('/v02-1/choosewarnings-customise/locations-no-warnings', (req, res) => {
   const sortedData = _.sortBy(data, 'principleTitle')
   const groupedData = _.groupBy(sortedData, 'sectionNumber')
   const allData = _.sortBy(data, 'sectionNumber')
   // console.log(groupedData)
-  res.render('locations-no-warnings.html', { groupedData, sortedData, allData });
+  res.render('v02-1/choosewarnings-customise/locations-no-warnings.html', { groupedData, sortedData, allData });
 })
 
 // Techspike routes END
