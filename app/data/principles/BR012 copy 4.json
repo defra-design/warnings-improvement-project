@@ -2,14 +2,15 @@
       "termName": "edit-location",
       "address": "4 Royal Crescent, Bridlington, YO15 2PF",
       "principleUrl": "BR01",
-      "sectionNumber": "011",
-      "criticalityToBusiness": ["C"],
+      "sectionNumber": "001",
+      "criticalityToBusiness": ["A"],
       "section": "BR012",
       "title": "BR012",
       "subHeader": "subHeader",
       "priority": ["high"], 
       "availableWarnings": "None",
-      "increasedArea": "3 flood warning areas",
+      "increase": "true",
+      "increasedArea": "None",
       "links": {
         "link01": {
           "linkDescription": "Link description:",

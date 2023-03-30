@@ -77,11 +77,15 @@ router.get('/v02-1/choosewarnings-customise/locations-no-warnings', (req, res) =
 router.post('/customise-settings/apply-filters', (req, res) => {
   if (req.session.data.clearFilters == "true") {
     req.session.data.section = ""
+    req.session.data.metres = ""
     req.session.data.role = ""
     req.session.data.priority = ""
     req.session.data.criticalityToBusiness = ""
     req.session.data.filteredResults = ""
     req.session.data.clearFilters = ""
+  } else if (req.session.data.continueLocations == "true") {
+    // Redirect to a different location
+    res.redirect('/v02-1/choosewarnings-customise/flood-warnings-success')
   } else {
 
   console.log('success test')

@@ -5,6 +5,11 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
+{% set metres = permit.metres %}
+
+{% if permit.metres == metres %}
+  {% set appType = 'metres' %}
+{% endif %}
 
 
 
@@ -23,10 +28,24 @@
     <h1 class="govuk-heading-l">
       Locations not in flood warning areas
     </h1>
-    {% if metres %}
-    <p>The user entered {{ metres }} metres.</p>
-  {% endif %}
 
+  {% if metres %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        4 locations now associated with flood warning areas
+      </h3>
+
+      <p class="govuk-body"><a href="#locations" class="govuk-notification-banner__link" ><b>View locations</a></p>
+    </div>
+  </div>
+  {% else %}
+{% endif %}
     <p>You can increase the area around your location to improve your chances of it being covered by a flood warning. You can also link your location to a nearby flood warning area.</p>
 
     <details class="govuk-details" data-module="govuk-details">
@@ -53,10 +72,17 @@
     <div class="govuk-grid-column-one-third">
       {% include "includes/filters-panel-area-increase.html" %}
     </div>
+    
     <div class="govuk-grid-column-two-thirds">
+      {% if metres %}
 
+      {% include "includes/table-area-increased.html" %}
+
+      {% else %}
       {% include "includes/table-area-increase.html" %}
-      {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+      {% endif %}
+<!--      {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
       {{ govukPagination({
         next: {
@@ -77,13 +103,17 @@
             href: "#"
           }
         ]
-      }) }}
+      }) }}-->
+      <div class="govuk-button-group">
+
         <div style="padding-top:1em">
-            <button class="govuk-button" value="continue" idPrefix= "no-warning" name= "no-warning">
+            <button class="govuk-button" value="true" idPrefix= "continueLocations" name= "continueLocations">
             Continue
             </button>
         </div>
+        </div>
     </div>
+    </form>
   </div>
 
 

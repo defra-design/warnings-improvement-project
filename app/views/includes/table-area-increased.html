@@ -66,9 +66,10 @@
       <td class="govuk-table__cell govuk-table__cell">
         {{ item.criticalityToBusiness }}
       </td>
-
       <td class="govuk-table__cell govuk-table__cell">
-        {{ item.availableWarnings }}
+        <div class="govuk-form-group {% if item.increase == 'true' %}govuk-form-group--error{% else %}govuk-form-group--success{% endif %}">
+          {{ item.increasedArea }}
+        </div>
       </td>
     </tr>
 {% endfor %}

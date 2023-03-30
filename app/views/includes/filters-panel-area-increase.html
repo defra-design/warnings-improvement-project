@@ -2,48 +2,6 @@
 
      <form  method="post" novalidate action="/customise-settings/apply-filters">
 
-<!-- 
-       {{ govukCheckboxes({
-         idPrefix: 'section',
-         name: 'section',
-         classes: "govuk-checkboxes--small",
-         fieldset: {
-           legend: {
-             text: 'Section',
-             classes: 'govuk-fieldset__legend--s'
-           }
-         },
-         items: [
-           {
-            value: 'Designing (service) journeys', 
-            text: 'Designing (service) journeys',
-             checked:  checked("section", "Designing (service) journeys")
-           },
-           {
-            value: 'Designing (for) user behaviour', 
-            text: 'Designing (for) user behaviour',
-             checked:  checked("section", "Designing (for) user behaviour")
-           },
-           {
-            value: 'Research', 
-            text: 'Research',
-             checked:  checked("section", "Research")
-           },
-           {
-            value: 'Interfaces and interactions',
-            text: 'Interfaces and interactions',
-            checked:  checked("section", "Interfaces and interactions")
-          },
-          {
-            value: 'Content',
-            text: 'Content',
-            checked:  checked("section", "Content")
-          }
-         ]
-       }) }}
- -->
-
-
  <div class="govuk-form-group" style="padding-bottom: 1em">
 
  <h2 class="govuk-heading-m">
@@ -54,7 +12,7 @@
 Increase area by
 </label>
 
-<div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="metres" name="metres" type="text" spellcheck="false">
+<div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="metres" name="metres" type="text" spellcheck="false"value="{{ permit.metres }}">
 <div class="govuk-input__suffix" aria-hidden="true">metres</div>
 
 </div>
@@ -135,7 +93,10 @@ Increase area by
 
        <div class="govuk-button-group">
            {{ govukButton({
-         text: "Apply filters"
+         text: "Apply filters",
+         id: "applyFilters",
+         name: "applyFilters"
+
        }) }}
 
 
@@ -145,9 +106,8 @@ Increase area by
            name: "clearFilters",
            value: "true"
          }) }}
+        </div>
 
-         </div>
 
-</form>
 
 </div>
