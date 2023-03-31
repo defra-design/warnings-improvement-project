@@ -55,12 +55,12 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
-router.get('/customise-settings', (req, res) => {
+router.get('/v02-1/choosewarnings-customise/customise-settings', (req, res) => {
     const sortedData = _.sortBy(data, 'principleTitle')
     const groupedData = _.groupBy(sortedData, 'sectionNumber')
     const allData = _.sortBy(data, 'sectionNumber')
     // console.log(groupedData)
-    res.render('customise-settings.html', { groupedData, sortedData, allData });
+    res.render('v02-1/choosewarnings-customise/customise-settings.html', { groupedData, sortedData, allData });
 })
 
 router.get('/v02-1/choosewarnings-customise/locations-no-warnings', (req, res) => {
@@ -84,8 +84,20 @@ router.post(['/locations-no-warnings/apply-filters', '/customise-settings/apply-
     req.session.data.filteredResults = ""
     req.session.data.clearFilters = ""
   } else if (req.session.data.continueLocations == "true" && req.originalUrl === '/locations-no-warnings/apply-filters') {
+    req.session.data.section = ""
+    req.session.data.metres = ""
+    req.session.data.role = ""
+    req.session.data.priority = ""
+    req.session.data.criticalityToBusiness = ""
+    req.session.data.filteredResults = ""
     res.redirect('/v02-1/choosewarnings-customise/flood-warnings-success');
   } else if (req.session.data.continueSettings == "true" && req.originalUrl === '/customise-settings/apply-filters') {
+    req.session.data.section = ""
+    req.session.data.metres = ""
+    req.session.data.role = ""
+    req.session.data.priority = ""
+    req.session.data.criticalityToBusiness = ""
+    req.session.data.filteredResults = ""
     res.redirect('/v02-1/choosewarnings-customise/customise-success');
   } else {
     console.log('success test')
