@@ -74,7 +74,7 @@ router.get('/v02-1/choosewarnings-customise/locations-no-warnings', (req, res) =
 // Techspike routes END
 
 
-router.post('/customise-settings/apply-filters', (req, res) => {
+router.post(['/locations-no-warnings/apply-filters', '/customise-settings/apply-filters'], (req, res) => {
   if (req.session.data.clearFilters == "true") {
     req.session.data.section = ""
     req.session.data.metres = ""
@@ -83,12 +83,12 @@ router.post('/customise-settings/apply-filters', (req, res) => {
     req.session.data.criticalityToBusiness = ""
     req.session.data.filteredResults = ""
     req.session.data.clearFilters = ""
-  } else if (req.session.data.continueLocations == "true") {
-    // Redirect to a different location
-    res.redirect('/v02-1/choosewarnings-customise/flood-warnings-success')
+  } else if (req.session.data.continueLocations == "true" && req.originalUrl === '/locations-no-warnings/apply-filters') {
+    res.redirect('/v02-1/choosewarnings-customise/flood-warnings-success');
+  } else if (req.session.data.continueSettings == "true" && req.originalUrl === '/customise-settings/apply-filters') {
+    res.redirect('/v02-1/choosewarnings-customise/customise-success');
   } else {
-
-  console.log('success test')
+    console.log('success test')
   
   const allData = _.sortBy(data, 'sectionNumber')
 
