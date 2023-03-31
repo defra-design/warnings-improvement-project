@@ -60,20 +60,20 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
-router.get('/v02-1/choosewarnings-customise/customise-settings', (req, res) => {
+router.get('/v02-1/choosewarnings/customise-settings', (req, res) => {
     const sortedData = _.sortBy(data, 'principleTitle')
     const groupedData = _.groupBy(sortedData, 'sectionNumber')
     const allData = _.sortBy(data, 'sectionNumber')
     // console.log(groupedData)
-    res.render('v02-1/choosewarnings-customise/customise-settings.html', { groupedData, sortedData, allData });
+    res.render('v02-1/choosewarnings/customise-settings.html', { groupedData, sortedData, allData });
 })
 
-router.get('/v02-1/choosewarnings-customise/locations-no-warnings', (req, res) => {
+router.get('/v02-1/choosewarnings/locations-no-warnings', (req, res) => {
   const sortedData = _.sortBy(data, 'principleTitle')
   const groupedData = _.groupBy(sortedData, 'sectionNumber')
   const allData = _.sortBy(data, 'sectionNumber')
   // console.log(groupedData)
-  res.render('v02-1/choosewarnings-customise/locations-no-warnings.html', { groupedData, sortedData, allData });
+  res.render('v02-1/choosewarnings/locations-no-warnings.html', { groupedData, sortedData, allData });
 })
 
 // Techspike routes END
@@ -95,7 +95,7 @@ router.post(['/locations-no-warnings/apply-filters', '/customise-settings/apply-
     req.session.data.priority = ""
     req.session.data.criticalityToBusiness = ""
     req.session.data.filteredResults = ""
-    res.redirect('/v02-1/choosewarnings-customise/flood-warnings-success');
+    res.redirect('/v02-1/choosewarnings/flood-warnings-success');
   } else if (req.session.data.continueSettings == "true" && req.originalUrl === '/customise-settings/apply-filters') {
     req.session.data.section = ""
     req.session.data.metres = ""
@@ -103,7 +103,7 @@ router.post(['/locations-no-warnings/apply-filters', '/customise-settings/apply-
     req.session.data.priority = ""
     req.session.data.criticalityToBusiness = ""
     req.session.data.filteredResults = ""
-    res.redirect('/v02-1/choosewarnings-customise/customise-success');
+    res.redirect('/v02-1/choosewarnings/flood-warnings-set');
   } else {
     console.log('success test')
   
