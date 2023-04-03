@@ -1,15 +1,15 @@
 {
       "termName": "edit-location",
-      "address": "4 Royal Crescent, Bridlington, YO15 2PF",
+      "address": "33 The Grove, WALSALL, WS70 3GE",
       "principleUrl": "BR01",
-      "sectionNumber": "011",
+      "sectionNumber": "012",
       "criticalityToBusiness": ["A"],
-      "section": "BR012",
-      "title": "BR012",
+      "section": "BRID12",
+      "title": "BRID12",
       "subHeader": "subHeader",
       "priority": ["low"], 
       "availableWarnings": "None",
-      "increasedArea": "3 flood warning areas",
+      "increasedArea": "2 flood warning areas",
       "links": {
         "link01": {
           "linkDescription": "Link description:",

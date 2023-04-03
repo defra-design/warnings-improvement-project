@@ -1,15 +1,15 @@
 {
       "termName": "edit-location",
-      "address": "4 Royal Crescent, Bridlington, YO15 2PF",
+      "address": "95 Richmond Road, Warrington, WA86 4NB",
       "principleUrl": "BR01",
-      "sectionNumber": "011",
+      "sectionNumber": "016",
       "criticalityToBusiness": ["B"],
-      "section": "BR012",
-      "title": "BR012",
+      "section": "BRID16",
+      "title": "BRID16",
       "subHeader": "subHeader",
       "priority": ["medium"], 
       "availableWarnings": "None",
-      "increasedArea": "3 flood warning areas",
+      "increasedArea": "4 flood warning areas",
       "links": {
         "link01": {
           "linkDescription": "Link description:",
