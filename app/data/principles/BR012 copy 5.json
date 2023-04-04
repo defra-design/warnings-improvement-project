@@ -7,7 +7,7 @@
       "section": "BRID15",
       "title": "BRID15",
       "subHeader": "subHeader",
-      "priority": ["low"], 
+      "priority": ["Low"], 
       "availableWarnings": "None",
       "increasedArea": "6 flood warning areas",
       "links": {

@@ -7,7 +7,7 @@
       "section": "BRID14",
       "title": "BRID14",
       "subHeader": "subHeader",
-      "priority": ["high"], 
+      "priority": ["High"], 
       "availableWarnings": "None",
       "increase": "true",
       "increasedArea": "None",
