@@ -20,8 +20,8 @@
 
 
 {% block content %}
+{{permit|dump}}
 
-<!--{{permit|dump}}-->
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -38,13 +38,19 @@
     </div>
     <div class="govuk-notification-banner__content">
       <h3 class="govuk-notification-banner__heading">
-        4 locations now associated with flood warning areas
+        {% if permit.warning=='set' %}
+        BRID14 now associated with a flood warning area
+        {% else %}
+        18 locations now associated with flood warning areas
+        {% endif %}
+
       </h3>
 
-      <p class="govuk-body"><a href="#locations" class="govuk-notification-banner__link" ><b>View locations</a></p>
+      <p class="govuk-body">{% if permit.warning=='set' %}<a href="#brid14" class="govuk-notification-banner__link" ><b>View BRID14</b>{% else %}<a href="#brid12" class="govuk-notification-banner__link" ><b>View locations</b>{% endif %}</a></p>
     </div>
   </div>
-  {% else %}
+
+
 {% endif %}
     <p>You can increase the area around your locations to improve your chances of it being covered by a flood warning. You can also link your location to a nearby flood warning area.</p>
 

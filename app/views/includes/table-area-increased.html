@@ -47,7 +47,7 @@
 
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="locations" name="locations" type="checkbox" >
+                  <input class="govuk-checkboxes__input" id="{{ item.title | lower | replace(' ', '-') }}" name="locations" type="checkbox" >
                   <label class="govuk-label govuk-checkboxes__label" for="locations">
                    <a href="{{ item.termName | lower | replace(' ', '-') }}" style="font-weight: bold;" class="govuk-link">{{ item.title }}</a></br>
                     {{ item.address }}
@@ -67,8 +67,16 @@
         {{ item.criticalityToBusiness }}
       </td>
       <td class="govuk-table__cell govuk-table__cell">
-        <div class="govuk-form-group {% if item.increase == 'true' %}govuk-form-group--error{% else %}govuk-form-group--success{% endif %}">
+        <div class="govuk-form-group {% if item.increase == 'true' and permit.warning=='set' %}govuk-form-group--success{% elif item.increase == 'true' %}govuk-form-group--error{% else %}govuk-form-group--success{% endif %}">
+        
+          {% if item.increase == 'true' and permit.warning=="set" %}
+
+          1 flood warning area manually linked
+    
+          {% else %}
           {{ item.increasedArea }}
+
+          {% endif %}
         </div>
       </td>
     </tr>
