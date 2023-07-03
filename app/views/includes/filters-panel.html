@@ -1,0 +1,138 @@
+<div class="filter-box">
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-3">Filter by</h2>
+
+     <form  method="post" novalidate action="/customise-settings/apply-filters">
+
+<!-- 
+       {{ govukCheckboxes({
+         idPrefix: 'section',
+         name: 'section',
+         classes: "govuk-checkboxes--small",
+         fieldset: {
+           legend: {
+             text: 'Section',
+             classes: 'govuk-fieldset__legend--s'
+           }
+         },
+         items: [
+           {
+            value: 'Designing (service) journeys', 
+            text: 'Designing (service) journeys',
+             checked:  checked("section", "Designing (service) journeys")
+           },
+           {
+            value: 'Designing (for) user behaviour', 
+            text: 'Designing (for) user behaviour',
+             checked:  checked("section", "Designing (for) user behaviour")
+           },
+           {
+            value: 'Research', 
+            text: 'Research',
+             checked:  checked("section", "Research")
+           },
+           {
+            value: 'Interfaces and interactions',
+            text: 'Interfaces and interactions',
+            checked:  checked("section", "Interfaces and interactions")
+          },
+          {
+            value: 'Content',
+            text: 'Content',
+            checked:  checked("section", "Content")
+          }
+         ]
+       }) }}
+ -->
+
+
+      
+       
+        {{ govukCheckboxes({
+          idPrefix: 'priority',
+          name: 'priority',
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: 'Priority',
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          items: [
+            {
+              value: 'low',
+              text: 'Low',
+              checked:  checked("priority", "low")
+            },
+            {
+              value: 'medium',
+              text: 'Medium',
+              checked:  checked("priority", "medium")
+            },
+            {
+              value: 'high',
+              text: 'High',
+              checked:  checked("priority", "high")
+            }
+          ]
+
+        }) }}
+
+
+        {{ govukCheckboxes({
+          idPrefix: 'criticalityToBusiness',
+          name: 'criticalityToBusiness',
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: 'Criticality to business',
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          items: [
+            {
+              value: 'A',
+              text: 'A',
+              checked:  checked("criticalityToBusiness", "A")
+            },
+            {
+              value: 'B',
+              text: 'B',
+              checked:  checked("criticalityToBusiness", "B")
+            },
+            {
+              value: 'C',
+              text: 'C',
+              checked:  checked("criticalityToBusiness", "C")
+            },
+            {
+              value: 'D',
+              text: 'D',
+              checked:  checked("criticalityToBusiness", "D")
+            },
+            {
+              value: 'E',
+              text: 'E',
+              checked:  checked("criticalityToBusiness", "E")
+            }
+          ]
+        }) }}
+
+
+       <div class="govuk-button-group">
+           {{ govukButton({
+         text: "Apply filters"
+       }) }}
+
+
+       {{ govukButton({
+           text: "Clear filters",
+           classes: "govuk-button--secondary",
+           name: "clearFilters",
+           value: "true"
+         }) }}
+
+         </div>
+
+
+</div>

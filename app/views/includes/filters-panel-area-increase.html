@@ -1,0 +1,113 @@
+<div class="filter-box">
+
+     <form  method="post" novalidate action="/locations-no-warnings/apply-filters">
+
+ <div class="govuk-form-group" style="padding-bottom: 1em">
+
+ <h2 class="govuk-heading-m">
+  Increase the search area around locations
+</h2>
+
+<label class="govuk-label" for="weight">
+Increase all areas by
+</label>
+
+<div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="metres" name="metres" type="text" spellcheck="false"value="{{ permit.metres }}">
+<div class="govuk-input__suffix" aria-hidden="true">metres</div>
+
+</div>
+</div>
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-3">Filter by</h2>
+
+        {{ govukCheckboxes({
+          idPrefix: 'priority',
+          name: 'priority',
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: 'Priority',
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          items: [
+            {
+              value: 'high',
+              text: 'High',
+              checked:  checked("priority", "high")
+            },
+            {
+              value: 'medium',
+              text: 'Medium',
+              checked:  checked("priority", "medium")
+            },
+            {
+              value: 'low',
+              text: 'Low',
+              checked:  checked("priority", "low")
+            }
+          ]
+
+        }) }}
+
+
+        {{ govukCheckboxes({
+          idPrefix: 'criticalityToBusiness',
+          name: 'criticalityToBusiness',
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: 'Criticality to business',
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          items: [
+            {
+              value: 'A',
+              text: 'A',
+              checked:  checked("criticalityToBusiness", "A")
+            },
+            {
+              value: 'B',
+              text: 'B',
+              checked:  checked("criticalityToBusiness", "B")
+            },
+            {
+              value: 'C',
+              text: 'C',
+              checked:  checked("criticalityToBusiness", "C")
+            },
+            {
+              value: 'D',
+              text: 'D',
+              checked:  checked("criticalityToBusiness", "D")
+            },
+            {
+              value: 'E',
+              text: 'E',
+              checked:  checked("criticalityToBusiness", "E")
+            }
+          ]
+        }) }}
+
+
+       <div class="govuk-button-group">
+           {{ govukButton({
+         text: "Apply filters",
+         id: "applyFilters",
+         name: "applyFilters"
+
+       }) }}
+
+
+       {{ govukButton({
+           text: "Clear filters",
+           classes: "govuk-button--secondary",
+           name: "clearFilters",
+           value: "true"
+         }) }}
+        </div>
+
+
+
+</div>

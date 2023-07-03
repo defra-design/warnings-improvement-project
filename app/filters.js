@@ -371,6 +371,27 @@ module.exports = function (env) {
 		return input
 	}
 
+	filters.tagStatusColour = function(e) {
+
+		if (e == "Content design") {
+	
+		  return "govuk-tag--orange"
+	
+		} else if (e == "Interaction design") {
+	
+		  return "govuk-tag--blue"
+	
+		} else if (e == "Service design") {
+	
+		  return "govuk-tag--purple"
+	
+		} else if (e == "User research") {
+	
+		  return "govuk-tag--turquoise"
+	
+		}
+	
+	  }
 	/* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

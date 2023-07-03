@@ -1,0 +1,23 @@
+{
+      "termName": "edit-location",
+      "address": "95 Richmond Road, Warrington, WA86 4NB",
+      "principleUrl": "BR01",
+      "sectionNumber": "016",
+      "criticalityToBusiness": ["B"],
+      "section": "BRID16",
+      "title": "BRID16",
+      "subHeader": "subHeader",
+      "priority": ["Medium"], 
+      "availableWarnings": "None",
+      "increasedArea": "4 flood warning areas",
+      "links": {
+        "link01": {
+          "linkDescription": "Link description:",
+          "linkUrl": "https://sustainablewebdesign.org/have-user-journeys-been-planned-to-help-the-user-achieve-their-goals-efficiently/"
+        },
+        "link02": {
+          "linkDescription": "Link description:",
+          "linkUrl": "https://good.services/15-principles-of-good-service-design"
+        }
+      }
+}

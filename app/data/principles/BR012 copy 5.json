@@ -1,0 +1,23 @@
+{
+      "termName": "edit-location",
+      "address": "69 New Street, CARLISLE, CA30 5OH",
+      "principleUrl": "BR01",
+      "sectionNumber": "015",
+      "criticalityToBusiness": ["D"],
+      "section": "BRID15",
+      "title": "BRID15",
+      "subHeader": "subHeader",
+      "priority": ["Low"], 
+      "availableWarnings": "None",
+      "increasedArea": "6 flood warning areas",
+      "links": {
+        "link01": {
+          "linkDescription": "Link description:",
+          "linkUrl": "https://sustainablewebdesign.org/have-user-journeys-been-planned-to-help-the-user-achieve-their-goals-efficiently/"
+        },
+        "link02": {
+          "linkDescription": "Link description:",
+          "linkUrl": "https://good.services/15-principles-of-good-service-design"
+        }
+      }
+}
