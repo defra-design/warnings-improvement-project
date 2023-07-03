@@ -1,147 +1,638 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Home – GOV.UK Prototype Kit
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-{% set metres = permit.metres %}
-
-{% if permit.metres == metres %}
-  {% set appType = 'metres' %}
-{% endif %}
-
-
 
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
-
-
 {% block content %}
 
-<!--{{permit|dump}}-->
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
-      Locations not in flood warning areas
-    </h1>
+  <form class="form" action="/v02-1/no-warning-answer" method="post">
 
-  {% if metres %}
-  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Success
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <h3 class="govuk-notification-banner__heading">
-        4 locations now associated with flood warning areas
-      </h3>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-body"><a href="#locations" class="govuk-notification-banner__link" ><b>View locations</a></p>
-    </div>
-  </div>
-  {% else %}
-{% endif %}
-    <p>You can increase the area around your locations to improve your chances of it being covered by a flood warning. You can also link your location to a nearby flood warning area.</p>
 
-    <!--<details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          How to increase the areas and link locations?
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>You can increase the area:<br>
-        <ul>
-          <li>individually for each location by clicking the location name</li>
-          <li>for one or more locations at the same time by selecting the locations you want to change and entering the area in the box below</li>
-        </ul>
-        You can also link a location to a nearby flood warning area by clicking the location name.</p>
-      </div>
-    </details>-->
 
+
+
+      <h1 class="govuk-heading-l">
+        Locations not in flood warning areas
+      </h1>
+
+
+
+      <p class="govuk-body">You can increase the area around your location to improve your chances of it being covered by a flood warning. You can also link your location to a nearby flood warning area.
+      </p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+            How to increase the areas and link locations?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          You can increase the area:
+          <ul>
+            <li>individually for each location by clicking the location name</li>
+            <li>for one or more locations at the same time by selecting the locations you want to change and entering the area in the box below</li>
+          </ul>
+
+          <p>You can also link a location to a nearby flood warning area by clicking the location name.</p>
+
+
+          </div>
+        </details>
+
+
+
+
+
+<h2 class="govuk-heading-m">
+  Increase the area for one or more locations
+</h2>
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="weight">
+    Increase area by
+  </label>
+
+
+
+  <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="metres" name="metres" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">metres</div>
+<div class="govuk-!-padding-left-3">
+    <button  value="increase" idPrefix= "no-warning" name= "no-warning"class="govuk-button govuk-button--secondary" data-module="govuk-button"  >
+    Update
+    </button> </div>
 
   </div>
 </div>
-  <div class="govuk-grid-row">
+</div>
 
-    <div class="govuk-grid-column-one-third">
-      {% include "includes/filters-panel-area-increase.html" %}
-    </div>
-    
-    <div class="govuk-grid-column-two-thirds">
-      {% if metres %}
 
-      {% include "includes/table-area-increased.html" %}
 
-      {% else %}
-      {% include "includes/table-area-increase.html" %}
 
-      {% endif %}
-<!--      {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
-      {{ govukPagination({
-        next: {
-          href: "#"
-        },
-        items: [
-          {
-            number: 1,
-            current: true,
+
+
+
+
+
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+
+        <div class="moj-filter">
+
+          <div class="moj-filter__header">
+
+            <div class="moj-filter__header-title">
+              <h2 class="govuk-heading-m">Filters</h2>
+            </div>
+
+            <div class="moj-filter__header-action">
+
+            </div>
+
+          </div>
+
+          <div class="moj-filter__content">
+
+            <div class="moj-filter__selected">
+
+              <div class="moj-filter__selected-heading">
+
+                <div class="moj-filter__heading-title">
+                  <h2 class="govuk-heading-m">Selected filters</h2>
+                </div>
+
+                <div class="moj-filter__heading-action">
+                  <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear</a></p>
+                </div>
+
+              </div>
+
+
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Flood risk</h3>
+
+
+
+
+
+
+
+              <ul class="moj-filter-tags">
+
+                <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span>High</a></li>
+
+                  <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span>Medium</a></li>
+
+              </ul>
+
+            </div>
+
+            <div class="moj-filter__options">
+
+
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                    Flood risk
+
+                  </legend>
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                      <label class="govuk-label govuk-checkboxes__label" for="type">
+                        High (2)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                      <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                        Medium (48)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                      <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                        Low (2)
+                      </label>
+
+                    </div>
+
+                  </div>
+
+                </fieldset>
+
+              </div>
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                    Criticality to business
+
+                  </legend>
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" >
+                      <label class="govuk-label govuk-checkboxes__label" for="status">
+                        A(2)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                        B (5)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                        C (3)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                        D (3)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                        E (3)
+                      </label>
+
+                    </div>
+
+
+
+
+
+                  </div>
+
+                </fieldset>
+
+
+
+
+              </div>
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                    Location type
+
+                  </legend>
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" >
+                      <label class="govuk-label govuk-checkboxes__label" for="type">
+                        Pumping station (18)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" >
+                      <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                        Office space (5)
+                      </label>
+
+                    </div>
+
+                  </div>
+
+                </fieldset>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">50 locations </caption>
+
+
+
+
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                        <b>Location</b>
+                      </label>
+                    </div>
+
+                  </th>
+
+
+              <th scope="col" class="govuk-table__header">Criticality to business</th>
+              <th scope="col" class="govuk-table__header govuk-table__header">Flood risk</th>
+              <th scope="col" class="govuk-table__header govuk-table__header">Increased area in metres</th>
+              <th scope="col" class="govuk-table__header govuk-table__header">Available flood warnings</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      <a href="#"><b>BRID_11</b></a><br>
+4 Royal Crescent, Bridlington, YO15 2PF
+                    </label>
+                  </div>
+
+
+              </th>
+
+
+
+              <td class="govuk-table__cell ">A</td>
+              <td class="govuk-table__cell govuk-table__cell">High</td>
+              <td class="govuk-table__cell govuk-table__cell">None</td>
+              <td class="govuk-table__cell govuk-table__cell">None</td>
+
+
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                          <a href="#"><b>BRID_12</b></a><br>
+    Belgrave road, Bridlington, YO15 3JP
+                        </label>
+                      </div>
+
+
+                  </th>
+
+
+
+                  <td class="govuk-table__cell ">A</td>
+                  <td class="govuk-table__cell govuk-table__cell">High</td>
+                  <td class="govuk-table__cell govuk-table__cell">None</td>
+                  <td class="govuk-table__cell govuk-table__cell">None</td>
+
+
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                              <a href="#"><b>BRID_13</b></a><br>
+                South Marine Drive, Bridlington, YO15 3JJ
+                            </label>
+                          </div>
+
+
+                      </th>
+
+
+
+                      <td class="govuk-table__cell ">B</td>
+                      <td class="govuk-table__cell govuk-table__cell">Medium</td>
+                      <td class="govuk-table__cell govuk-table__cell">None</td>
+                      <td class="govuk-table__cell govuk-table__cell">None</td>
+
+
+
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                  <a href="#"><b>BRID_14</b></a><br>
+                    Roundhay Ave, Bridlington, YO15 3JY
+                                </label>
+                              </div>
+
+
+                          </th>
+
+
+
+                          <td class="govuk-table__cell ">B</td>
+                          <td class="govuk-table__cell govuk-table__cell">Medium</td>
+                          <td class="govuk-table__cell govuk-table__cell">None</td>
+                          <td class="govuk-table__cell govuk-table__cell">None</td>
+
+
+
+                          <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                      <a href="#"><b>BRID_15</b></a><br>
+                        Roundhay, Bridlington, YO15 3JZ
+                                    </label>
+                                  </div>
+
+
+                              </th>
+
+
+
+                              <td class="govuk-table__cell ">C</td>
+                              <td class="govuk-table__cell govuk-table__cell">Medium</td>
+                              <td class="govuk-table__cell govuk-table__cell">None</td>
+                              <td class="govuk-table__cell govuk-table__cell">No flood warnings</td>
+
+
+                              <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">
+                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                          <a href="#"><b>BRID_16</b></a><br>
+                            Belgrave mansions, Bridlington, YO15 3JL
+                                        </label>
+                                      </div>
+
+
+                                  </th>
+
+
+
+                                  <td class="govuk-table__cell ">C</td>
+                                  <td class="govuk-table__cell govuk-table__cell">Medium</td>
+                                  <td class="govuk-table__cell govuk-table__cell">None</td>
+                                  <td class="govuk-table__cell govuk-table__cell">None</td>
+
+                                  <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                      <th scope="row" class="govuk-table__header">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                          <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                              <a href="#"><b>BRID_17</b></a><br>
+                                Flat 3, Woodcroft court, Bridlington, YO15 3JN
+                                            </label>
+                                          </div>
+
+
+                                      </th>
+
+
+
+                                      <td class="govuk-table__cell ">C</td>
+                                      <td class="govuk-table__cell govuk-table__cell">Medium</td>
+                                      <td class="govuk-table__cell govuk-table__cell">None</td>
+                                      <td class="govuk-table__cell govuk-table__cell">None</td>
+
+
+                                      <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row">
+                                          <th scope="row" class="govuk-table__header">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                              <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                  <a href="#"><b>BRID_18</b></a><br>
+                                    Flat 4, Woodcroft court, Bridlington, YO15 3JN
+                                                </label>
+                                              </div>
+
+
+                                          </th>
+
+
+
+                                          <td class="govuk-table__cell ">A</td>
+                                          <td class="govuk-table__cell govuk-table__cell">High</td>
+                                          <td class="govuk-table__cell govuk-table__cell">None</td>
+                                          <td class="govuk-table__cell govuk-table__cell">No flood warnings</td>
+
+
+                                          <tbody class="govuk-table__body">
+                                            <tr class="govuk-table__row">
+                                              <th scope="row" class="govuk-table__header">
+                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                  <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                      <a href="#"><b>BRID_19</b></a><br>
+                                        Flat 5, Woodcroft court, Bridlington, YO15 3JN
+                                                    </label>
+                                                  </div>
+
+
+                                              </th>
+
+
+
+                                              <td class="govuk-table__cell ">A</td>
+                                              <td class="govuk-table__cell govuk-table__cell">High</td>
+                                              <td class="govuk-table__cell govuk-table__cell">None</td>
+                                              <td class="govuk-table__cell govuk-table__cell">No flood warnings</td>
+
+                                              <tbody class="govuk-table__body">
+                                                <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">
+                                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                      <div class="govuk-checkboxes__item">
+                                                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                          <a href="#"><b>BRID_20</b></a><br>
+                                            Flat 6, Woodcroft court, Bridlington, YO15 3JN
+                                                        </label>
+                                                      </div>
+
+
+                                                  </th>
+
+
+
+                                                  <td class="govuk-table__cell ">A</td>
+                                                  <td class="govuk-table__cell govuk-table__cell">High</td>
+                                                  <td class="govuk-table__cell govuk-table__cell">None</td>
+                                                  <td class="govuk-table__cell govuk-table__cell">No flood warnings</td>
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+
+          </tbody>
+        </table>
+
+
+        {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+        {{ govukPagination({
+          next: {
             href: "#"
           },
-          {
-            number: 2,
-            href: "#"
-          },
-          {
-            number: 3,
-            href: "#"
-          }
-        ]
-      }) }}-->
-      <div class="govuk-button-group">
+          items: [
+            {
+              number: 1,
+              current: true,
+              href: "#"
+            },
+            {
+              number: 2,
+              href: "#"
+            },
+            {
+              number: 3,
+              href: "#"
+            }
+          ]
+        }) }}
 
-        <div style="padding-top:1em">
-            <button class="govuk-button" value="true" idPrefix= "continueLocations" name= "continueLocations">
+    <div class="govuk-!-padding-bottom-5"></div>
+
+
+
+          <button class="govuk-button" data-module="govuk-button" value="continue" idPrefix= "no-warning"
+          name= "no-warning">
             Continue
-            </button>
-        </div>
-        </div>
+          </button>
+
+
+
+
+
     </div>
-    </form>
+
+    </div>
+
+
+      </div>
+    </div>
   </div>
+</div>
 
 
 
-<script language="JavaScript">
-  function toggleFA(source) {
-    checkboxes = document.getElementsByName('FA');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-      checkboxes[i].checked = source.checked;
-    }
-  }
-</script>
-    <script language="JavaScript">
-      function toggleFW(source) {
-        checkboxes = document.getElementsByName('FW');
-        for(var i=0, n=checkboxes.length;i<n;i++) {
-          checkboxes[i].checked = source.checked;
-        }
-      }
-  </script>
-<script language="JavaScript">
-          function toggleSFW(source) {
-          checkboxes = document.getElementsByName('SFW');
-          for(var i=0, n=checkboxes.length;i<n;i++) {
-           checkboxes[i].checked = source.checked;
-        }
-      }
-  </script>
 
+
+<div class="govuk-!-padding-bottom-9"></div>
+
+
+
+
+    </div>
+  </div>
 
 {% endblock %}
