@@ -1,0 +1,273 @@
+{% extends 'layout.html' %}
+
+
+
+
+{% block pageTitle %}
+    Manage locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/v02-2/choosewarnings-notinfwa/flood-options" method="post">
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Review flood warnings available for your locations</h1>
+
+                <a href="/v02-2/choosewarnings-notinfwa/map" role="button" data-module="govuk-button" id="map-btn" class="defra-link-icon-s" data-journey-click="Station:Map View:Station - View map"><svg width="15" height="20" viewBox="0 0 15 20" focusable="false"><path d="M15,7.5c0.009,3.778 -4.229,9.665 -7.5,12.5c-3.271,-2.835 -7.509,-8.722 -7.5,-12.5c0,-4.142 3.358,-7.5 7.5,-7.5c4.142,0 7.5,3.358 7.5,7.5Zm-7.5,5.461c3.016,0 5.461,-2.445 5.461,-5.461c0,-3.016 -2.445,-5.461 -5.461,-5.461c-3.016,0 -5.461,2.445 -5.461,5.461c0,3.016 2.445,5.461 5.461,5.461Z" fill="currentColor"></path></svg><span>  View map</span><span class="govuk-visually-hidden">(Visual only)</span></a>
+<div class="govuk-!-padding-bottom-3"></div>
+
+                <p class="govuk-body"><b>Flood alerts</b> are available for <b>4</b> of your locations
+<b>Severe flood warnings and Flood warnings</b> are available for <b>2</b> of your locations</p>
+
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What are flood alerts, flood warnings and severe flood warnings?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood alert</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>flooding may be possible</li>
+      <li>usually issued from two days to two hours before flooding might happen</li>
+      <li>this notification is sent to a larger, less specific area</li>
+      <li>‘be prepared’ if you get this notification</li>
+    </ul>
+
+    <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood warning</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>there is a risk of flooding to homes, businesses, rail and roads</li>
+      <li>this notification is sent to a smaller, more specific area</li>
+      <li>flood warnings and severe flood warnings are sent to the same area</li>
+      <li>‘act now’ if you get this notification</li>
+    </ul>
+
+    <p class="govuk-heading-s" style="margin-bottom: 10px;">Severe flood warning</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>there is a risk of severe flooding and major disruption</li>
+      <li>this notification is sent to a smaller, more specific area</li>
+      <li>flood warnings and severe flood warnings are sent to the same area</li>
+      <li>there is a danger to life if you get this notification</li>
+    </ul>
+
+ </div>
+</details>
+
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What does flood risk mean?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p>
+    Flood risk is based on combination of likelihood and impact - how likely it is that flooding will happen and the effect that will have on people, building and services.
+</p>
+    <p class="govuk-heading-s" style="margin-bottom: 10px;">High risk</p>
+      <p>High risk means that each year there is a chance of flooding from rivers and the sea of greater than 1 in 30</p>
+
+
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Medium risk</p>
+        <p>Medium risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 100 and 1 in 30</p>
+
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Low risk</p>
+          <p>Low risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 1000 and 1 in 100</p>
+
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Possible</p>
+            <p>Possible means that flooding is possible in the local area when groundwater levels are high</p>
+
+            <p class="govuk-heading-s" style="margin-bottom: 10px;">Unlikely</p>
+              <p>Unlikely meant it is unlikely your location will be affected by groundwater flooding</p>
+
+ </div>
+</details>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+  <a href= "/v02-2/choosewarnings-notinfwa/location-name" class= "govuk-link">  34 Hattersley way </a> is at high risk of flooding and in an area where flood warnings are not issued. Click into the location to see the closest warning area.
+  </strong>
+</div>
+
+</div>
+
+
+<div class="govuk-grid-column-full">
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Location name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Flood risk from
+rivers and the sea</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Flood risk from groundwater</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Flood alerts available</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Flood warnings and severe flood warnings available</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" ><a href="#" class="govuk-link">1 Darnall road
+</a>
+<br>
+<span style="font-weight: 400;">1 Darnall road,
+Leicester, LE2 7AS</span>
+
+</th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--orange">
+          Medium risk
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey">
+          Unlikely
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">No</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" ><a href="#" class="govuk-link">9 Darnall road
+</a>
+<br>
+<span style="font-weight: 400;">9 Darnall road,
+Leicester, LE2 7AS</span>
+
+</th>
+<td class="govuk-table__cell">
+  <strong class="govuk-tag govuk-tag--orange">
+    Medium risk
+  </strong>
+</td>
+<td class="govuk-table__cell">
+  <strong class="govuk-tag govuk-tag--grey">
+    Unlikely
+  </strong>
+</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">No</td>
+    </tr>
+
+
+
+
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header" ><a href="#" class="govuk-link">6 Hattersley way
+      </a>
+      <br>
+      <span style="font-weight: 400;">6, Hattersley way, Leicester, LE2 7BB</span>
+
+      </th>
+
+
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">
+          Low risk
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--pink">
+          Possible
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Yes</td>
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" ><a href="#" class="govuk-link">33 Hattersley way
+      </a>
+      <br>
+      <span style="font-weight: 400;">33, Hattersley way, Leicester, LE2 7BB</span>
+
+      </th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--pink">
+          High risk
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--pink">
+          Possible
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Yes</td>
+    </tr>
+
+
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" ><a href="#" class="govuk-link">34 Hattersley way
+      </a>
+      <br>
+      <span style="font-weight: 400;">34, Hattersley way, Leicester, LE2 7BB</span>
+
+      </th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--pink">
+          High risk
+        </strong>
+      </td>
+
+      <<td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey">
+          Unlikely
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">No</td>
+      <td class="govuk-table__cell">No</td>
+    </tr>
+
+
+
+
+
+
+
+  </tbody>
+</table>
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+{% endblock %}

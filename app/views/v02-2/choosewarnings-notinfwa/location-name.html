@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+
+
+
+
+{% block pageTitle %}
+    Manage locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/v02-2/choosewarnings-notinfwa/flood-options" method="post">
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">34 Hattersley way</h1>
+
+                <a href="/v02-2/choosewarnings-notinfwa/map" role="button" data-module="govuk-button" id="map-btn" class="defra-link-icon-s" data-journey-click="Station:Map View:Station - View map"><svg width="15" height="20" viewBox="0 0 15 20" focusable="false"><path d="M15,7.5c0.009,3.778 -4.229,9.665 -7.5,12.5c-3.271,-2.835 -7.509,-8.722 -7.5,-12.5c0,-4.142 3.358,-7.5 7.5,-7.5c4.142,0 7.5,3.358 7.5,7.5Zm-7.5,5.461c3.016,0 5.461,-2.445 5.461,-5.461c0,-3.016 -2.445,-5.461 -5.461,-5.461c-3.016,0 -5.461,2.445 -5.461,5.461c0,3.016 2.445,5.461 5.461,5.461Z" fill="currentColor"></path></svg><span>  View map</span><span class="govuk-visually-hidden">(Visual only)</span></a>
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "University of Gloucestershire"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Delete choice",
+          visuallyHiddenText: "of University of Gloucestershire"
+        },
+        {
+          href: "#",
+          text: "Withdraw",
+          visuallyHiddenText: "from University of Gloucestershire"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Course"
+      },
+      value: {
+        html: "English (3DMD)<br>PGCE with QTS full time"
+      }
+    },
+    {
+      key: {
+        text: "Location"
+      },
+      value: {
+        html: "School name<br>Road, City, SW1 1AA"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "University of Bristol"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Delete choice",
+          visuallyHiddenText: "of University of Bristol"
+        },
+        {
+          href: "#",
+          text: "Withdraw",
+          visuallyHiddenText: "from University of Bristol"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Course"
+      },
+      value: {
+        html: "English (Q3X1)<br>PGCE with QTS full time"
+      }
+    },
+    {
+      key: {
+        text: "Location"
+      },
+      value: {
+        html: "School name<br>Road, City, SW2 1AA"
+      }
+    }
+  ]
+}) }}
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+{% endblock %}

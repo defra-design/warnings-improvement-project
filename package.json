@@ -12,6 +12,7 @@
     "serve": "node listen-on-port"
   },
   "dependencies": {
+    "@ministryofjustice/frontend": "1.6.4",
     "@turf/turf": "^6.5.0",
     "acorn": "^8.5.0",
     "ansi-colors": "^4.1.1",
@@ -43,9 +44,9 @@
     "proj4": "^2.7.5",
     "require-dir": "^1.0.0",
     "sass": "^1.49.10",
+    "scripts": "^0.1.0",
     "sync-request": "^6.0.0",
     "universal-analytics": "^0.5.3",
-    "uuid": "^8.3.2",
-    "@ministryofjustice/frontend": "1.6.4"
+    "uuid": "^8.3.2"
   }
 }

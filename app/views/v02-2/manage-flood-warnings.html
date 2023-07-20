@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Live flood warnings"
+      },
+      {
+        href: "#2",
+        text: "Manage locations"
+
+      },
+      {
+        href: "#3",
+        text: "Manage flood warnings",
+        active: true
+      },
+
+      {
+        href: "#4",
+        text: "Manage contacts"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block pageTitle %}
+    Manage flood warnings
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Manage flood warnings</h1>
+
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    50 of your locations are at medium to high risk of flooding but are not in a flood warning area.
+                    <a href="#">
+                    Review medium to high risk locations </a>
+                  </strong>
+                </div>
+
+                  <h3 class="govuk-heading-m">1,820
+                    <p>locations with severe flood warnings and flood warnings set up (customise)<br>
+                      <label class="govuk-caption-m">In the last 2 years 3 severe flood warnings and 958 flood warnings were issued for your locations
+                        <br>
+                      <a href="/v02-1/choosewarnings-edit/flood-options">Change settings for flood warnings</a>
+                      </label>
+                    </h3>
+
+
+                    <h3 class="govuk-heading-m">50
+                      <p>locations are associated to flood warnings<br>
+                        <label class="govuk-caption-m">These are the locations you have associated with a flood warning area, either by increasing the area around your locations or by linking to a nearby flood warning area.
+                          <br>
+                        <a href="/v02-1/choosewarnings-edit/locations-associated">Edit the associated locations</a>
+                        </label>
+                      </h3>
+
+
+
+                      <h3 class="govuk-heading-m">180
+                        <p>locations are not in flood warning areas<br>
+                          <label class="govuk-caption-m">Locations can be outside warning areas but still be at risk of flooding. Review these locations to check the flood risk. you can increase the area around your location to improve your chances of it being covered by a flood warning. You can also link your location to a neaby flood warning area.
+                            <br>
+                          <a href="/v01-2/multiple-upload/edit-locations-found">Review locations that are not in flood warning areas</a>
+                          </label>
+                        </h3>
+
+
+
+
+</div>
+
+{% endblock %}

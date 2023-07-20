@@ -1,26 +1,10 @@
-// global styles for <a> and <p> tags
-$govuk-global-styles: true;
-$govuk-new-link-styles: true;
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
 
-// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
-$govuk-assets-path: '/govuk/assets/';
+// Add extra styles here
 
-// Import GOV.UK Frontend and any extension styles if extensions have been configured
-@import ".tmp/sass/extensions";
-
-// Patterns that aren't in Frontend
-@import "patterns/contents-list";
-@import "patterns/mainstream-guide";
-@import "patterns/pagination";
-@import "patterns/related-items";
-@import "patterns/step-by-step-header";
-@import "patterns/step-by-step-nav";
-@import "patterns/step-by-step-related";
-@import "patterns/task-list";
-@import "patterns/_search";
-@import "patterns/filter";
-
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .app-preview-map {
     height: 420px;
@@ -136,6 +120,7 @@ a.app-link-destructive {
   border-left: 5px solid #307D3E;
 }
 
+
 .govuk-inset-text--success {
   border-left: 5px solid #307D3E;
 
@@ -157,3 +142,23 @@ a.app-link-destructive {
 
 
 }
+
+.govuk-success-message {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0px;
+  clear: both;
+  color: #00703c;
+  }
+
+  .govuk-notification-banner__header {
+     padding: 0px 0px 0px;
+   }
+ }
