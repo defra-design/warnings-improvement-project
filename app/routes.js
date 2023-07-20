@@ -47,10 +47,6 @@ router.use('/place', placeRouter)
 let locationRouter3 = require('./routes_v4/location')
 router.use('/location', locationRouter)
 
-
-
-<<<<<<< Updated upstream
-=======
 router.post(['/locations-no-warnings/apply-filters', '/customise-settings/apply-filters'], (req, res) => {
   if (req.session.data.clearFilters == "true") {
     req.session.data.section = ""
@@ -150,5 +146,4 @@ router.get('/customise', function (req, res) {
 	req.session.data = { route: 'customise' }
 	res.redirect(`/v02-1/choosewarnings/overview-flood`)
 })
->>>>>>> Stashed changes
 
