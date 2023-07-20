@@ -7,9 +7,11 @@
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "1.2.1",
     "@ministryofjustice/frontend": "^1.8.0",
+    "@turf/turf": "^6.5.0",
     "@x-govuk/edit-prototype-in-browser": "^0.2.0",
     "govuk-frontend": "4.7.0",
     "govuk-prototype-kit": "13.11.0",
-    "notifications-node-client": "^7.0.2"
+    "notifications-node-client": "^7.0.2",
+    "proj4": "^2.9.0"
   }
 }

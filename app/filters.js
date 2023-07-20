@@ -21,6 +21,13 @@ const isNotThere = (input) => {
 	return !input || input.trim() == '' || input.trim() == 'undefined'
 }
 
+module.exports = function (env) {
+	/**
+	 * Instantiate object used to store the methods registered as a
+	 * 'filter' (of the same name) within nunjucks. You can override
+	 * gov.uk core filters by creating filter methods of the same name.
+	 * @type {Object}
+	 */
 	var filters = {}
 
 	const numberToMonthString = (input) => {
@@ -378,6 +385,5 @@ const isNotThere = (input) => {
 	/* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
-
-// Add the filters using the addFilter function
-Object.entries(filters).forEach(([name, fn]) => addFilter(name, fn))
+	return filters
+}
