@@ -147,3 +147,4 @@ router.get('/customise', function (req, res) {
 	res.redirect(`/v02-1/choosewarnings/overview-flood`)
 })
 
+require('@x-govuk/edit-prototype-in-browser').addRoutes(require('govuk-prototype-kit').requests)
