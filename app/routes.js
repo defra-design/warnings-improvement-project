@@ -146,8 +146,6 @@ router.get('/customise', function (req, res) {
 	req.session.data = { route: 'customise' }
 	res.redirect(`/v02-1/choosewarnings/overview-flood`)
 })
-<<<<<<< Updated upstream
+
 
 require('@x-govuk/edit-prototype-in-browser').addRoutes(require('govuk-prototype-kit').requests)
-=======
->>>>>>> Stashed changes

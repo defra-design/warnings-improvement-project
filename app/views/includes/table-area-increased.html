@@ -1,0 +1,87 @@
+{% if data.filteredResults.length %}
+
+{% set data = data.filteredResults %}
+
+{% else %}
+
+{% set data = allData %}
+
+{% endif %}
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">7 locations </caption>
+
+
+
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">
+
+
+          </th>
+
+
+      <th scope="col" class="govuk-table__header">
+      <b>Criticality to business</b>
+      </th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header">
+      <b>Flood risk</b>
+      </th>
+
+
+      <th scope="col" class="govuk-table__header govuk-table__header">
+      <b>Available flood warnings</b>
+      </th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for item in data %}
+    <tr class="govuk-table__row">
+
+            <th scope="row" class="govuk-table__header">
+
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="{{ item.title | lower | replace(' ', '-') }}" name="locations" type="checkbox" >
+                  <label class="govuk-label govuk-checkboxes__label" for="locations">
+                   <a href="{{ item.termName | lower | replace(' ', '-') }}" style="font-weight: bold;" class="govuk-link">{{ item.title }}</a></br>
+                    {{ item.address }}
+                  </label>
+                </div>
+
+              </th>
+     </th>
+
+
+
+      <td class="govuk-table__cell ">
+        {{ item.priority }}
+        </td>
+
+      <td class="govuk-table__cell govuk-table__cell">
+        {{ item.criticalityToBusiness }}
+      </td>
+      <td class="govuk-table__cell govuk-table__cell">
+        <div class="govuk-form-group {% if item.increase == 'true' and permit.warning=='set' %}govuk-form-group--success{% elif item.increase == 'true' %}govuk-form-group--error{% else %}govuk-form-group--success{% endif %}">
+
+          {% if item.increase == 'true' and permit.warning=="set" %}
+
+          1 flood warning area manually linked
+
+          {% else %}
+          {{ item.increasedArea }}
+
+          {% endif %}
+        </div>
+      </td>
+    </tr>
+{% endfor %}
+{% for item in data %}
+  </tbody>
+</table>
+{% endfor %}
