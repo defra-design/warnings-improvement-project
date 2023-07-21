@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>flood-warning</title>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flood-warning" transform="translate(1.000000, 1.000000)">
+            <rect id="Rectangle" stroke="#D4351C" fill="#D4351C" x="0" y="0" width="22" height="22"></rect>
+            <line x1="8" y1="0" x2="0" y2="8" id="Path" stroke="#FFFFFF"></line>
+            <line x1="16" y1="0" x2="0" y2="16" id="Path" stroke="#FFFFFF"></line>
+            <line x1="22" y1="18" x2="18" y2="22" id="Path" stroke="#FFFFFF"></line>
+            <line x1="22" y1="2" x2="2" y2="22" id="Path" stroke="#FFFFFF"></line>
+            <line x1="22" y1="10" x2="10" y2="22" id="Path" stroke="#FFFFFF"></line>
+            <line x1="0" y1="14" x2="8" y2="22" id="Path" stroke="#FFFFFF"></line>
+            <line x1="0" y1="6" x2="16" y2="22" id="Path" stroke="#FFFFFF"></line>
+            <line x1="18" y1="0" x2="22" y2="4" id="Path" stroke="#FFFFFF"></line>
+            <line x1="2" y1="0" x2="22" y2="20" id="Path" stroke="#FFFFFF"></line>
+            <line x1="10" y1="0" x2="22" y2="12" id="Path" stroke="#FFFFFF"></line>
+        </g>
+    </g>
+</svg>
