@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <br>
+    <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">
+              Placeholder
+            </strong>
+          </td>
+    <br>
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header" >
+
+
+
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      2000 locations are found
+    </h3>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+                <h1 class="govuk-heading-l">Your locations</h1>
+
+                  <h3 class="govuk-heading-m">2000<p>locations found</p></h3>
+
+
+<a href="#" class="govuk-link">Add more locations </a>
+
+
+
+
+
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<form class="form" action="/v02-2/choosewarnings-many-notinfwa/warning-types" method="post">
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+</div>
+
+{% endblock %}

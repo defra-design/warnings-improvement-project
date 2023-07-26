@@ -148,4 +148,8 @@ router.get('/customise', function (req, res) {
 })
 
 
-require('@x-govuk/edit-prototype-in-browser').addRoutes(require('govuk-prototype-kit').requests)
+
+
+
+
+

@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check if locations are in flood risk areas – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+<!--{{permit|dump}}-->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v02-2/choosewarnings-many/checking" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        Types of flood warning
+      </h1>
+
+
+
+<p>We send warnings when flooding is possible, is expected or is happening.</p>
+
+<p>The types of warning are:</p>
+
+
+
+
+<h2 class="govuk-heading-s">
+    <img class="defra-flood-heading-image" src="/public/images/symbol-flood-alert.svg" width="46" height="46" style="vertical-align: middle" alt="">
+    Flood alert
+</h2>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>flooding may be possible</li>
+<li>usually issued from two days to two hours before flooding might happen</li>
+<li>this notification is sent to a larger, less specific area</li>
+<li>‘be prepared’ if you get this notification</li>
+</ul>
+
+
+
+<h2 class="govuk-heading-s">
+    <img class="defra-flood-heading-image" src="/public/images/symbol-flood-warning.svg" width="46" height="46" style="vertical-align: middle" alt="">
+    Flood warning
+</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>there is a risk of flooding to homes, businesses, rail and roads</li>
+<li>this notification is sent to a smaller, more specific area</li>
+<li>flood warnings and severe flood warnings are sent to the same area</li>
+<li>‘act now’ if you get this notification</li>
+</ul>
+
+<h2 class="govuk-heading-s">
+    <img class="defra-flood-heading-image" src="/public/images/symbol-flood-warning-severe.svg" width="46" height="46" style="vertical-align: middle" alt="">
+    Severe flood warning
+</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>there is a risk of severe flooding and major disruption</li>
+<li>this notification is sent to a smaller, more specific area</li>
+<li>flood warnings and severe flood warnings are sent to the same area</li>
+<li>there is a danger to life if you get this notification</li>
+</ul>
+
+<h3 class="govuk-heading-m">Which areas cannot get flood warnings </h3>
+<p>Not all locations are in places where flood warnings are issued. </p>
+
+<p>This may be because there are no measurement gauges in that area or because it is an area where not many people live or work.</p>
+
+<p>Your locations may still be at risk even if there are no warnings issued in that area.</p>
+
+<p>If warnings are not issued for your locations you may wish to find other ways to monitor them, such as checking the Met Office forecasts or listening to local radio.
+</p>
+
+<a href="/v02-2/choosewarnings-many/fwa" class="govuk-link">How are the flood warning areas set up?</a>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Check locations
+</button>
+
+
+
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

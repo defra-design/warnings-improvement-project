@@ -1,0 +1,287 @@
+{% if data.filteredResults.length %}
+
+{% set data = data.filteredResults %}
+
+{% else %}
+
+{% set data = allData %}
+
+{% endif %}
+
+
+<div class="govuk-grid-column-two-thirds">
+
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">1821 locations </caption>
+
+
+
+
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">
+
+
+            </th>
+
+
+        <th scope="col" class="govuk-table__header">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleSFW(this)" />
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <b>All severe flood warnings</b>
+              </label>
+            </div>
+        </th>
+
+        <th scope="col" class="govuk-table__header govuk-table__header">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleFW(this)" />
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <b>All flood warnings</b>
+              </label>
+            </div>
+        </th>
+
+
+        <th scope="col" class="govuk-table__header govuk-table__header">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" onClick="toggleFA(this)" />
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <b>All flood alerts</b>
+              </label>
+            </div>
+        </th>
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+
+                <a href="#"><b>1 Darnall road</b></a><br>
+                <p class="govuk-body-s">
+                  1, Darnall road, 
+                  Leicester, LE2 7AS</p>
+        </th>
+
+
+
+        <td class="govuk-table__cell ">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Severe flood warnings
+              </label>
+            </div>
+          </td>
+
+        <td class="govuk-table__cell govuk-table__cell">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Flood warnings
+              </label>
+            </div>
+        </td>
+
+        <td class="govuk-table__cell govuk-table__cell">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Flood alert
+              </label>
+            </div>
+        </td>
+
+
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+
+                    <a href="#"><b>9 Darnall road</b></a><br>
+                    <p class= "govuk-body-s">
+                      9, Darnall road, 
+                      Leicester, LE2 7AS</p>
+            </th>
+
+
+            <td class="govuk-table__cell ">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Severe flood warnings
+                  </label>
+                </div>
+              </td>
+
+            <td class="govuk-table__cell govuk-table__cell">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Flood warnings
+                  </label>
+                </div>
+            </td>
+
+            <td class="govuk-table__cell govuk-table__cell">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Flood alert
+                  </label>
+                </div>
+            </td>
+
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+
+                        <a href="#"><b>10 Darnall road</b></a><br>
+                        <p class= "govuk-body-s">10, Darnall road, 
+                          Leicester, LE2 7AS</p>
+                </th>
+
+                <td class="govuk-table__cell ">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Severe flood warnings
+                      </label>
+                    </div>
+                  </td>
+
+                <td class="govuk-table__cell govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Flood warnings
+                      </label>
+                    </div>
+                </td>
+
+                <td class="govuk-table__cell govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Flood alert
+                      </label>
+                    </div>
+                </td>
+
+
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+
+                            <a href="#"><b>6 Hattersley way</b></a><br>
+                            <p class= "govuk-body-s">
+                              6, Hattersley way, Leicester, LE2 7BB</p>
+                    </th>
+
+                    <td class="govuk-table__cell ">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                          Severe flood warnings
+                          </label>
+                        </div>
+                      </td>
+
+                    <td class="govuk-table__cell govuk-table__cell">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                          Flood warnings
+                          </label>
+                        </div>
+                    </td>
+
+                    <td class="govuk-table__cell govuk-table__cell">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                          Flood alert
+                          </label>
+                        </div>
+                    </td>
+
+
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+
+                                <a href="#"><b>33 Hattersley way</b></a><br>
+                                <p class= "govuk-body-s">
+                                  33, Hattersley way, Leicester, LE2 7BB</p>
+                        </th>
+
+
+
+
+                        <td class="govuk-table__cell ">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                              Severe flood warnings
+                              </label>
+                            </div>
+                          </td>
+
+                        <td class="govuk-table__cell govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation" name="FW" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                              Flood warnings
+                              </label>
+                            </div>
+                        </td>
+
+                        <td class="govuk-table__cell govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation" name="FA" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                              Flood alert
+                              </label>
+                            </div>
+                        </td>
+
+
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+
+{% for item in data %}
+  </tbody>
+</table>
+{% endfor %}

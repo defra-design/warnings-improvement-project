@@ -1,0 +1,164 @@
+{% extends 'layout.html' %}
+
+
+
+
+
+{% block pageTitle %}
+Manage locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+text: 'Back',
+href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/v02-2/choosewarnings-many-notinfwa/flood-options" method="post">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      
+
+
+
+
+
+     
+
+      {% set html %}
+      <p class="govuk-body">
+       <b>1 location is linked to nearby flood warning and alert services</b> 
+      </p>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+      html: html,
+      type: 'success',
+      titleText: ' '
+      }) }}
+
+      
+
+
+
+
+      <h1 class="govuk-heading-l">Review flood warnings available for your locations</h1>
+
+      <a href="/v02-2/choosewarnings-notinfwa/map" role="button" data-module="govuk-button" id="map-btn"
+        class="defra-link-icon-s" data-journey-click="Station:Map View:Station - View map"><svg width="15" height="20"
+          viewBox="0 0 15 20" focusable="false">
+          <path
+            d="M15,7.5c0.009,3.778 -4.229,9.665 -7.5,12.5c-3.271,-2.835 -7.509,-8.722 -7.5,-12.5c0,-4.142 3.358,-7.5 7.5,-7.5c4.142,0 7.5,3.358 7.5,7.5Zm-7.5,5.461c3.016,0 5.461,-2.445 5.461,-5.461c0,-3.016 -2.445,-5.461 -5.461,-5.461c-3.016,0 -5.461,2.445 -5.461,5.461c0,3.016 2.445,5.461 5.461,5.461Z"
+            fill="currentColor"></path>
+        </svg><span> View map</span><span class="govuk-visually-hidden">(Visual only)</span></a>
+      <div class="govuk-!-padding-bottom-3"></div>
+
+      
+
+
+
+      
+
+
+
+      
+
+    
+
+   
+
+
+
+    <h3 class="govuk-heading-m">1,820<p>locations are in places where flood warnings are issued</p>
+    </h3>
+
+    <h3 class="govuk-heading-m">180
+      <p>locations are in places where no flood warnings are issued <br>
+      <span class="govuk-hint">Not all locations are in places where flood warnings are issued. Your locations may still
+        be at risk even if there are no warnings issued in that area.</span> </p>
+    </h3>
+
+
+   
+
+
+    <div class="govuk-inset-text">
+     
+     
+      <h3 class="govuk-heading-m">1<p>location is linked to nearby flood warnings<br>
+        <a href="#" class="govuk-link"">Review locations linked to nearby flood warnings</a></p>
+        
+      </h3>
+  
+     
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            49 locations at medium or high risk of flooding are in places where no flood warnings are issued.   
+             <a href="/v02-2/choosewarnings-many-notinfwa/closest-warnings" class="govuk-link"> Choose to get flood warnings closest to these locations </a>
+            </strong>
+        </div>
+      
+     
+    </div>
+
+
+
+    
+
+
+
+
+
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Why are some locations in places where no warnings are issued?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>Not all locations are in places where flood warnings are issued.</p>
+
+        <p>This may be because there are no measurement gauges in that area or because it is an area where not many
+          people live or work.
+        </p>
+        <p>Your locations may still be at risk even if there are no warnings issued in that area.
+        </p>
+        <p>If warnings are not issued for your locations you may wish to find other ways to monitor them, such as
+          checking the Met Office forecasts or listening to local radio.
+        </p>
+      </div>
+    </details>
+
+
+    <button class="govuk-button" data-module="govuk-button">
+      Choose which flood warnings to receive
+    </button>
+
+       
+
+
+
+
+
+
+
+
+     
+
+
+      {% endblock %}

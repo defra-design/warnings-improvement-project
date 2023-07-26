@@ -1,138 +1,131 @@
-<div class="filter-box">
 
-<h2 class="govuk-heading-m govuk-!-margin-bottom-3">Filter by</h2>
+{%- from "moj/components/filter/macro.njk" import mojFilter -%}
+{%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
 
-     <form  method="post" novalidate action="/customise-settings/apply-filters">
+{%- set filterOptionsHtml %}
 
-<!--
-       {{ govukCheckboxes({
-         idPrefix: 'section',
-         name: 'section',
-         classes: "govuk-checkboxes--small",
-         fieldset: {
-           legend: {
-             text: 'Section',
-             classes: 'govuk-fieldset__legend--s'
-           }
-         },
-         items: [
-           {
-            value: 'Designing (service) journeys',
-            text: 'Designing (service) journeys',
-             checked:  checked("section", "Designing (service) journeys")
-           },
-           {
-            value: 'Designing (for) user behaviour',
-            text: 'Designing (for) user behaviour',
-             checked:  checked("section", "Designing (for) user behaviour")
-           },
-           {
-            value: 'Research',
-            text: 'Research',
-             checked:  checked("section", "Research")
-           },
-           {
-            value: 'Interfaces and interactions',
-            text: 'Interfaces and interactions',
-            checked:  checked("section", "Interfaces and interactions")
-          },
-          {
-            value: 'Content',
-            text: 'Content',
-            checked:  checked("section", "Content")
-          }
-         ]
-       }) }}
- -->
+  
 
+  {{ govukCheckboxes({
+    idPrefix: 'criticality',
+    name: 'criticality',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: 'Your criticality rating',
+        classes: 'govuk-fieldset__legend--m'
+      }
+    },
+    items: [
+      {
+        value: '1',
+        text: 'High (18)',
+        checked: false
+      },
+      {
+        value: '2',
+        text: 'Medium (5)',
+        checked: false
+      },
+      {
+        value: '3',
+        text: 'Low (2)'
+      }
+    ]
+  }) }}
 
-
-
-        {{ govukCheckboxes({
-          idPrefix: 'priority',
-          name: 'priority',
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: 'Priority',
-              classes: 'govuk-fieldset__legend--s'
-            }
-          },
-          items: [
-            {
-              value: 'low',
-              text: 'Low',
-              checked:  checked("priority", "low")
-            },
-            {
-              value: 'medium',
-              text: 'Medium',
-              checked:  checked("priority", "medium")
-            },
-            {
-              value: 'high',
-              text: 'High',
-              checked:  checked("priority", "high")
-            }
-          ]
-
-        }) }}
+  {{ govukCheckboxes({
+    idPrefix: 'ea-rating',
+    name: 'ea-rating',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: 'Environment Agency flood risk rating',
+        classes: 'govuk-fieldset__legend--m'
+      }
+    },
+    items: [
+      {
+        value: 'high',
+        text: 'High risk (2)',
+        checked: false
+      },
+      {
+        value: 'medium',
+        text: 'Medium risk (5)'
+      },
+      {
+        value: 'low',
+        text: 'Low (3)',
+        checked: false
+      }
+    ]
+  }) }}
 
 
-        {{ govukCheckboxes({
-          idPrefix: 'criticalityToBusiness',
-          name: 'criticalityToBusiness',
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: 'Criticality to business',
-              classes: 'govuk-fieldset__legend--s'
-            }
-          },
-          items: [
-            {
-              value: 'A',
-              text: 'A',
-              checked:  checked("criticalityToBusiness", "A")
-            },
-            {
-              value: 'B',
-              text: 'B',
-              checked:  checked("criticalityToBusiness", "B")
-            },
-            {
-              value: 'C',
-              text: 'C',
-              checked:  checked("criticalityToBusiness", "C")
-            },
-            {
-              value: 'D',
-              text: 'D',
-              checked:  checked("criticalityToBusiness", "D")
-            },
-            {
-              value: 'E',
-              text: 'E',
-              checked:  checked("criticalityToBusiness", "E")
-            }
-          ]
-        }) }}
+  {{ govukCheckboxes({
+    idPrefix: 'location-type',
+    name: 'location-type',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: 'Location type',
+        classes: 'govuk-fieldset__legend--m'
+      }
+    },
+    items: [
+      {
+        value: '1',
+        text: 'Warehouse (18)',
+        checked: false
+      },
+      {
+        value: '2',
+        text: 'Pumping station(5)',
+        checked: false
+      },
+      {
+        value: '3',
+        text: 'Head office (2)'
+      }
+    ]
+  }) }}
+
+{% endset -%}
+
+{{ mojFilter({
+  heading: {
+    text: 'Filter'
+  },
+
+  submit: {
+    attributes: {
+        "data-test-id": "submit-button"
+    }
+  },
+
+  selectedFilters: {
+
+    heading: {
+      text: 'Selected filters'
+    },
+
+    clearLink: {
+      text: 'Clear filters'
+    },
+
+    categories: [
+      
+    ]
+  },
+  optionsHtml: filterOptionsHtml
+}) }}
 
 
-       <div class="govuk-button-group">
-           {{ govukButton({
-         text: "Apply filters"
-       }) }}
 
 
-       {{ govukButton({
-           text: "Clear filters",
-           classes: "govuk-button--secondary",
-           name: "clearFilters",
-           value: "true"
-         }) }}
-
-         </div>
 
 
-</div>
+
+

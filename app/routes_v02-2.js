@@ -141,6 +141,18 @@ router.get('/choosewarnings/flood-options', function (req, res) {
   })
   })
 
+  router.post('/choosewarnings-many/flood-options', function (req, res) {
+    res.render(folder + '/choosewarnings-many/flood-options',{
+      "formAction":"/"+ folder + "/choosewarnings-many/flood-options-routing"
+    })
+    })
+
+    router.post('/choosewarnings-many-notinfwa/flood-options', function (req, res) {
+      res.render(folder + '/choosewarnings-many-notinfwa/flood-options',{
+        "formAction":"/"+ folder + "/choosewarnings-many-notinfwa/flood-options-routing"
+      })
+      })
+
 // Send permit data in session to every page ==================================
 router.all('*', function (req, res, next) {
   res.locals.permit=res.locals.data
@@ -158,12 +170,36 @@ router.all('*', function (req, res, next) {
 
   // Route to check if application has started and redirect
   router.post('/choosewarnings-notinfwa/flood-options-routing', function (req, res) {
-	if (req.body['floodWarningCustomise']=="complex") {
-	  res.redirect("/"+ folder + "/flood-warning-answer-customise")
+	if (req.body['floodWarningNotinfwa']=="default") {
+	  res.redirect("/v02-2/choosewarnings-notinfwa/flood-warnings-set")
 	} else {
-	  res.redirect("/"+ folder + "/flood-warning-answer")
+	  res.redirect("/v02-2/choosewarnings-notinfwa/customise-settings")
 	}
   })
+
+    // Route to check if application has started and redirect
+    router.post('/choosewarnings-many/flood-options-routing', function (req, res) {
+      if (req.body['floodWarningMany']=="default") {
+        res.redirect("/v02-2/choosewarnings-many/flood-warnings-set")
+      } else {
+        res.redirect("/v02-2/choosewarnings-many/customise-settings")
+      }
+      })
+
+
+      // Route to check if application has started and redirect
+  router.post('/choosewarnings-many-notinfwa/flood-options-routing', function (req, res) {
+    if (req.body['floodWarningNotinfwaMany']=="default") {
+      res.redirect("/v02-2/choosewarnings-many-notinfwa/flood-warnings-set")
+    } else {
+      res.redirect("/v02-2/choosewarnings-many-notinfwa/customise-settings")
+    }
+    })
+
+   
+
+
+
 
 
 module.exports = router

@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check if locations are in flood risk areas – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+<!--{{permit|dump}}-->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v02-2/choosewarnings-many/checking" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        How flood warning areas are set up
+      </h1>
+
+
+
+
+
+
+
+
+<p>Your location may be in a place where:</p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>flood warnings and severe flood warnings are issued (flood warning area)</li>
+<li>flood alerts are issued (flood alert area)</li>
+<li>flood warnings, severe flood warnings and flood alerts are issued (where your location is in both a flood warning area and a flood alert area)
+</li>
+<li>no warnings are issued</li>
+</ul>
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why are some locations in places where no warnings are issued?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>Not all locations are in places where flood warnings are issued.</p>
+
+   <p> This may be because there are no measurement gauges in that area or because it is an area where not many people live or work.
+  </p>
+   <p>Your locations may still be at risk even if there are no warnings issued in that area.
+  </p>
+  <p>    If warnings are not issued for your locations you may wish to find other ways to monitor them, such as checking the Met Office forecasts or listening to local radio.
+  </p>
+  </div>
+</details>
+
+
+<h2 class="govuk-heading-s" ;">
+    <img class="defra-flood-heading-image" src="/public/images/flood-warning.svg" width="46" height="46" style="vertical-align: middle" alt="">
+    Flood warning areas
+</h2>
+
+
+<p>The Environment Agency monitors many areas across England and can issue flood warnings and severe flood warnings when flooding is expected. These are called flood warning areas.</p>
+
+<p>Flood warning areas usually cover smaller, more specific areas where people live or work, such as cities, towns, villages or hamlets.</p>
+
+<p>Not all locations are in places where flood warnings and severe flood warnings are issued.</p>
+
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Your locations may still be at risk even if there is no warning service for that area.
+  </strong>
+</div>
+
+<h2 class="govuk-heading-s">
+    <img class="defra-flood-heading-image" src="/public/images/flood-alert.svg" width="46" height="46" style="vertical-align: middle" alt="">
+    Flood alert areas
+</h2>
+
+<p>Flood alert areas tend to be larger and less specific than flood warning areas. They can cross several flood warning areas.</p>
+
+<p>Flood alerts are issued earlier than flood warnings to provide advance notice of the possibility of flooding. They may be issued when there is less confidence that flooding will happen.</p>
+
+<p>Not all locations are in places where flood alerts are issued.</p>
+
+<h2 class="govuk-heading-s">
+    <img class="defra-flood-heading-image" src="/public/images/flood-extent.svg" width="46" height="46" style="vertical-align: middle" alt="">
+    Flood extent and flood risk
+</h2>
+
+<p>Flood extent predicts the area of the flood that could happen at a particular location.</p>
+
+<p>Flood risk is based on a combination of likelihood and impact – how likely it is that flooding will happen and the effect that will have on people, buildings and services.</p>
+
+
+
+
+
+
+
+
+<a href="#" class="govuk-link">Find out more about how we measure river, sea and groundwater levels.</a>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+<img class="defra-flood-heading-image" src="/public/images/fwa-image.png" width="1000
+"  alt=""style="border: 1px solid #b1b4b6;">
+
+
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

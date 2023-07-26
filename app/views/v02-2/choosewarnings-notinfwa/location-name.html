@@ -21,94 +21,149 @@
 
 {% block content %}
 
-<form class="form" action="/v02-2/choosewarnings-notinfwa/flood-options" method="post">
+<form class="form" action="/v02-2/choosewarnings-notinfwa/review-flood-warnings" method="post">
 
 <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-two-thirds">
 
-                <h1 class="govuk-heading-l">34 Hattersley way</h1>
+                <h1 class="govuk-heading-l">Location not in an area that issues flood warnings</h1>
 
-                <a href="/v02-2/choosewarnings-notinfwa/map" role="button" data-module="govuk-button" id="map-btn" class="defra-link-icon-s" data-journey-click="Station:Map View:Station - View map"><svg width="15" height="20" viewBox="0 0 15 20" focusable="false"><path d="M15,7.5c0.009,3.778 -4.229,9.665 -7.5,12.5c-3.271,-2.835 -7.509,-8.722 -7.5,-12.5c0,-4.142 3.358,-7.5 7.5,-7.5c4.142,0 7.5,3.358 7.5,7.5Zm-7.5,5.461c3.016,0 5.461,-2.445 5.461,-5.461c0,-3.016 -2.445,-5.461 -5.461,-5.461c-3.016,0 -5.461,2.445 -5.461,5.461c0,3.016 2.445,5.461 5.461,5.461Z" fill="currentColor"></path></svg><span>  View map</span><span class="govuk-visually-hidden">(Visual only)</span></a>
+                <a href="#" role="button" data-module="govuk-button" id="map-btn" class="defra-link-icon-s" data-journey-click="Station:Map View:Station - View map"><svg width="15" height="20" viewBox="0 0 15 20" focusable="false"><path d="M15,7.5c0.009,3.778 -4.229,9.665 -7.5,12.5c-3.271,-2.835 -7.509,-8.722 -7.5,-12.5c0,-4.142 3.358,-7.5 7.5,-7.5c4.142,0 7.5,3.358 7.5,7.5Zm-7.5,5.461c3.016,0 5.461,-2.445 5.461,-5.461c0,-3.016 -2.445,-5.461 -5.461,-5.461c-3.016,0 -5.461,2.445 -5.461,5.461c0,3.016 2.445,5.461 5.461,5.461Z" fill="currentColor"></path></svg><span>  View map</span><span class="govuk-visually-hidden">(Visual only)</span></a>
 <div class="govuk-!-padding-bottom-3"></div>
 
 
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">34 Hattersley way</caption>
+  <thead class="govuk-table__head">
 
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">34 Hattersley way</h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Delete choice<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
-        </a>
-      </li>
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Withdraw<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Course
-        </dt>
-        <dd class="govuk-summary-list__value">
-          English (3DMD)<br>PGCE with QTS full time
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Location
-        </dt>
-        <dd class="govuk-summary-list__value">
-          School name<br>Road, City, SW1 1AA
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">University of Bristol</h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Delete choice<span class="govuk-visually-hidden"> of University of Bristol</span>
-        </a>
-      </li>
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Withdraw<span class="govuk-visually-hidden"> from University of Bristol</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Course
-        </dt>
-        <dd class="govuk-summary-list__value">
-          English (Q3X1)<br>PGCE with QTS full time
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Location
-        </dt>
-        <dd class="govuk-summary-list__value">
-          School name<br>Road, City, SW2 1AA
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Address</th>
+      <td class="govuk-table__cell">34, Hattersley way, <br> Leicester, LE2 7BB</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Your criticality rating</th>
+      <td class="govuk-table__cell">Medium</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Location type</th>
+      <td class="govuk-table__cell">
+Warehouse
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Flood risk from rivers and the sea</th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--pink">
+          High risk
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">lood risk from groundwater</th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey">
+          Unlikely
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Flood alerts available</th>
+      <td class="govuk-table__cell">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Flood warnings and <br>severe flood warnings available</th>
+      <td class="govuk-table__cell">No</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
 
-<button class="govuk-button" data-module="govuk-button">
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Closest flood warnings</caption>
+  <thead class="govuk-table__head">
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+
+
+
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-body govuk-!-text-align-left ">
+  This location is not in a place where flood warnings are issued but you can choose to receive warnings from a close-by area.
+</th>
+</tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Flood warning area</th>
+      <td class="govuk-table__cell">River Soar at Frog Island and <br> riverside areas of Leicester </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Description of the flood warning area</th>
+      <td class="govuk-table__cell">River Soar at Frog Island and riverside areas of Leicester including Abbey Park</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Distance from your location</th>
+      <td class="govuk-table__cell">
+23 metres upstream from your location
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Warnings issued in the last 2 years</th>
+      <td class="govuk-table__cell">
+        0 severe flood warnings issued
+  3 flood warnings issued
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "receive-closest-warnings",
+  fieldset: {
+    legend: {
+      text: "Do you want to receive warnings and alerts issued from the closest flood warning area?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: checked("receive-closest-warnings", "yes")
+    },
+    {
+      value: "no",
+      text: "No, see other available flood warning areas",
+      checked: checked("receive-closest-warnings", "no")
+    }
+  ]
+}) }}
+
+
+<a href="#" class="govuk-link govuk-link--no-visited-state">Get warnings from an additional area</a>
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+
+
+<button class="govuk-button" data-module="govuk-button" >
   Continue
 </button>
 

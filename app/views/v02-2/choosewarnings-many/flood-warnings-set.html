@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+          {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <p class="govuk-body">
+    <b>Your organisation will receive severe flood warnings and flood warnings for 1,000 locations</b> 
+   </p>
+  {% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success',
+  titleText: ' '
+}) }}
+
+</div>
+</div>
+
+                <h1 class="govuk-heading-l">Your locations</h1>
+
+                  <h3 class="govuk-heading-m">1,820<br>
+                    <label class="govuk-body">Locations will get severe flood warnings and flood warnings
+                      <p class="govuk-hint">In the last 2 years 3 severe flood warnings and 100 flood warnings were issued for your locations </p>
+</label>
+                    </h3>
+
+
+
+                  
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<form class="form" action="#" method="post">
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Set up contacts
+</button>
+
+
+</div>
+
+{% endblock %}
