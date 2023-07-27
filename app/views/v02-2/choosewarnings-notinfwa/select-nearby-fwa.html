@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Select the relevant flood warnings that you would like to receive
+    </h1>
+
+
+  </div>
+</div>
+
+
+  <div class="govuk-inset-text">
+    <b>34 Hattersley way</b><br>
+    34, Hattersley way, Leicester, LE2 7BB
+  </div>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Nearby flood warning areas</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Flood alert or warning area</th>
+        <th scope="col" class="govuk-table__header">River or coastal</th>
+        <th scope="col" class="govuk-table__header">The flood warning area's distance from your location</th>
+        <th scope="col" class="govuk-table__header">Link your location to this area</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">River Soar at Frog Island and riverside areas of Leicester</th>
+        <td class="govuk-table__cell">River Soar (upstream of your location)</td>
+        <td class="govuk-table__cell">45 metres</td>
+        <td class="govuk-table__cell">
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+              </label>
+            </div>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">River Soar at Freemans Weir</th>
+        <td class="govuk-table__cell">River Soar (downstream of your location)</td>
+        <td class="govuk-table__cell">190 metres</td>
+        <td class="govuk-table__cell">
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+              </label>
+            </div>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Rothley Brook at Glenfield</th>
+        <td class="govuk-table__cell">River Sence (upstream of your location)</td>
+        <td class="govuk-table__cell">800 metres</td>
+        <td class="govuk-table__cell">
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+              </label>
+            </div>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">River Sence at South Wigston</th>
+        <td class="govuk-table__cell">River Sence (upstream of your location)</td>
+        <td class="govuk-table__cell">900 metres</td>
+        <td class="govuk-table__cell">
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+
+              </label>
+            </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {{ govukButton({
+  text: "Continue",
+  href: "/v02-2/choosewarnings-notinfwa/flood-warnings-set-customise"
+  }) }}
+
+
+
+
+
+
+    {% endblock %}

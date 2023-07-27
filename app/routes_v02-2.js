@@ -153,6 +153,9 @@ router.get('/choosewarnings/flood-options', function (req, res) {
       })
       })
 
+
+     
+
 // Send permit data in session to every page ==================================
 router.all('*', function (req, res, next) {
   res.locals.permit=res.locals.data
@@ -199,6 +202,22 @@ router.all('*', function (req, res, next) {
    
 
 
+   // Run this code when a form is submitted to 'closest-fwa-answer'
+ router.post('/v02-2/closest-fwa-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'receive-closest-warnings'
+  var receiveClosestWarnings = req.session.data['receive-closest-warnings']
+
+  // Check whether the variable matches a condition
+  if (receiveClosestWarnings == "yes"){
+    // Send user to next page
+    res.redirect('/v02-2/choosewarnings-notinfwa/review-flood-warnings')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/v02-2/choosewarnings-notinfwa/select-nearby-fwa')
+  }
+
+})
 
 
 

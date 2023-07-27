@@ -7,19 +7,23 @@
 
 
 
-          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header" >
+  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+  {% set html %}
+    <p class="govuk-body">
+      <b>Your organisation will receive severe flood warnings and flood warnings for 3 locations</b> 
+     </p>
+    {% endset %}
+  
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success',
+    titleText: ' '
+  }) }}
 
 
 
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      Your organisation will receive severe flood warnings and flood warnings for 3 locations
-    </h3>
-  </div>
-</div>
-
+         
 
 
 
@@ -30,10 +34,12 @@
 
                 <h1 class="govuk-heading-l">Your locations</h1>
 
-                  <h3 class="govuk-heading-m">3<p>locations will get severe flood warnings and flood warnings</p></h3>
+                  <h3 class="govuk-heading-m">3<p>locations will get severe flood warnings and flood warnings <br>
+                    <label class="govuk-hint">In the last 2 years 0 severe flood warnings and 10 flood warnings were issued for your locations</label>
+                  </p>
+                  </h3>
 
 
-<p class="govuk-hint">In the last 2 years 0 severe flood warnings and 10 flood warnings were issued for your locations</p>
 
 
 

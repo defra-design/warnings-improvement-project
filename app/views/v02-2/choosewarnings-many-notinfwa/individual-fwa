@@ -1,0 +1,98 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set metres = permit.metres %}
+
+{% if permit.metres == metres %}
+  {% set appType = 'metres' %}
+{% endif %}
+
+
+
+<details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What are flood alerts, flood warnings and severe flood warnings?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood alert</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>flooding may be possible</li>
+        <li>usually issued from two days to two hours before flooding might happen</li>
+        <li>this notification is sent to a larger, less specific area</li>
+        <li>‘be prepared’ if you get this notification</li>
+      </ul>
+
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood warning</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>there is a risk of flooding to homes, businesses, rail and roads</li>
+        <li>this notification is sent to a smaller, more specific area</li>
+        <li>flood warnings and severe flood warnings are sent to the same area</li>
+        <li>‘act now’ if you get this notification</li>
+      </ul>
+
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Severe flood warning</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>there is a risk of severe flooding and major disruption</li>
+        <li>this notification is sent to a smaller, more specific area</li>
+        <li>flood warnings and severe flood warnings are sent to the same area</li>
+        <li>there is a danger to life if you get this notification</li>
+      </ul>
+
+    </div>
+  </details>
+
+
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What does flood risk mean?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>
+        Flood risk is based on combination of likelihood and impact - how likely it is that flooding will happen and
+        the effect that will have on people, building and services.
+      </p>
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">High risk</p>
+      <p>High risk means that each year there is a chance of flooding from rivers and the sea of greater than 1 in
+        30</p>
+
+
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Medium risk</p>
+      <p>Medium risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 100
+        and 1 in 30</p>
+
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Low risk</p>
+      <p>Low risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 1000
+        and 1 in 100</p>
+
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Possible</p>
+      <p>Possible means that flooding is possible in the local area when groundwater levels are high</p>
+
+      <p class="govuk-heading-s" style="margin-bottom: 10px;">Unlikely</p>
+      <p>Unlikely meant it is unlikely your location will be affected by groundwater flooding</p>
+
+    </div>
+  </details>
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v02-2/choosewarnings-many-notinfwa/review-flood-warnings-summary">Exit map</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+<a class="govuk-link" href="#">River Soar at Frog Island and riverside areas of Leicester</a>
+
+<img class="defra-flood-heading-image" src="/public/images/map-zoom-in.png" width="1024"  style="vertical-align: middle"  alt="">
+{% endblock %}
