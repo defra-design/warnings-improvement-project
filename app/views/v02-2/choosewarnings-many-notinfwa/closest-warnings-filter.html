@@ -284,6 +284,7 @@ Home – GOV.UK Prototype Kit
     }) }}
 
   </div>
+  
 
 
 
@@ -324,13 +325,14 @@ Home – GOV.UK Prototype Kit
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
-                  onClick="toggleSFW(this)" />
-                <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                  <b>Location name</b>
-                </label>
-              </div>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+              onClick="toggleSFW(this)" />
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    <b>Location name</b>
+                  </label>
+                </div>
 
           </th>
 
@@ -621,6 +623,30 @@ Home – GOV.UK Prototype Kit
 </div>
 
 
+<script language="JavaScript">
+  function toggleFA(source) {
+    checkboxes = document.getElementsByName('FA');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
+<script language="JavaScript">
+  function toggleFW(source) {
+    checkboxes = document.getElementsByName('FW');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
+<script language="JavaScript">
+  function toggleSFW(source) {
+    checkboxes = document.getElementsByName('SFW');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
 
 
 
