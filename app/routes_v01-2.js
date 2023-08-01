@@ -275,21 +275,13 @@ router.post('/location/catigories-check', function (req, res) {
     if (locationFormat == "spreadsheet-postcodes"){
       // Send user to next page
       res.redirect('/v01-2/multiple-upload/spreadsheet-postcode/instructions-postcode')
-    }
-
-    // Check whether the variable matches a condition
-    if (locationFormat == "spreadsheet-grid-reference"){
+    } else if (locationFormat == "spreadsheet-grid-reference"){
       // Send user to next page
       res.redirect('/v01-2/multiple-upload/spreadsheet-gridref/instructions-gridreference')
-    }
-
-    // Check whether the variable matches a condition
-    if (locationFormat == "manual"){
+    } else if (locationFormat == "manual"){
       // Send user to next page
       res.redirect('/v01-2/address-manual/address-area')
-    }
-
-     else {
+    } else {
       // Send user to ineligible page
       res.redirect('/v01-2/multiple-upload/shapefile/instructions-shapefile')
     }
