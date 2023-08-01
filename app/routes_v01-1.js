@@ -289,7 +289,7 @@ router.post('/location/catigories-check', function (req, res) {
       res.redirect('/v01-1/address-manual/address-area')
     }
 
-    else if {
+    else {
       // Send user to ineligible page
       res.redirect('/v01-1/multiple-upload/shapefile/instructions-shapefile')
     }
