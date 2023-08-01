@@ -278,18 +278,18 @@ router.post('/location/catigories-check', function (req, res) {
     }
 
     // Check whether the variable matches a condition
-    if (locationFormat == "spreadsheet-grid-reference"){
+    else if (locationFormat == "spreadsheet-grid-reference"){
       // Send user to next page
       res.redirect('/v01-1/multiple-upload/spreadsheet-gridref/instructions-gridreference')
     }
 
     // Check whether the variable matches a condition
-    if (locationFormat == "manual"){
+    else if (locationFormat == "manual"){
       // Send user to next page
       res.redirect('/v01-1/address-manual/address-area')
     }
 
-     else {
+    else if {
       // Send user to ineligible page
       res.redirect('/v01-1/multiple-upload/shapefile/instructions-shapefile')
     }
