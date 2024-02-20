@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <form class="form" action="/v01/multiple-upload/uploaded-locations" method="post">
+
+                <h1 class="govuk-heading-l">Upload your revised spreadsheet</h1>
+
+{% if data['location-format']=='spreadsheet'%}
+                <img src="/public/images/ajax-loader.gif" width="50px" alt="">
+{%endif %}
+
+                <div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      Upload your spreadsheet
+    </label>
+    <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+  </div>
+
+
+              <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Flood warnings settings – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Flood warnings settings",
+      href: "#"
+    },
+    {
+      text: "Upload and edit your locations",
+      href: "#"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Add and edit your locations
+      </h1>
+
+      <form class="form" action="/v03-1/uploadlocations/location-format" method="post">
+
+
+        <p class="govuk-body">Use this section to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>add locations (also known as assets), either one by one or by uploading a spreadsheet or shapefile</li>
+          <li>choose to add locations using postcode, X and Y coordinates or shapefiles</li>
+          <li>edit existing locations: change location details, descriptions and importance to your business</li>
+          <li>delete locations from your account</li>
+        </ul>
+
+
+
+        {{ govukButton({
+          text: "Upload locations"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

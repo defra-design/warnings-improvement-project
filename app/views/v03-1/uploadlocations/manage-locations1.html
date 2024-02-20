@@ -1,0 +1,363 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+          <form class="form" action="/v01/multiple-upload/uploaded-locations" method="post">
+
+
+
+
+            <h1 class="govuk-heading-xl">Manage your locations</h1>
+
+  <p class="govuk-body">Some locations were not found <a href="/v01/multiple-upload/spreadsheet-postcode/review-unidentified" class="govuk-link">Review locations not found</a>, download the report, amend locations and upload.</p>
+
+  <div class="govuk-!-padding-bottom-5"></div>
+
+
+
+            <div class="gem-c-search__item-wrapper">
+            <input enterkeyhint="search" class="gem-c-search__item gem-c-search__input js-class-toggle __web-inspector-hide-shortcut__" id="search-main-5be11cec" name="q" title="Search" type="search" value="">
+            <div class="gem-c-search__item gem-c-search__submit-wrapper">
+              <button class="gem-c-search__submit" type="submit" data-track-category="homepageClicked" data-track-action="searchSubmitted" data-track-label="/search/all" data-track-dimension-index="29" data-track-dimension="Search GOV.UK" data-module="gem-track-click" enterkeyhint="search" data-gem-track-click-module-started="true">
+                Search GOV.UK
+          <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+          <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+          </svg>
+          </button>    </div>
+          </div>
+
+          <div class="govuk-!-padding-bottom-3"></div>
+
+
+
+
+
+</div>
+
+<div class="govuk-grid-column-full">
+<div class="govuk-!-padding-bottom-5"></div>
+
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+Remove
+</button>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">2500 locations found</caption>
+
+
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            <b>Location reference</b>
+                          </label>
+                        </div>
+
+                      </th>
+
+
+                  <th scope="col" class="govuk-table__header">Full address</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header">Postcode</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header">Criticality</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header">Flood warning</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                          100050016236
+                        </label>
+                      </div>
+
+
+                  </th>
+
+
+
+                  <td class="govuk-table__cell ">25 A, Belgrave road, Bridlington</td>
+                  <td class="govuk-table__cell govuk-table__cell">YO15 3JP</td>
+                  <td class="govuk-table__cell govuk-table__cell">Low</td>
+
+
+
+                  <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                    <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                            <ul class="govuk-summary-list__actions-list">
+                              <li class="govuk-summary-list__actions-list-item">
+                                <a class="govuk-link" href="/v01/multiple-upload/check-locations"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                              </li>
+                              <li class="govuk-summary-list__actions-list-item">
+                                <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a>
+                              </li>
+                            </ul>
+                          </dd>
+
+
+
+                          <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                      100050026541
+                                    </label>
+                                  </div>
+                              </th>
+
+                              <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+                              <td class="govuk-table__cell govuk-table__cell">YO15 3JZ</td>
+                              <td class="govuk-table__cell govuk-table__cell">Low</td>
+
+
+
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                        <ul class="govuk-summary-list__actions-list">
+                                          <li class="govuk-summary-list__actions-list-item">
+                                            <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                          </li>
+                                          <li class="govuk-summary-list__actions-list-item">
+                                            <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a>
+                                          </li>
+                                        </ul>
+                                      </dd>
+
+
+
+                                      <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row">
+                                          <th scope="row" class="govuk-table__header">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                              <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                  10091609888
+                                                </label>
+                                              </div>
+                                          </th>
+
+                                          <td class="govuk-table__cell govuk-table__cell">52, South Marine Drive, Bridlington</td>
+                                          <td class="govuk-table__cell govuk-table__cell">YO15 3JJ</td>
+                                          <td class="govuk-table__cell govuk-table__cell">Low</td>
+
+
+
+                                          <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                    <ul class="govuk-summary-list__actions-list">
+                                                      <li class="govuk-summary-list__actions-list-item">
+                                                        <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                      </li>
+                                                      <li class="govuk-summary-list__actions-list-item">
+                                                        <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a>
+                                                      </li>
+                                                    </ul>
+                                                  </dd>
+
+
+
+
+                                                  <tbody class="govuk-table__body">
+                                                    <tr class="govuk-table__row">
+                                                      <th scope="row" class="govuk-table__header">
+                                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                          <div class="govuk-checkboxes__item">
+                                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                              100050026575
+                                                            </label>
+                                                          </div>
+                                                      </th>
+
+                                                      <td class="govuk-table__cell govuk-table__cell">44, Roundhay Road, Bridlington</td>
+                                                      <td class="govuk-table__cell govuk-table__cell">YO15 3JY</td>
+                                                      <td class="govuk-table__cell govuk-table__cell">Low</td>
+
+
+
+                                                      <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                                <ul class="govuk-summary-list__actions-list">
+                                                                  <li class="govuk-summary-list__actions-list-item">
+                                                                    <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                                  </li>
+                                                                  <li class="govuk-summary-list__actions-list-item">
+                                                                    <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a>
+                                                                  </li>
+                                                                </ul>
+                                                              </dd>
+
+
+
+                                                              <tbody class="govuk-table__body">
+                                                                <tr class="govuk-table__row">
+                                                                  <th scope="row" class="govuk-table__header">
+                                                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                      <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                                          100050027825
+                                                                        </label>
+                                                                      </div>
+                                                                  </th>
+
+                                                                  <td class="govuk-table__cell govuk-table__cell">17 Belgrave mansions, Bridlington</td>
+                                                                  <td class="govuk-table__cell govuk-table__cell">YO15 3JL</td>
+                                                                  <td class="govuk-table__cell govuk-table__cell">Low</td>
+
+
+
+                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                                    <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                                            <ul class="govuk-summary-list__actions-list">
+                                                                              <li class="govuk-summary-list__actions-list-item">
+                                                                                <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                                              </li>
+                                                                              <li class="govuk-summary-list__actions-list-item">
+                                                                                <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a>
+                                                                              </li>
+                                                                            </ul>
+                                                                          </dd>
+
+
+                                                                          <tbody class="govuk-table__body">
+                                                                            <tr class="govuk-table__row">
+                                                                              <th scope="row" class="govuk-table__header">
+                                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                                  <div class="govuk-checkboxes__item">
+                                                                                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                                                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                                                      100052156385
+                                                                                    </label>
+                                                                                  </div>
+                                                                              </th>
+
+                                                                              <td class="govuk-table__cell govuk-table__cell">Flat 3, Woodcroft court, Bridlington</td>
+                                                                              <td class="govuk-table__cell govuk-table__cell">YO15 3JN</td>
+                                                                              <td class="govuk-table__cell govuk-table__cell">Low</td>
+
+
+
+                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                                                <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                                                        <ul class="govuk-summary-list__actions-list">
+                                                                                          <li class="govuk-summary-list__actions-list-item">
+                                                                                            <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+                                                                                          </li>
+                                                                                          <li class="govuk-summary-list__actions-list-item">
+                                                                                            <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a>
+                                                                                          </li>
+                                                                                        </ul>
+                                                                                      </dd>
+
+
+
+</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+            {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+            {{ govukPagination({
+              next: {
+                href: "#"
+              },
+              items: [
+                {
+                  number: 1,
+                  current: true,
+                  href: "#"
+                },
+                {
+                  number: 2,
+                  href: "#"
+                },
+                {
+                  number: 3,
+                  href: "#"
+                }
+              ]
+            }) }}
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+            <form method="post" novalidate action="">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Do you need to add more locations?
+                  </legend>
+
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes">
+                      <label class="govuk-label govuk-radios__label" for="add-another">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="add-another-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+
+              <button class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </form>
+
+
+
+
+        </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set metres = permit.metres %}
+
+{% if permit.metres == metres %}
+  {% set appType = 'metres' %}
+{% endif %}
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Exit map</a>
+{% endblock %}
+
+
+
+{% block content %}
+<a class="govuk-link" href="/v03-1/choosewarnings-many/map-zoom-in">View 5 locations</a>
+
+
+
+
+
+
+
+<img class="defra-flood-heading-image" src="/public/images/map-allinfwa.png"width="1024"  style="vertical-align: middle"  alt="">
+{% endblock %}

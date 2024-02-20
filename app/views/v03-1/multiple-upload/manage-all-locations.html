@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Live flood warnings"
+      },
+      {
+        href: "#2",
+        text: "Manage locations",
+        active: true
+      },
+      {
+        href: "#3",
+        text: "Manage flood warnings"
+      },
+
+      {
+        href: "#4",
+        text: "Manage contacts"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block pageTitle %}
+    Manage locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/v01-2/multiple-upload/location-format" method="post">
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Manage locations</h1>
+
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Add locations
+</button>
+
+                  <h3 class="govuk-heading-m">1,900 <p>locations found<br><a href="/v03-1/multiple-upload/edit-locations-found">View and edit your locations found</a></p></h3>
+
+
+                  <h3 class="govuk-heading-m">6 <br><label class="govuk-body">locations partly matched</label><p class="govuk-caption-m">The postcode has been found but the address does not match <br><a href="/v01-2/multiple-upload/spreadsheet-postcode/first-line-address">View and edit the partly matched locations</a></p>
+                  </h3>
+
+
+
+
+                  <h3 class="govuk-heading-m">94 <br><label class="govuk-body">locations not found</label><p class="govuk-caption-m">This may be because the address is new, and the postcode has not yet been added to the database, or because of missing details or typing mistakes<br><a href="/v01-2/multiple-upload/spreadsheet-postcode/locations-not-found">Review locations not found</a></p>
+                  </h3>
+
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      You will get severe flood warnings and flood warnings for 1,820 locations
+    </h3>
+  </div>
+</div>
+
+                <h1 class="govuk-heading-l">Your flood warnings</h1>
+
+                  <h3 class="govuk-heading-m">1820<br>
+                    <label class="govuk-body">locations will get severe flood warnings and flood warnings
+                      <p class="govuk-hint">In the last 2 years 3 severe flood warnings and 958 flood warnings were issued for your locations </p>
+</label>
+                    </h3>
+
+
+
+                  <h3 class="govuk-heading-m">180 <br>
+                    <label class="govuk-body">locations are not in flood warning areas and at low risk of flooding</label>
+
+<a class="govuk-caption-m" href="#">Review locations that are not in flood warning areas</a>
+
+
+                  </h3>
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<form class="form" action="#" method="post">
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Set up teams
+</button>
+
+
+</div>
+
+{% endblock %}

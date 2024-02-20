@@ -1,0 +1,655 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+
+
+
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+      Choose to get lood warnings closest to your locations
+    </h1>
+
+    <p class="govuk-body">50 of your locations at medium or high risk of flooding are in areas where flood warnings are
+      not issued.
+    </p>
+
+    <p class="govuk-heading-s">Check the box to select the location and click the button ‘Get closest flood warnings’
+    </p>
+
+    <p class="govuk-body">
+      The table below shows areas near to your locations where flood warnings are available. You can choose to sign up
+      for these warnings if they are relevant.
+    </p>
+
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What does flood risk mean?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+          Flood risk is based on combination of likelihood and impact - how likely it is that flooding will happen and
+          the effect that will have on people, building and services.
+        </p>
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">High risk</p>
+        <p>High risk means that each year there is a chance of flooding from rivers and the sea of greater than 1 in 30
+        </p>
+
+
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Medium risk</p>
+        <p>Medium risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 100
+          and 1 in 30</p>
+
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Low risk</p>
+        <p>Low risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 1000 and
+          1 in 100</p>
+
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Possible</p>
+        <p>Possible means that flooding is possible in the local area when groundwater levels are high</p>
+
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Unlikely</p>
+        <p>Unlikely meant it is unlikely your location will be affected by groundwater flooding</p>
+
+      </div>
+    </details>
+
+
+
+
+    
+   
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Get closest flood warnings (0)",
+      href: "review-flood-warnings-confirm"
+     
+    }) }}
+
+
+
+
+    <div class="govuk-!-padding-bottom-1"></div>
+
+
+
+  </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+
+    {%- from "moj/components/filter/macro.njk" import mojFilter -%}
+    {%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
+    {%- from "govuk/components/input/macro.njk" import govukInput -%}
+
+    {%- set filterOptionsHtml %}
+
+
+
+
+
+
+    {{ govukCheckboxes({
+    idPrefix: 'includes',
+    name: 'includes',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+    legend: {
+    text: 'Includes warning areas within',
+    classes: 'govuk-fieldset__legend--m'
+    }
+    },
+    items: [
+    {
+    value: '1',
+    text: '1-50 metres (18)',
+    checked: true
+    },
+    {
+    value: '2',
+    text: '51 - 100 metres (5)',
+    checked: false
+    },
+    {
+    value: '3',
+    text: '101 - 200 metres (2)'
+    },
+
+    {
+      value: '3',
+      text: '201 - 250 metres (30)'
+      }
+    ]
+    }) }}
+
+    {{ govukCheckboxes({
+    idPrefix: 'criticality',
+    name: 'criticality',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+    legend: {
+    text: 'Your criticality rating',
+    classes: 'govuk-fieldset__legend--m'
+    }
+    },
+    items: [
+    {
+    value: 'high',
+    text: 'High (2)',
+    checked: true
+    },
+    {
+    value: 'medium',
+    text: 'Medium (5)'
+    },
+    {
+    value: 'low',
+    text: 'Low (3)',
+    checked: false
+    }
+    ]
+    }) }}
+
+
+    {{ govukCheckboxes({
+    idPrefix: 'location-type',
+    name: 'location-type',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+    legend: {
+    text: 'Location type',
+    classes: 'govuk-fieldset__legend--m'
+    }
+    },
+    items: [
+    {
+    value: '1',
+    text: 'Warehouse (18)',
+    checked: false
+    },
+    {
+    value: '2',
+    text: 'Pumping station (5)',
+    checked: false
+    },
+    {
+    value: '3',
+    text: 'Head office (2)'
+    }
+    ]
+    }) }}
+
+
+
+    {{ govukCheckboxes({
+      idPrefix: 'ea-rating',
+      name: 'ea-rating',
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+      legend: {
+      text: 'Environment Agency flood risk rating',
+      classes: 'govuk-fieldset__legend--m'
+      }
+      },
+      items: [
+      {
+      value: '1',
+      text: 'High risk (18)',
+      checked: false
+      },
+      {
+      value: '2',
+      text: 'Medium risk (5)',
+      checked: false
+      },
+      {
+      value: '3',
+      text: 'Low risk (2)'
+      }
+      ]
+      }) }}
+
+    {% endset -%}
+
+    {{ mojFilter({
+    heading: {
+    text: 'Filter'
+    },
+
+    submit: {
+    attributes: {
+    "data-test-id": "submit-button"
+    }
+    },
+
+    selectedFilters: {
+
+    heading: {
+    text: 'Selected filters'
+    },
+
+    clearLink: {
+    text: 'Clear filters'
+    },
+
+    categories: [
+    {
+      heading: {
+      text: 'Type'
+       },
+    items: [
+    {
+      href: '/path/to/remove/this',
+      text: 'Include warning areas within
+      1 - 50 metres'
+    }, 
+    {
+    href: '/path/to/remove/this',
+    text: 'High'
+    }]
+    },
+    {
+
+    }
+    ]
+    },
+    optionsHtml: filterOptionsHtml
+    }) }}
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+    text: "Hide filter",
+    href: "/v02-2/choosewarnings-many-notinfwa/closest-warnings",
+    classes: "govuk-button--secondary"
+    }) }}
+
+
+
+
+
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">18 locations </caption>
+
+
+
+
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+              onClick="toggleSFW(this)" />
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    <b>Location name</b>
+                  </label>
+                </div>
+
+          </th>
+
+
+          <th scope="col" class="govuk-table__header govuk-table__header">
+            Environment Agency flood risk rating
+          </th>
+
+          <th scope="col" class="govuk-table__header govuk-table__header">
+            Flood warnings within 50 metres
+          </th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <a href="#"><b>35 Hattersley way</b></a><br>
+                  <p class="govuk-body-s">35, Hattersley way, Leicester, LE2 7BB</p>
+                </label>
+              </div>
+
+          </th>
+
+          <td class="govuk-table__cell govuk-table__cell">
+            High risk of flooding from river or the sea
+          </td>
+
+          <td class="govuk-table__cell govuk-table__cell">
+            <p>Flood warning area
+
+
+              <span class="govuk-caption-m">23 metres upstream from your location</span>
+            </p>
+
+            <p>Flood alert area
+
+
+              <span class="govuk-caption-m">10 metres upstream from your location</span>
+            </p>
+
+
+          </td>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <a href="#"><b>36 Hattersley way</b></a><br>
+                  <p class="govuk-body-s">36, Hattersley way, Leicester, LE2 7BB</p>
+                </label>
+              </div>
+
+          </th>
+
+          <td class="govuk-table__cell govuk-table__cell">
+            High risk of flooding from river or the sea
+          </td>
+
+          <td class="govuk-table__cell govuk-table__cell">
+            <p>Flood warning area
+
+
+              <span class="govuk-caption-m">22 metres downstream from your location</span>
+            </p>
+
+
+
+
+          </td>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <a href="#"><b>38 Hattersley way</b></a><br>
+                  <p class="govuk-body-s">38, Hattersley way, Leicester, LE2 7BB</p>
+                </label>
+              </div>
+
+          </th>
+
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell">
+            High risk of flooding from river or the sea
+          </td>
+
+          <td class="govuk-table__cell govuk-table__cell">
+
+
+            <p>Flood alert area
+
+
+              <span class="govuk-caption-m">49 metres downstream from your location</span>
+            </p>
+
+
+          </td>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <a href="#"><b>11 Darnall road
+                    </b></a><br>
+                  <p class="govuk-body-s">11, Darnall road, Leicester, LE2 7AS</p>
+                </label>
+              </div>
+
+          </th>
+
+
+
+          <td class="govuk-table__cell govuk-table__cell">
+            Likely from groundwater
+          </td>
+
+          <td class="govuk-table__cell govuk-table__cell">
+            <p>Flood warning area
+
+
+              <span class="govuk-caption-m">23 metres upstream from your location</span>
+            </p>
+
+            <p>Flood alert area
+
+
+              <span class="govuk-caption-m">10 metres upstream from your location</span>
+            </p>
+
+
+          </td>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <a href="#"><b>13 Darnall road</b></a><br>
+                  <p class="govuk-body-s">13, Darnall road, Leicester, LE2 7AS</p>
+                </label>
+              </div>
+
+          </th>
+
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell">
+            High risk of flooding from river or the sea
+          </td>
+
+          <td class="govuk-table__cell govuk-table__cell">
+            <p>Flood warning area
+
+
+              <span class="govuk-caption-m">23 metres upstream from your location</span>
+            </p>
+
+            <p>Flood alert area
+
+
+              <span class="govuk-caption-m">10 metres upstream from your location</span>
+            </p>
+
+
+          </td>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="SFW" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <a href="#"><b>15 Darnall road
+                    </b></a><br>
+                  <p class="govuk-body-s">15, Darnall road, Leicester, LE2 7AS</p>
+                </label>
+              </div>
+
+          </th>
+
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell">
+            Likely from groundwater
+          </td>
+
+          <td class="govuk-table__cell govuk-table__cell">
+            <p>Flood warning area
+
+
+              <span class="govuk-caption-m">23 metres upstream from your location</span>
+            </p>
+
+            <p>Flood warning area
+
+
+              <span class="govuk-caption-m">19 metres upstream from your location</span>
+            </p>
+
+            <p>Flood alert area
+
+
+              <span class="govuk-caption-m">10 metres upstream from your location</span>
+            </p>
+
+
+          </td>
+
+
+
+
+    </table>
+
+
+
+
+    {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+    {{ govukPagination({
+    previous: {
+    href: "#"
+    },
+    next: {
+    href: "#"
+    },
+    items: [
+    {
+    number: 1,
+    href: "#"
+    },
+    {
+    ellipsis: true
+    },
+    {
+    number: 6,
+    href: "#"
+    },
+    {
+    number: 7,
+    current: true,
+    href: "#"
+    },
+    {
+    number: 8,
+    href: "#"
+    },
+    {
+    ellipsis: true
+    },
+    {
+    number: 42,
+    href: "#"
+    }
+    ]
+    }) }}
+
+
+
+
+  </div>
+</div>
+
+
+<script language="JavaScript">
+  function toggleFA(source) {
+    checkboxes = document.getElementsByName('FA');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
+<script language="JavaScript">
+  function toggleFW(source) {
+    checkboxes = document.getElementsByName('FW');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
+<script language="JavaScript">
+  function toggleSFW(source) {
+    checkboxes = document.getElementsByName('SFW');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+      checkboxes[i].checked = source.checked;
+    }
+  }
+</script>
+
+
+
+
+
+{% endblock %}

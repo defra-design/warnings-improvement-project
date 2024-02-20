@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Your uploaded locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/v03-1/uploadlocations/landing-page-basic" method="post">
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Locations address and postcodes</h1>
+
+                  <p>Uploaded file <br>
+                    <a href="#" class="govuk-link">locations.csv</a>
+                  </p>
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+<button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+  Delete file
+</button>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+              {
+                text: "The file must be smaller than 2MB",
+                href: "#csv-size"
+              }
+            ]
+          }) }}
+
+
+          <form class="form" action="/v03-1/multiple-upload/spreadsheet-gridref/uploading-gridref" method="post">
+
+                <h1 class="govuk-heading-l">Upload your locations</h1>
+
+                {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+  {{ govukFileUpload({
+    id: "csv-size",
+    name: "csv-size",
+    label: {
+      text: "Upload your spreadsheet."
+
+    },
+    errorMessage: {
+      text: "The file must be smaller than 2MB"
+    }
+  }) }}
+
+
+              <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

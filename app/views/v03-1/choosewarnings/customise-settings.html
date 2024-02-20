@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Customise flood warnings
+    </h1>
+
+
+
+    <p class="govuk-body">You can choose whether to receive severe flood warnings, flood warnings or flood alerts for
+      each location. This can be more effective for your organisation and help you get a manageable number of warnings
+      and alerts.
+    </p>
+
+    <p class="govuk-body">You can <a href="flood-options" class="govuk-link">change to the default option</a> of severe
+      flood warnings and flood warnings for all locations</p>
+
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What are flood alerts, flood warnings and severe flood warnings?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood alert</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>flooding may be possible</li>
+          <li>usually issued from two days to two hours before flooding might happen</li>
+          <li>this notification is sent to a larger, less specific area</li>
+          <li>‘be prepared’ if you get this notification</li>
+        </ul>
+
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood warning</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>there is a risk of flooding to homes, businesses, rail and roads</li>
+          <li>this notification is sent to a smaller, more specific area</li>
+          <li>flood warnings and severe flood warnings are sent to the same area</li>
+          <li>‘act now’ if you get this notification</li>
+        </ul>
+
+        <p class="govuk-heading-s" style="margin-bottom: 10px;">Severe flood warning</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>there is a risk of severe flooding and major disruption</li>
+          <li>this notification is sent to a smaller, more specific area</li>
+          <li>flood warnings and severe flood warnings are sent to the same area</li>
+          <li>there is a danger to life if you get this notification</li>
+        </ul>
+
+      </div>
+    </details>
+
+    <div class="govuk-inset-text">
+      The selected locations had 0 severe flood warnings, 10 warnings and 15 alerts in the past 2 years.
+    </div>
+
+
+
+
+    {{ govukButton({
+    text: "Get flood warnings (0)",
+    href: "/v03-1/choosewarnings-notinfwa/flood-warnings-set-customise"
+    }) }}
+
+
+
+  </div>
+</div>
+<div class="govuk-grid-row">
+
+
+
+
+  <div class="govuk-grid-column-one-third">
+    {% include "includes/filters-panel.html" %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "includes/customise-settings-table.html" %}
+
+  </div>
+
+
+
+
+
+  <!--<h3> id="linked-data" tabindex="-1" class="govuk-heading-m">
+  <a href="{{ item.termName | lower | replace(' ', '-') }}" class="govuk-link">{{ item.title }}</a>
+</h3>
+<p> {{ item.address }} </p>
+<p>{{ item.priority }}</p>
+<p>{{ item.criticalityToBusiness }}</p>
+<p>{{ item.availableWarnings }}</p>
+<p>{{ item.increasedArea }}</p>
+
+-->
+
+
+
+
+
+
+
+  <script language="JavaScript">
+    function toggleFA(source) {
+      checkboxes = document.getElementsByName('FA');
+      for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+  </script>
+  <script language="JavaScript">
+    function toggleFW(source) {
+      checkboxes = document.getElementsByName('FW');
+      for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+  </script>
+  <script language="JavaScript">
+    function toggleSFW(source) {
+      checkboxes = document.getElementsByName('SFW');
+      for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+  </script>
+
+
+  {% endblock %}

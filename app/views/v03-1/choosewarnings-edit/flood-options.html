@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% set title = "Search for a location" %}
+
+{% block pageTitle %}
+Get flood warnings by phone, text or email
+{% endblock %}
+
+
+
+
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v02-1/flood-edit-answer" method="post">
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What flood warnings and alerts do you need?
+              </h1>
+            </legend>
+
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What are severe flood warnings, flood warnings and flood alert?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p><b>Severe flood warnings</b><br>
+                When a severe flood warning is issued there is a danger to life and a risk of major disruption.</p>
+
+              <p><b>Flood warnings</b><br>
+                When a flood warning is issued immediate action is needed. There is a risk of flooding to homes, businesses, rail and roads.</p>
+
+                <p><b>Flood alerts</b><br>
+                Flood alerts warn that flooding may be possible. They are usually issued from two days to two hours before flooding might happen. Alerts can help you be prepared to act on your flood plan.</p>
+              </div>
+            </details>
+
+            <div class="govuk-radios" data-module="govuk-radios" >
+
+              <div class="govuk-radios__item">
+                <input aria-expanded="true" checked="" value="customise" type="radio" name="flood-edit" idPrefix="flood-edit" class="govuk-radios__input">
+
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                  Customise your flood warnings and flood alerts
+                  <p class="govuk-hint">Recommended: you can choose whether to receive severe flood warnings, flood warnings or flood alerts for each location. This can be more effective for your organisation and help you get a manageable number of warnings and alerts.</p>
+                </label>
+
+              </div>
+
+              <div class="govuk-radios__item" >
+                <input class="govuk-radios__input" idPrefix="flood-edit" name="flood-edit" type="radio" >
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2" >
+                  Get severe flood warnings and flood warnings for all locations (default)
+                  <p class="govuk-hint">In the last 2 years 3 severe flood warnings and 958 flood warnings were issued for your locations.</p>
+                </label>
+              </div>
+
+
+
+
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </div>
+  </div>
+
+{% endblock %}

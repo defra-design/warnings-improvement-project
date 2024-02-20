@@ -1,0 +1,411 @@
+{% extends 'layout.html' %}
+
+
+
+
+
+{% block pageTitle %}
+Manage locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+text: 'Back',
+href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-l">Flood warning area
+
+        <p>River Doar at Frig Island and riverside areas of Leicester</p>
+
+      </h1>
+
+
+      <details class="govuk-details" data-module="govuk-details" style="margin-bottom: 10px;">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What are flood alerts, flood warnings and severe flood warnings?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood alert</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>flooding may be possible</li>
+            <li>usually issued from two days to two hours before flooding might happen</li>
+            <li>this notification is sent to a larger, less specific area</li>
+            <li>‘be prepared’ if you get this notification</li>
+          </ul>
+
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood warning</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>there is a risk of flooding to homes, businesses, rail and roads</li>
+            <li>this notification is sent to a smaller, more specific area</li>
+            <li>flood warnings and severe flood warnings are sent to the same area</li>
+            <li>‘act now’ if you get this notification</li>
+          </ul>
+
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Severe flood warning</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>there is a risk of severe flooding and major disruption</li>
+            <li>this notification is sent to a smaller, more specific area</li>
+            <li>flood warnings and severe flood warnings are sent to the same area</li>
+            <li>there is a danger to life if you get this notification</li>
+          </ul>
+
+        </div>
+      </details>
+
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What does flood risk mean?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>
+            Flood risk is based on combination of likelihood and impact - how likely it is that flooding will happen and
+            the effect that will have on people, building and services.
+          </p>
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">High risk</p>
+          <p>High risk means that each year there is a chance of flooding from rivers and the sea of greater than 1 in
+            30</p>
+
+
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Medium risk</p>
+          <p>Medium risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 100
+            and 1 in 30</p>
+
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Low risk</p>
+          <p>Low risk means that each year there is a chance of flooding from rivers and the sea of between 1 in 1000
+            and 1 in 100</p>
+
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Possible</p>
+          <p>Possible means that flooding is possible in the local area when groundwater levels are high</p>
+
+          <p class="govuk-heading-s" style="margin-bottom: 10px;">Unlikely</p>
+          <p>Unlikely meant it is unlikely your location will be affected by groundwater flooding</p>
+
+        </div>
+      </details>
+
+
+    </div>
+  </div>
+
+
+  {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+  {% set locationHtml %}
+  <h2 class="govuk-heading-l">5 locations in this flood warning area</h2>
+
+
+  {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col"> Location name </th>
+        <th class="govuk-table__header" scope="col"> Your criticality rating </th>
+        <th class="govuk-table__header" scope="col"> Flood risk from rivers and the sea </th>
+        <th class="govuk-table__header" scope="col"> Likeliness of groundwater flooding </th>
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <p> 1 Darnall road <br> <label class="govuk-body-s">
+              1, Darnall road, Leicester,
+              LE2 7AS</label> </p>
+        </td>
+        <td class="govuk-table__cell">
+          <p> High </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Medium risk",
+          classes: "govuk-tag--orange"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Unlikely",
+          classes: "govuk-tag--grey"
+          })}}
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <p> 9 Darnall road <br> <label class="govuk-body-s">
+              9, Darnall road, Leicester,
+              LE2 7AS</label> </p>
+        </td>
+        <td class="govuk-table__cell">
+          <p> High </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Medium risk",
+          classes: "govuk-tag--orange"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Unlikely",
+          classes: "govuk-tag--grey"
+          })}}
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <p> 6 Hattersley way <br> <label class="govuk-body-s">
+            6, Hattersley way, Leicester,
+            LE2 7BB</label> </p>
+        </td>
+        <td class="govuk-table__cell">
+          <p> Medium </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Low risk",
+          classes: "govuk-tag--yellow"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Possible",
+          classes: "govuk-tag--pink"
+          })}}
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <p> 8 Hattersley way <br> <label class="govuk-body-s">
+              8, Hattersley way, Leicester,
+              LE2 7BB</label> </p>
+        </td>
+        <td class="govuk-table__cell">
+          <p> Medium </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "High risk",
+          classes: "govuk-tag--pink"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Possible",
+          classes: "govuk-tag--pink"
+          })}}
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <p> 10 Hattersley way <br> <label class="govuk-body-s">
+            10, Hattersley way, Leicester,
+            LE2 7BB</label> </p>
+        </td>
+        <td class="govuk-table__cell">
+          <p> Medium </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "High risk",
+          classes: "govuk-tag--pink"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Possible",
+          classes: "govuk-tag--pink"
+          })}}
+        </td>
+      </tr>
+      
+
+    </tbody>
+
+
+  </table>
+
+
+
+  {% endset -%}
+
+
+  {% set nearbyLocationkHtml %}
+  <h2 class="govuk-heading-l">3 locations close to this flood warning area</h2>
+  <button class="govuk-button govuk-button--secondary"> Receive warnigns from this area (1)</button>
+
+
+  {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col"> Location name </th>
+        <th class="govuk-table__header" scope="col"> Your criticality rating </th>
+        <th class="govuk-table__header" scope="col"> Flood risk from rivers and the sea </th>
+        <th class="govuk-table__header" scope="col"> Likeliness of groundwater flooding </th>
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                <b>35 Hattersley way</b>
+
+                <br> <label class="govuk-body-s">
+            
+                  35, Hattersley way, Leicester, LE2 7BB</label>
+              </label>
+            </div>
+          
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p> Medium </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Medium risk",
+          classes: "govuk-tag--orange"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Unlikely",
+          classes: "govuk-tag--grey"
+          })}}
+        </td>
+      </tr>
+
+    </tbody>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                <b>36 Hattersley way</b>
+
+                <br> <label class="govuk-body-s">
+            
+                  36, Hattersley way, Leicester, LE2 7BB</label>
+              </label>
+            </div>
+        </td>
+        <td class="govuk-table__cell">
+          <p> Medium </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Medium risk",
+          classes: "govuk-tag--orange"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Unlikely",
+          classes: "govuk-tag--grey"
+          })}}
+        </td>
+      </tr>
+
+    </tbody>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                <b>38 Hattersley way</b>
+
+                <br> <label class="govuk-body-s">
+            
+                  38, Hattersley way, Leicester, LE2 7BB</label>
+              </label>
+            </div>
+        <td class="govuk-table__cell">
+          <p> Medium </p>
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Low risk",
+          classes: "govuk-tag--yellow"
+          })}}
+        </td>
+        <td class="govuk-table__cell">
+          {{govukTag({
+          text: "Possible",
+          classes: "govuk-tag--pink"
+          })}}
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+  {% endset -%}
+ 
+
+
+
+  {{ govukTabs({
+  items: [
+  {
+  label: "Locations (5)",
+  id: "location",
+  panel: {
+  html: locationHtml
+  }
+  },
+  {
+  label: "Nearby locations (3)",
+  id: "nearby-locations",
+  panel: {
+  html: nearbyLocationkHtml
+  }
+  }
+  ]
+  }) }}
+
+
+
+
+
+
+
+
+
+
+  {% endblock %}

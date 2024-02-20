@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check if locations are in flood risk areas – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+<!--{{permit|dump}}-->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v02-2/choosewarnings-many-notinfwa/triage" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        Get flood warnings by text, phone or email
+      </h1>
+
+
+
+<p>Use this service to sign up for warnings for flooding from:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>rivers (fluvial flooding)</li>
+  <li>the sea (coastal flooding)</li>
+  <li>groundwater (when water underground that is usually held in the rocks and soil gets so high that it flows above the surface)</li>
+    </ul>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+  <p>This service does not give warnings for:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>surface water flooding (flash flooding, a sudden local flood, typically due to heavy rain)</li>
+      </ul>
+
+
+
+  <p>Local authorities are responsible for giving information about surface water flooding. It varies by local area, happens quickly and is difficult to predict.
+    <a href="https://www.gov.uk/find-local-council" class="govuk-link" rel="noreferrer noopener" target="_blank">Find your local council (opens in new tab)</a> for more information.
+  </p>
+
+  <p>You can use this service to get warnings for yourself or for more than one place on behalf of the organisation you work for.
+  </p>
+
+  <a href="/v02-2/choosewarnings-many-notinfwa/triage" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Start
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg></a>
+
+  <h2 class="govuk-heading-l">
+    Before you start
+  </h2>
+
+  <p>You’ll need to provide:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the location or locations you want flood warnings for</li>
+    <li>an email address</li>
+    <li>a way to contact you at any time of day or night - you can choose to get a phone call, text or email</li>
+      </ul>
+
+
+    <h3 class="govuk-heading-m">
+      Update your details or flood warnings
+    </h3>
+
+    <p>If you have previously signed up for flood warnings, you can sign into your account to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>update your details</li>
+      <li>choose to no longer receive warnings for a property</li>
+      <li>choose to receive warnings for additional properties</li>
+      <li>delete your account</li>
+        </ul>
+
+        <h3 class="govuk-heading-m">
+          If you live in Scotland, Wales or Northern Ireland
+        </h3>
+
+        <p>Sign up for <a href="https://www.sepa.org.uk/environment/water/flooding/" class="govuk-link" rel="noreferrer noopener" target="_blank">flood warning in Scotland (opens in new tab) </a> or <a a href="https://naturalresources.wales/flooding/check-flood-warnings/?lang=en" class="govuk-link" rel="noreferrer noopener" target="_blank">flood warning in Wales (opens in new tab)</a> </p>
+        <p>Use flood maps to <a href="https://www.nidirect.gov.uk/articles/flooding" class="govuk-link" rel="noreferrer noopener" target="_blank">check flooding risk in Northern Ireland (opens in new tab) </a></p>
+
+        <h3 class="govuk-heading-m">
+          If you need help using this service
+        </h3>
+
+        <h4 class="govuk-heading-s">For individuals</h4>
+
+<p>If you are in England, Scotland or Wales, call Floodline. </p>
+<p>
+Floodline<br>
+Telephone: 0345 988 1188 <br>
+Textphone: 0345 602 6340 <br>
+24-hour service<br>
+<a href="https://www.gov.uk/call-charges" class="govuk-link" rel="noreferrer noopener" target="_blank"> Find out about call charges </a>
+
+</p>
+
+        <h4 class="govuk-heading-s">Warnings for more than one place for organisations</h4>
+        <p>If you are in England or Wales, call the National Customer Contact Centre.</p>
+        <p>
+        National Customer Contact Centre<br>
+        Telephone: 03708 506 506 <br>
+        Monday to Friday, 8am to 6pm <br>
+        <a href="https://www.gov.uk/call-charges" class="govuk-link" rel="noreferrer noopener" target="_blank"> Find out about call charges </a>
+
+        </p>
+    </div>
+  </div>
+
+{% endblock %}

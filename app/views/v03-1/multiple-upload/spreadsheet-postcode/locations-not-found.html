@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Locations not found
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">94 locations not found</h1>
+
+
+
+                    <p class="govuk-body"> <a href="#">Download your locations not found (xxKB, .csv)</a></p>
+
+                        <div class="govuk-!-padding-bottom-1"></div>
+
+                        <label class="govuk-label">You can use this download to:</label>
+
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>check which locations have not been found</li>
+                          <li>correct any typing mistakes or missing details</li>
+                          <li>upload the revised spreadsheet during the next step to find more locations</li>
+
+                                </ul>
+
+
+
+<form class="form" action="/v03-1/multiple-upload/spreadsheet-postcode/find-location" method="post">
+
+
+<button class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Continue
+</button>
+
+
+
+        </div>
+
+</div>
+
+{% endblock %}

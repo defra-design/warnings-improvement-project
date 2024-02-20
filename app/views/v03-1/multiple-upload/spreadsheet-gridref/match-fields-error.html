@@ -1,0 +1,230 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#xcoord">You must select a field with 6 figure numbers for X coordinate</a>
+                </li>
+                <li>
+                  <a href="#ycoord">You must select a field with 6 figure numbers for Y coordinate</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <form class="form" action="/v03-1/multiple-upload/spreadsheet-gridref/uploaded-locations" method="post">
+
+                <h1 class="govuk-heading-l">Match the fields from your spreadsheet with X coordinates and Y coordinates</h1>
+
+                <div class="govuk-form-group">
+                <label class="govuk-label" for="location-name">
+                  Location name
+                </label>
+                <select class="govuk-select" id="location-name" name="location-name">
+                  <option value="name" >Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address">y</option>
+                  <option value="reference"selected>Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group govuk-form-group--error">
+                <label class="govuk-label" for="sort">
+                  X coordinate
+                </label>
+                <p id="xcoord" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> You must select a field with 6 figure numbers for X coordinate
+                </p>
+                <select class="govuk-select" id="sort" name="sort">
+                  <div class="govuk-date-input" id="passport-issued">
+                  <option value="name" >Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address">y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality" selected>Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+
+
+
+
+
+
+
+
+                <div class="govuk-form-group govuk-form-group--error">
+                  <label class="govuk-label" for="sort">
+                    Y coordinate
+                  </label>
+                  <p id="ycoord" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> You must select a field with 6 figure numbers for Y coordinate
+                  </p>
+
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="name" selected>Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address">y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Location reference (optional)
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="name" >Asset name</option>
+                  <option value="criticality" selected>x</option>
+                  <option value="address">y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Location type (optional)
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="name" >Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address">y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference" selected>Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Criticality (optional)
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="name" selected>Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address">y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Location team (optional)
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="name" >Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address" selected>y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Action to be taken (optional)
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="name" >Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address">y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address" selected>Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality">Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Notes (optional)
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="name">Asset name</option>
+                  <option value="criticality">x</option>
+                  <option value="address">y</option>
+                  <option value="reference">Ref</option>
+                  <option value="criticality">Area team</option>
+                  <option value="address">Action</option>
+                  <option value="reference">Importance</option>
+                  <option value="criticality" selected>Type</option>
+                  <option value="criticality">Additional info</option>
+                </select>
+              </div>
+
+
+              <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

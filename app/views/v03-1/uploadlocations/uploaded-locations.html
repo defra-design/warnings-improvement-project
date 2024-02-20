@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Your uploaded locations</h1>
+
+                  <h3 class="govuk-heading-m">8,820 <p>locations identified</p></h3>
+
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Set up warnings for the locations identified
+</button>
+
+<div class="govuk-!-padding-top-1"></div>
+
+<a href="#" class="govuk-link govuk-link--no-visited-state">Upload more locations</a>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

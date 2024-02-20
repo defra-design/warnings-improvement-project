@@ -1,0 +1,252 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Find each location individually
+      </h1>
+
+
+
+      <label class="govuk-label" for="more-detail">
+          Search by address or postcode
+        </label>
+
+      <div class="gem-c-search__item-wrapper">
+
+      <input enterkeyhint="search" class="gem-c-search__item gem-c-search__input js-class-toggle __web-inspector-hide-shortcut__" id="search-main-5be11cec" name="q" title="Search" type="search" value="">
+      <div class="gem-c-search__item gem-c-search__submit-wrapper">
+        <button class="gem-c-search__submit" type="submit" data-track-category="homepageClicked" data-track-action="searchSubmitted" data-track-label="/search/all" data-track-dimension-index="29" data-track-dimension="Search GOV.UK" data-module="gem-track-click" enterkeyhint="search" data-gem-track-click-module-started="true">
+          Search GOV.UK
+
+  <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+    <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+  </svg>
+  </button>    </div>
+    </div>
+
+<div class="govuk-!-padding-bottom-8"></div>
+
+
+</div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-grid-column-full">
+
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">94 locations</caption>
+
+
+<p class="govuk-body govuk-!-margin-bottom-6">
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">
+                  <b>Location name</b>
+            </th>
+
+
+        <th scope="col" class="govuk-table__header">Full address</th>
+        <th scope="col" class="govuk-table__header govuk-table__header">Postcode</th>
+        <th scope="col" class="govuk-table__header govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header govuk-table__header"></th>
+      </tr>
+    </thead>
+
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__cell">
+                BRID_01
+        </th>
+
+        <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+        <td class="govuk-table__cell govuk-table__cell">YO15 3JZ</td>
+        <td class="govuk-table__cell govuk-table__cell">Not found</td>
+
+
+
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+
+          <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="/v01-2/multiple-upload/spreadsheet-postcode/how-manual-find">Find</a>
+                    </li>
+                  </ul>
+                </dd>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+                BRID_02
+        </th>
+
+
+
+        <td class="govuk-table__cell ">25 A, Belgrave road, Bridlington</td>
+        <td class="govuk-table__cell govuk-table__cell">YO15 3JP</td>
+        <td class="govuk-table__cell govuk-table__cell">Not found</td>
+
+
+
+        <td class="govuk-table__cell govuk-table__cell--numeric">
+
+          <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="/v01-2/multiple-upload/spreadsheet-postcode/how-manual-find2">Find</a>
+                    </li>
+                  </ul>
+                </dd>
+
+
+
+
+
+
+
+                            <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">
+                                        BRID_03
+                                </th>
+
+                                <td class="govuk-table__cell govuk-table__cell">52, South Marine Drive, Bridlington</td>
+                                <td class="govuk-table__cell govuk-table__cell">YO15 3JJ</td>
+                                <td class="govuk-table__cell govuk-table__cell">Not found</td>
+
+
+
+                                <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                  <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                          <ul class="govuk-summary-list__actions-list">
+                                            <li class="govuk-summary-list__actions-list-item">
+                                              <a class="govuk-link" href="/v01-2/multiple-upload/spreadsheet-postcode/how-manual-find">Find</a>
+                                            </li>
+                                          </ul>
+                                        </dd>
+
+
+
+
+                                        <tbody class="govuk-table__body">
+                                          <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">
+                                                    BRID_04
+                                            </th>
+
+                                            <td class="govuk-table__cell govuk-table__cell">44, Roundhay Road, Bridlington</td>
+                                            <td class="govuk-table__cell govuk-table__cell">YO15 3JY</td>
+                                            <td class="govuk-table__cell govuk-table__cell">Not found</td>
+
+
+
+                                            <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                              <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                      <ul class="govuk-summary-list__actions-list">
+                                                        <li class="govuk-summary-list__actions-list-item">
+                                                          <a class="govuk-link" href="/v01-2/multiple-upload/spreadsheet-postcode/how-manual-find">Find</a>
+                                                        </li>
+                                                      </ul>
+                                                    </dd>
+
+
+
+                                                    <tbody class="govuk-table__body">
+                                                      <tr class="govuk-table__row">
+                                                        <th scope="row" class="govuk-table__header">
+
+                                                                BRID_05
+
+
+                                                        </th>
+
+                                                        <td class="govuk-table__cell govuk-table__cell">17 Belgrave mansions, Bridlington</td>
+                                                        <td class="govuk-table__cell govuk-table__cell">YO15 3JL</td>
+                                                        <td class="govuk-table__cell govuk-table__cell">Not found</td>
+
+
+
+                                                        <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                          <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                                  <ul class="govuk-summary-list__actions-list">
+                                                                    <li class="govuk-summary-list__actions-list-item">
+                                                                      <a class="govuk-link" href="/v01-2/multiple-upload/spreadsheet-postcode/how-manual-find">Find</a>
+                                                                    </li>
+                                                                  </ul>
+                                                                </dd>
+
+
+                                                                <tbody class="govuk-table__body">
+                                                                  <tr class="govuk-table__row">
+                                                                    <th scope="row" class="govuk-table__header">
+
+                                                                            BRID_06
+
+                                                                    </th>
+
+                                                                    <td class="govuk-table__cell govuk-table__cell">Flat 3, Woodcroft court, Bridlington</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell">YO15 3JN</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell">Not found</td>
+
+
+
+                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                                                      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                                                              <ul class="govuk-summary-list__actions-list">
+                                                                                <li class="govuk-summary-list__actions-list-item">
+                                                                                  <a class="govuk-link" href="/v01-2/multiple-upload/spreadsheet-postcode/how-manual-find">Find</a>
+                                                                                </li>
+                                                                              </ul>
+                                                                            </dd>
+
+
+
+  </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Continue",
+    href: "/v03-1/multiple-upload/spreadsheet-postcode/uploaded-locations4"
+  }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

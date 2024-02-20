@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% set title = "Search for a location" %}
+
+{% block pageTitle %}
+Get flood warnings by phone, text or email
+{% endblock %}
+
+
+
+
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{formAction}}" method="post">
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What flood warnings do you need?
+              </h1>
+            </legend>
+            <!--{{permit|dump}}-->
+
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What are flood alerts, flood warnings and severe flood warnings?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood alert</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>flooding may be possible</li>
+                  <li>usually issued from two days to two hours before flooding might happen</li>
+                  <li>this notification is sent to a larger, less specific area</li>
+                  <li>‘be prepared’ if you get this notification</li>
+                </ul>
+
+                <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood warning</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>there is a risk of flooding to homes, businesses, rail and roads</li>
+                  <li>this notification is sent to a smaller, more specific area</li>
+                  <li>flood warnings and severe flood warnings are sent to the same area</li>
+                  <li>‘act now’ if you get this notification</li>
+                </ul>
+
+                <p class="govuk-heading-s" style="margin-bottom: 10px;">Severe flood warning</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>there is a risk of severe flooding and major disruption</li>
+                  <li>this notification is sent to a smaller, more specific area</li>
+                  <li>flood warnings and severe flood warnings are sent to the same area</li>
+                  <li>there is a danger to life if you get this notification</li>
+                </ul>
+
+             </div>
+            </details>
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" idPrefix="flood-warning-notinfwa" name="floodWarningNotinfwaMany" type="radio" value="default">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                  Get severe flood warnings and flood warnings for <b>1,000</b> of your locations
+                  <p class="govuk-hint">You will not receive any flood alerts for your locations</p>
+
+<p class="govuk-hint">In the last 2 years 3 severe flood warnings and 1000 flood warnings were issued for your locations.</p>
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" idPrefix="flood-warning-notinfwa" name="floodWarningNotinfwaMany" type="radio" value="complex">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  Customise your flood warnings
+                  <p class="govuk-hint">You can choose whether to receive flood alerts, flood warnings or severe flood warnings for each location</p>
+                </label>
+              </div>
+
+
+
+
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </div>
+  </div>
+
+{% endblock %}

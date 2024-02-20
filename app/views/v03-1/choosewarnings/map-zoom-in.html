@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set metres = permit.metres %}
+
+{% if permit.metres == metres %}
+  {% set appType = 'metres' %}
+{% endif %}
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v03-1/choosewarnings/review-flood-warnings">Exit map</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<img class="defra-flood-heading-image" src="/public/images/map-zoom-in.png" width="1024"  style="vertical-align: middle"  alt="">
+{% endblock %}

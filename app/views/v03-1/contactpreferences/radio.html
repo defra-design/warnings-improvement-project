@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Flood warnings settings – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "http://localhost:3000/v03-1/contactpreferences/landing-page"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  <form class="form" action="/V03-1/contactpreferences/emailorcustomise" method="post">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "contactPreferences",
+  fieldset: {
+    legend: {
+      text: "Who do you want to choose contact preferences for?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+
+    {
+      value: "all-users",
+      text: "All users: everyone in your organisation will get flood warnings in the same way, by phone, text or email"
+    },
+    {
+      value: "individual",
+      text: "Individuals or groups of people"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "yourself",
+      text: "Yourself"
+    }
+  ]
+}) }}
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ super() }}
+
+{{ govukBackLink ({
+text: 'Back',
+href: 'javascript:history.back()'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+    {% set html %}
+    <p class="govuk-body">
+      <b>Your organisation will receive severe flood warnings for 1,820 locations, flood warnings for 1,000 locations
+        and flood alerts for 820 locations</b>
+    </p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+    html: html,
+    type: 'success',
+    titleText: ' '
+    }) }}
+
+
+
+    <h1 class="govuk-heading-l">Your locations</h1>
+
+
+
+
+    <h3 class="govuk-heading-m">1,000<p>locations will get severe flood warnings and flood warnings <br>
+
+        <label class="govuk-hint">In the last 2 years 3 severe flood warnings and 958 flood warnings were issued for
+          your locations</label>
+
+      </p>
+    </h3>
+
+    <h3 class="govuk-heading-m">180
+      <p>locations are in an area with no flood warning or alert service<br>
+        <span class="govuk-hint">Not all locations are in places where flood warnings are issued. Your locations may
+          still
+          be at risk even if there are no warnings issued in that area.</span>
+      </p>
+    </h3>
+
+
+
+
+
+    <div class="govuk-inset-text">
+
+
+      <h3 class="govuk-heading-m">1<p>location is linked to nearby flood warnings<br>
+          <a href="#" class="govuk-link"">Review locations linked to nearby flood warnings</a></p>
+        
+      </h3>
+  
+     
+        <div class=" govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              49 locations at medium or high risk of flooding are in places where no flood warnings are issued.
+              <a href="/v02-2/choosewarnings-many-notinfwa/closest-warnings" class="govuk-link"> Choose to get flood
+                warnings closest to these locations </a>
+            </strong>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="govuk-!-padding-bottom-1"></div>
+
+  <form class="form" action="#" method="post">
+
+
+
+    <div class="govuk-!-padding-bottom-3"></div>
+
+
+
+    <button class="govuk-button" data-module="govuk-button">
+      Set up contacts
+    </button>
+
+
+
+
+
+
+
+    {% endblock %}

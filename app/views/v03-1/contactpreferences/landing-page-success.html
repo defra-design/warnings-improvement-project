@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Flood warnings settings – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Flood warnings settings",
+      href: "#"
+    },
+    {
+      text: "Add and edit your locations",
+      href: "#"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <div class="govuk-success-summary" data-module="govuk-success-summary" >
+        <div role="alert">
+
+
+
+
+          <h2 class="govuk-error-summary__title">
+            Success
+          </h2>
+          <div class="govuk-success-summary__body">
+            <ul class="govuk-list govuk-success-summary__list">
+              <li>
+                <a  href="#newlocations"   style="color: 	#00703c; font-weight: bold;">Your contact preferences are chosen</a>
+
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <h1 class="govuk-heading-l">
+        Choose how to get flood warnings
+      </h1>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What can I do on this page?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+                  <p class="govuk-body">Use this section to:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>add locations (also known as assets), either one by one or by uploading a spreadsheet or shapefile</li>
+                    <li>choose to add locations using postcode, X and Y coordinates or shapefiles</li>
+                    <li>edit existing locations: change location details, descriptions and importance to your business</li>
+                    <li>delete locations from your account</li>
+                  </ul>
+
+        </div>
+      </details>
+
+      <form class="form" action="/v03-1/contactpreferences/have-you-finished" method="post">
+
+
+        <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Choose contact preferences
+    </button>
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+  </div>
+
+    </div>
+  </div>
+
+
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Severe flood warnings</th>
+        <th scope="col" class="govuk-table__header">Flood warnings</th>
+          <th scope="col" class="govuk-table__header">Flood alerts</th>
+          <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+
+
+    <tbody class="govuk-table__body">
+
+
+
+      <tr class="govuk-table__row">
+
+
+
+
+        <th scope="row" class="govuk-table__header" id="newlocations" name="newlocations">
+          <div class="govuk-form-group govuk-form-group--success" >
+    <p style="color:#00703c; font-weight:bold;">Contact preferences chosen </p>
+
+    <p>  John Smith (You)</p>
+
+          </div>
+        </th>
+        <td class="govuk-table__cell">By phone call</td>
+        <td class="govuk-table__cell">By phone call</td>
+        <td class="govuk-table__cell">By email</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">View or edit</a></td>
+      </tr>
+
+
+
+    </tbody>
+
+  </table>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

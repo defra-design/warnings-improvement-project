@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% set title = "Search for a location" %}
+
+{% block pageTitle %}
+Get flood warnings by phone, text or email
+{% endblock %}
+
+
+
+
+
+
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Your flood warnings are set up"
+      }) }}
+
+      <p class="govuk-body">Go back to your
+        <a href="/v03-1/contactpreferences/tasklist-addlocationscomplete" class="govuk-link">flood warnings settings</a>
+        or  <a href="#" class="govuk-link">check live warnings</a>
+
+      </p>
+
+      <p>
+        We have sent you an email to confirm this.</p>
+<p>
+If you have not received the email within 2 hours check your inbox, including your junk or spam folders. If you still have not received the email, call the National Customer Contact Centre.
+</p>
+<p>
+National Customer Contact Centre <br>
+Telephone: 03708 506 506<br>
+Monday to Friday, 8am to 6pm<br>
+<a href="#" class="govuk-link">Find out about call charges</a>
+        </p>
+
+      <h2 class="govuk-heading-m">Flood information</h2>
+
+    <p>
+        <a href="#" class="govuk-link">Prepare for flooding</a> <br>
+          <a href="#" class="govuk-link">Prepare your business for flooding</a> <br>
+            <a href="#" class="govuk-link">What to do before or during a flood</a>
+      </p>
+
+
+
+    </div>
+  </div>
+{% endblock %}

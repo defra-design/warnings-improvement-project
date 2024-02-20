@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+
+
+
+
+{% block pageTitle %}
+    Manage locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/v03-1/multiple-upload/flood-warning" method="post">
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">1,900 locations found</h1>
+
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Check if locations are in flood warning areas
+</button>
+
+
+<p class="govuk-body">Search for a location</p>
+          <div class="gem-c-search__item-wrapper">
+          <input enterkeyhint="search" class="gem-c-search__item gem-c-search__input js-class-toggle __web-inspector-hide-shortcut__" id="search-main-5be11cec" name="q" title="Search" type="search" value="">
+          <div class="gem-c-search__item gem-c-search__submit-wrapper">
+            <button class="gem-c-search__submit" type="submit" data-track-category="homepageClicked" data-track-action="searchSubmitted" data-track-label="/search/all" data-track-dimension-index="29" data-track-dimension="Search GOV.UK" data-module="gem-track-click" enterkeyhint="search" data-gem-track-click-module-started="true">
+              Search GOV.UK
+        <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+        <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+        </svg>
+        </button>
+      </div>
+        </div>
+
+<div class="govuk-!-padding-bottom-7"></div>
+
+</div>
+
+
+<div class="govuk-grid-column-full">
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Location name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Full address</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Postcodes</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_01</th>
+      <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JZ</td>
+      <td class="govuk-table__cell">Found by selecting from map</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_02</th>
+      <td class="govuk-table__cell">25 A, Belgrave road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JT</td>
+      <td class="govuk-table__cell">Found by linking to nearby address - 11 Belgrave Road, Bridlington, YO15 3JP</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_01</th>
+      <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JZ</td>
+      <td class="govuk-table__cell">Found</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_03</th>
+      <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JZ</td>
+      <td class="govuk-table__cell">Found</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_04</th>
+      <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JZ</td>
+      <td class="govuk-table__cell">Found</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_05</th>
+      <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JZ</td>
+      <td class="govuk-table__cell">Found</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_06</th>
+      <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JZ</td>
+      <td class="govuk-table__cell">Found</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">BRID_07</th>
+      <td class="govuk-table__cell">3, Roundhay road, Bridlington</td>
+      <td class="govuk-table__cell">YO15 3JZ</td>
+      <td class="govuk-table__cell">Found</td>
+      <td class="govuk-table__cell"><a href="#">Edit</a><br><a href="#">Remove</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<nav class="govuk-pagination" role="navigation" aria-label="results">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">Previous</span></a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 6">
+        6
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 7" aria-current="page">
+        7
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 8">
+        8
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
+        42
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg></a>
+  </div>
+</nav>
+
+
+{% endblock %}

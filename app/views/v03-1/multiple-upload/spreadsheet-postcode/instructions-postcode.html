@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How to upload addresses – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{{ super() }}
+
+{{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/v03-1/multiple-upload/spreadsheet-postcode/upload-spreadsheet" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        How to upload a spreadsheet with addresses and postcodes
+      </h1>
+
+      <p class="govuk-body">You can upload your own spreadsheet or <a href="https://docs.google.com/spreadsheets/d/1Peuj6sueS_vln2oajyDGB8j92wr9yaacvHvyZfoezF8/edit#gid=0" class="app-example__new-window" target="_blank">download the template spreadsheet and enter your information (xxKB, .ods file)</a>.
+      </p>
+
+    <p class="govuk-body">  If you use the template the column names, or ‘fields’, will match the ones in the system automatically. If you use your own spreadsheet, you can match your fields to the ones in the system after you upload your file.
+      </p>
+
+      <h1 class="govuk-heading-m">
+        What you need to include in your spreadsheet
+      </h1>
+
+      <p class="govuk-body"> Some fields must be included in your spreadsheet, so your locations can be matched. Some fields are optional, to give more information about your locations and help you act when flooding happens.
+        </p>
+
+      <label class="govuk-label"> Your spreadsheet must include these fields:</label>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>location name</li>
+        <li>full address</li>
+        <li>postcode</li>
+              </ul>
+
+
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    What information must I include?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <label class="govuk-body govuk-!-font-weight-bold">Location name</label>
+                  <br>How you refer to the location, for example: head office, Brayton Water pumping station</br>
+                  <div class="govuk-!-padding-bottom-3"></div>
+
+                  <label class="govuk-body govuk-!-font-weight-bold">Full address</label>
+                <br>Without postcode, for example: Richard Fairclough House, Knutsford Road, Latchford, Warrington</br>
+                <div class="govuk-!-padding-bottom-3"></div>
+
+                <label class="govuk-body govuk-!-font-weight-bold">Postcode</label>
+              <br>Full postcode, for example: WA4 1HT</br>
+              <div class="govuk-!-padding-bottom-3"></div>
+
+              </details>
+
+
+              <label class="govuk-label"> These fields are optional:</label>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>location reference</li>
+                <li>location type</li>
+                <li>location team</li>
+                <li>action to be taken</li>
+                <li>criticality</li>
+                <li>notes</li>
+                      </ul>
+
+
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            What information should I include in the optional fields?
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <label class="govuk-body govuk-!-font-weight-bold">Location reference</label>
+                          <br>Your internal reference, for example: PS01, unit 57, Brid_04</br>
+                          <div class="govuk-!-padding-bottom-3"></div>
+
+                          <label class="govuk-body govuk-!-font-weight-bold">Location type</label>
+                        <br>For example, pumping station, ground floor flat, office, retail unit</br>
+                        <div class="govuk-!-padding-bottom-3"></div>
+
+                        <label class="govuk-body govuk-!-font-weight-bold">Location team</label>
+                      <br>The team with responsibility for that location, for example: national team, north-west team</br>
+                      <div class="govuk-!-padding-bottom-3"></div>
+
+                      <label class="govuk-body govuk-!-font-weight-bold">Action to be taken</label>
+                    <br>What you can do to reduce the potential effects of flooding, for example: inspect the location, use sandbags, move stock, evacuate</br>
+                    <div class="govuk-!-padding-bottom-3"></div>
+
+                    <label class="govuk-body govuk-!-font-weight-bold">Criticality</label>
+                  <br>How important the location is to your business, for example, low, medium, business critical</br>
+                  <div class="govuk-!-padding-bottom-3"></div>
+
+                  <label class="govuk-body govuk-!-font-weight-bold">Notes</label>
+                <br>Any notes you may find helpful, for example, John Smith has the flood plan for this location, the last time this location flooded we used sandbags</br>
+                <div class="govuk-!-padding-bottom-3"></div>
+
+                      </details>
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Flood warning summary
+      </h1>
+
+
+
+
+<details class="govuk-details" data-module="govuk-details" style="margin-bottom: 10px;">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What are flood alerts, flood warnings and severe flood warnings?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+    <p class="govuk-heading-s" style="margin-bottom: 10px;">
+
+      <img class="defra-flood-heading-image" src="/public/images/symbol-flood-alert.svg" width="46" height="46" style="vertical-align: middle" alt="">
+
+      Flood alert</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>flooding may be possible</li>
+      <li>usually issued from two days to two hours before flooding might happen</li>
+      <li>this notification is sent to a larger, less specific area</li>
+      <li>‘be prepared’ if you get this notification</li>
+    </ul>
+
+    <p class="govuk-heading-s" style="margin-bottom: 10px;">
+      <img class="defra-flood-heading-image" src="/public/images/symbol-flood-warning.svg" width="46" height="46" style="vertical-align: middle" alt="">
+Flood warning
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>there is a risk of flooding to homes, businesses, rail and roads</li>
+      <li>this notification is sent to a smaller, more specific area</li>
+      <li>flood warnings and severe flood warnings are sent to the same area</li>
+      <li>‘act now’ if you get this notification</li>
+    </ul>
+
+    <p class="govuk-heading-s" style="margin-bottom: 10px;">
+      <img class="defra-flood-heading-image" src="/public/images/symbol-flood-warning-severe.svg" width="46" height="46" style="vertical-align: middle" alt="">
+Severe flood warning
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>there is a risk of severe flooding and major disruption</li>
+      <li>this notification is sent to a smaller, more specific area</li>
+      <li>flood warnings and severe flood warnings are sent to the same area</li>
+      <li>there is a danger to life if you get this notification</li>
+    </ul>
+
+ </div>
+</details>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "John Smith"
+            },
+            actions: {
+              items: [
+
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Permissions"
+            },
+            value: {
+              text: "Administrator"
+            },
+            actions: {
+              items: [
+
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Flood warnings you will get"
+            },
+            value: {
+              text: "Severe flood warnings and flood warnings for 1,000 locations"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "View and edit",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact preferences"
+            },
+            value: {
+            text: data ['contactPreferences']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/V03-1/contactpreferences/emailorcustomise",
+                  text: "View and edit",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Groups you are in"
+            },
+            value: {
+              text: "Leicester, Nottingham"
+
+            },
+
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "View and edit",
+                  visuallyHiddenText: "Groups you are you"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="/V03-1/contactpreferences/setupanother" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Flood warnings settings – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Flood warnings settings",
+      href: "#"
+    },
+    {
+      text: "Choose which flood warnings you want to get",
+      href: "#"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Choose which flood warnings you want to get
+      </h1>
+
+      <form class="form" action="/v03-1/choosewhichwarnings/warning-types" method="post">
+
+
+        <p class="govuk-body">Use this section to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>understand the difference between flood alerts, flood warnings and severe flood warnings</li>
+          <li>see what flood warnings are available for your locations</li>
+          <li>choose whether to get flood alaerts, flood warnings and severe flood warnings for your locations</li>
+        </ul>
+
+
+
+        {{ govukButton({
+          text: "Choose flood warnings"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

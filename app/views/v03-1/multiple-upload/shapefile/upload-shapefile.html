@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Match your file
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <form class="form" action="/v03-1/multiple-upload/shapefile/upload-shapefile-error" method="post">
+
+                <h1 class="govuk-heading-l">Upload your locations</h1>
+
+                <div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      Upload your shapefile
+    </label>
+    <div id="changed-name-hint" class="govuk-hint">
+      File must be ESRI Shapefile (this must be a .zip file containing .shp, .shx and
+      .dbf file.
+    </div>
+
+
+
+    <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+  </div>
+
+
+              <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+        </div>
+
+</div>
+
+{% endblock %}

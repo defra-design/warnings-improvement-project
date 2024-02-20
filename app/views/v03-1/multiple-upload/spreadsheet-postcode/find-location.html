@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% set title = "Search for a location" %}
+
+{% block pageTitle %}
+How to find locations
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v03-1/find-location-answer" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "find-location",
+        name: "find-location",
+        fieldset: {
+          legend: {
+            text: "How do you want to find your locations?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "manual",
+            text: "Find each location individually, select on a map or link to a nearby address (best for new addresses)"
+          },
+          {
+            value: "revised",
+            text: "Upload the revised spreadsheet with the locations not found (best for typing mistakes and missing details)"
+          },
+          {
+            value: "continue",
+            text: "I do not want to find any more locations, set flood warnings for the 1,906 locations already found, "
+          }
+        ]
+      }) }}
+
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </div>
+  </div>
+
+{% endblock %}
