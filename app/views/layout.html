@@ -24,23 +24,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "#1",
-        text: "Live flood warnings"
-      },
-      {
-        href: "/v01-2/multiple-upload/manage-all-locations",
-        text: "Flood warnings settings"
-      },
-      {
-        href: "#3",
-        text: "Reports"
-      }
+    containerClasses: "govuk-width-container"
+  }) }}
 
-    ]
-    }) }}
+  {% include "includes/navigation.html" %}
 
 {% endblock %}
 
