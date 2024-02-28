@@ -4,7 +4,7 @@
 {% block pageTitle %}
   Home – GOV.UK Prototype Kit
 {% endblock %}
-
+{% set currentNav = "Flood warning settings" %}
 
 
 
@@ -33,7 +33,7 @@
 
     <p class="govuk-body">You can <a href="flood-options" class="govuk-link">change to the default option</a> of severe flood warnings and flood warnings for all locations</p>
 
-    
+
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -48,7 +48,7 @@
           <li>this notification is sent to a larger, less specific area</li>
           <li>‘be prepared’ if you get this notification</li>
         </ul>
-    
+
         <p class="govuk-heading-s" style="margin-bottom: 10px;">Flood warning</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>there is a risk of flooding to homes, businesses, rail and roads</li>
@@ -56,7 +56,7 @@
           <li>flood warnings and severe flood warnings are sent to the same area</li>
           <li>‘act now’ if you get this notification</li>
         </ul>
-    
+
         <p class="govuk-heading-s" style="margin-bottom: 10px;">Severe flood warning</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>there is a risk of severe flooding and major disruption</li>
@@ -64,7 +64,7 @@
           <li>flood warnings and severe flood warnings are sent to the same area</li>
           <li>there is a danger to life if you get this notification</li>
         </ul>
-    
+
      </div>
     </details>
 
@@ -72,8 +72,8 @@
       The selected locations had 0 severe flood warnings, 10 warnings and 15 alerts in the past 2 years.
     </div>
 
-  
-    
+
+
 
     {{ govukButton({
       text: "Get flood warnings (0)",
@@ -81,13 +81,13 @@
     }) }}
 
 
-    
+
   </div>
   </div>
   <div class="govuk-grid-row">
 
-    
-      
+
+
 
     <div class="govuk-grid-column-one-third">
       {% include "includes/filters-panel.html" %}
@@ -97,11 +97,11 @@
     {% include "includes/customise-settings-table.html" %}
 
   </div>
-  
-   
 
 
-  
+
+
+
 <!--<h3> id="linked-data" tabindex="-1" class="govuk-heading-m">
   <a href="{{ item.termName | lower | replace(' ', '-') }}" class="govuk-link">{{ item.title }}</a>
 </h3>

@@ -5,7 +5,7 @@ Home – GOV.UK Prototype Kit
 {% endblock %}
 
 
-
+{% set currentNav = "Flood warning settings" %}
 
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -74,13 +74,13 @@ Home – GOV.UK Prototype Kit
 
 
 
-    
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       text: "Get closest flood warnings (0)",
       href: "review-flood-warnings-confirm"
-     
+
     }) }}
 
 

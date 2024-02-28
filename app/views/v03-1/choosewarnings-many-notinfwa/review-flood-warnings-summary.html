@@ -7,7 +7,7 @@
 {% block pageTitle %}
 Manage locations
 {% endblock %}
-
+{% set currentNav = "Flood warning settings" %}
 
 {% block beforeContent %}
 
@@ -29,16 +29,16 @@ href: 'javascript:history.back()'
     <div class="govuk-grid-column-two-thirds">
 
 
-      
 
 
 
 
 
-     
 
 
-      
+
+
+
 
 
 
@@ -54,19 +54,19 @@ href: 'javascript:history.back()'
         </svg><span> View map</span><span class="govuk-visually-hidden">(Visual only)</span></a>
       <div class="govuk-!-padding-bottom-3"></div>
 
-      
 
 
 
-      
 
 
 
-      
 
-    
 
-   
+
+
+
+
+
 
 
 
@@ -80,29 +80,29 @@ href: 'javascript:history.back()'
     </h3>
 
 
-   
 
 
 
-     
-     
-      
-     
+
+
+
+
+
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
             <span class="govuk-warning-text__assistive">Warning</span>
-            50 locations at medium or high risk of flooding are in places where no flood warnings are issued.   
+            50 locations at medium or high risk of flooding are in places where no flood warnings are issued.
              <a href="/v02-2/choosewarnings-many-notinfwa/closest-warnings" class="govuk-link"> Choose to get flood warnings closest to these locations </a>
             </strong>
         </div>
-      
-     
 
 
 
 
-    
+
+
+
 
 
 
@@ -134,7 +134,6 @@ href: 'javascript:history.back()'
       Choose which flood warnings to receive
     </button>
 
-       
 
 
 
@@ -143,7 +142,8 @@ href: 'javascript:history.back()'
 
 
 
-     
+
+
 
 
       {% endblock %}

@@ -7,7 +7,7 @@
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
-
+{% set currentNav = "Flood warning settings" %}
 {% block content %}
 
 <form class="form" action="/v02-1/choosewarnings-customise/flood-warnings-success" method="post">

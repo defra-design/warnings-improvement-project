@@ -4,6 +4,8 @@
   Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% set currentNav = "Flood warning settings" %}
+
 {% block beforeContent %}
 {{ super() }}
 
@@ -30,7 +32,7 @@
 
 
 <div class="govuk-button-group">
-  <button onclick="javascript: form.action='/v01-2/multiple-upload/shapefile/uploading';"" class="govuk-button" data-module="govuk-button">
+  <button onclick="javascript: form.action='/v03-1/uploadlocations/shapefile/uploading';"" class="govuk-button" data-module="govuk-button">
     Confirm
   </button>
 

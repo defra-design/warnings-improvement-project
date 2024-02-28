@@ -4,7 +4,7 @@
 Home – GOV.UK Prototype Kit
 {% endblock %}
 
-
+{% set currentNav = "Flood warning settings" %}
 
 
 
@@ -76,8 +76,8 @@ Home – GOV.UK Prototype Kit
 
 
 
-    
-   
+
+
 
 
 
@@ -86,7 +86,7 @@ Home – GOV.UK Prototype Kit
     {{ govukButton({
       text: "Get closest flood warnings (0)",
       href: "review-flood-warnings-confirm"
-     
+
     }) }}
 
 
@@ -269,7 +269,7 @@ Home – GOV.UK Prototype Kit
       href: '/path/to/remove/this',
       text: 'Include warning areas within
       1 - 50 metres'
-    }, 
+    },
     {
     href: '/path/to/remove/this',
     text: 'High'
@@ -284,7 +284,7 @@ Home – GOV.UK Prototype Kit
     }) }}
 
   </div>
-  
+
 
 
 

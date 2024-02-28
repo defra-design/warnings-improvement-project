@@ -6,7 +6,7 @@
 {% endblock %}
 
 
-
+{% set currentNav = "Flood warning settings" %}
 
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -18,14 +18,14 @@
   <h2 class="govuk-heading-m">
    Increase the search area around locations
  </h2>
- 
+
  <label class="govuk-label" for="weight">
  Increase area by
  </label>
- 
+
  <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="metres" name="metres" type="text" spellcheck="false">
  <div class="govuk-input__suffix" aria-hidden="true">metres</div>
- 
+
  </div>
  </div>
  {{permit|dump}}

@@ -56,7 +56,7 @@ router.use(function (req, res, next) {
     // Check whether the variable matches a condition
     else if (locationFormat == "manual"){
       // Send user to next page
-      res.redirect('/v03-1/uploadlocations/address-area')
+      res.redirect('#')
     }
 
     else {
@@ -287,7 +287,24 @@ res.redirect('/v03-1/contactpreferences/confirmation-pages')
 
 })
 
+// Run this code when a form is submitted to 'juggling-balls-answer'
+router.post('/replace-location-answer', function (req, res) {
 
+  // Make a variable and give it the value from 'how-many-balls'
+  var AddMethod = req.session.data['how-add-location']
+
+  // Check whether the variable matches a condition
+  if (AddMethod == "addto"){
+    // Send user to next page
+    res.redirect('/v03-1/uploadlocations/shapefile/uploading')
+  }
+
+   else {
+    // Send user to ineligible page
+    res.redirect('/v03-1/uploadlocations/shapefile/are-you-sure')
+  }
+
+})
 
 
 

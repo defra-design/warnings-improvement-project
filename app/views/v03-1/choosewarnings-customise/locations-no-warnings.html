@@ -4,7 +4,7 @@
 {% block pageTitle %}
   Home – GOV.UK Prototype Kit
 {% endblock %}
-
+{% set currentNav = "Flood warning settings" %}
 {% set metres = permit.metres %}
 
 {% if permit.metres == metres %}
@@ -72,7 +72,7 @@
     <div class="govuk-grid-column-one-third">
       {% include "includes/filters-panel-area-increase.html" %}
     </div>
-    
+
     <div class="govuk-grid-column-two-thirds">
       {% if metres %}
 

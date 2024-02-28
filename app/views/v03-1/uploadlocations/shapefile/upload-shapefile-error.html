@@ -4,7 +4,7 @@
     Match your file
 {% endblock %}
 
-
+{% set currentNav = "Flood warning settings" %}
 {% block beforeContent %}
 
     {{ super() }}
@@ -39,7 +39,7 @@
           }) }}
 
 
-          <form class="form" action="/v01-2/multiple-upload/shapefile/replace" method="post">
+          <form class="form" action="/v03-1/uploadlocations/shapefile/replace" method="post">
 
                 <h1 class="govuk-heading-l">Upload your locations</h1>
 

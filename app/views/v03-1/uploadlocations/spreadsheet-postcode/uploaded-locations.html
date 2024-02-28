@@ -4,7 +4,7 @@
     Your uploaded locations
 {% endblock %}
 
-
+{% set currentNav = "Flood warning settings" %}
 {% block beforeContent %}
 
     {{ super() }}
@@ -43,7 +43,7 @@
 
 <form class="form" action="/v01-2/multiple-upload/flood-warning" method="post">
 
-<a href="/v01-2/multiple-upload/location-format">Add more locations</a>
+<a href="/v03-1/multiple-upload/location-format">Add more locations</a>
 
 <div class="govuk-!-padding-bottom-3"></div>
 

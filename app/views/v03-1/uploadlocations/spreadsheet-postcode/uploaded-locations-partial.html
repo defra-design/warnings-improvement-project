@@ -4,7 +4,7 @@
     Your uploaded locations
 {% endblock %}
 
-
+{% set currentNav = "Flood warning settings" %}
 {% block beforeContent %}
 
     {{ super() }}
@@ -32,7 +32,7 @@
 <div class="govuk-!-padding-bottom-5"></div>
 
 
-<form class="form" action="/v01/location-add-answer" method="post">
+<form class="form" action="/v03-1/location-add-answer" method="post">
 
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 

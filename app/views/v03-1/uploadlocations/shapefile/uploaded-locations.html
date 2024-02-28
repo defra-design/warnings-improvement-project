@@ -4,7 +4,7 @@
     Match your file
 {% endblock %}
 
-
+{% set currentNav = "Flood warning settings" %}
 {% block beforeContent %}
 
     {{ super() }}
@@ -28,7 +28,7 @@
 
 <div class="govuk-!-padding-bottom-3"></div>
 
-<form class="form" action="/v02-1/choosewarnings-default/overview-flood" method="post">
+<form class="form" action="/v03-1/choosewarnings-default/overview-flood" method="post">
 
   <a href="/v01-/multiple-upload/location-format" class="govuk-link">Add more locations</a>
 

@@ -4,7 +4,7 @@
     Uploaded your locations
 {% endblock %}
 
-
+{% set currentNav = "Flood warning settings" %}
 {% block beforeContent %}
 
     {{ super() }}
@@ -22,7 +22,7 @@
 
         <div class="govuk-grid-column-two-thirds">
 
-          <form class="form" action="/v01/multiple-upload/spreadsheet-postcode/uploading-revised" method="post">
+          <form class="form" action="/v03-1/multiple-upload/spreadsheet-postcode/uploading-revised" method="post">
 
                 <h1 class="govuk-heading-l">Upload your locations</h1>
 

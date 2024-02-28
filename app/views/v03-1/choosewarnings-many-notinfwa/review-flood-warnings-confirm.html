@@ -8,7 +8,7 @@
 Manage locations
 {% endblock %}
 
-
+{% set currentNav = "Flood warning settings" %}
 {% block beforeContent %}
 
 {{ super() }}
@@ -29,17 +29,17 @@ href: 'javascript:history.back()'
     <div class="govuk-grid-column-two-thirds">
 
 
-      
 
 
 
 
 
-     
+
+
 
       {% set html %}
       <p class="govuk-body">
-       <b>1 location is linked to nearby flood warning and alert services</b> 
+       <b>1 location is linked to nearby flood warning and alert services</b>
       </p>
       {% endset %}
 
@@ -49,7 +49,7 @@ href: 'javascript:history.back()'
       titleText: ' '
       }) }}
 
-      
+
 
 
 
@@ -65,19 +65,19 @@ href: 'javascript:history.back()'
         </svg><span> View map</span><span class="govuk-visually-hidden">(Visual only)</span></a>
       <div class="govuk-!-padding-bottom-3"></div>
 
-      
 
 
 
-      
 
 
 
-      
 
-    
 
-   
+
+
+
+
+
 
 
 
@@ -91,33 +91,33 @@ href: 'javascript:history.back()'
     </h3>
 
 
-   
+
 
 
     <div class="govuk-inset-text">
-     
-     
+
+
       <h3 class="govuk-heading-m">1<p>location is linked to nearby flood warnings<br>
         <a href="#" class="govuk-link"">Review locations linked to nearby flood warnings</a></p>
-        
+
       </h3>
-  
-     
+
+
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
             <span class="govuk-warning-text__assistive">Warning</span>
-            49 locations at medium or high risk of flooding are in places where no flood warnings are issued.   
+            49 locations at medium or high risk of flooding are in places where no flood warnings are issued.
              <a href="/v02-2/choosewarnings-many-notinfwa/closest-warnings" class="govuk-link"> Choose to get flood warnings closest to these locations </a>
             </strong>
         </div>
-      
-     
+
+
     </div>
 
 
 
-    
+
 
 
 
@@ -149,7 +149,6 @@ href: 'javascript:history.back()'
       Choose which flood warnings to receive
     </button>
 
-       
 
 
 
@@ -158,7 +157,8 @@ href: 'javascript:history.back()'
 
 
 
-     
+
+
 
 
       {% endblock %}

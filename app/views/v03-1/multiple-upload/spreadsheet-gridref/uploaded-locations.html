@@ -15,31 +15,38 @@
     }) }}
 
 {% endblock %}
-
+{% set currentNav = "Flood warning settings" %}
 {% block content %}
+
+
+<form class="form" action="/v03-1/multiple-upload/spreadsheet-gridref/landing-page-basic" method="post">
 
 <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-two-thirds">
 
-                <h1 class="govuk-heading-l">Your uploaded locations</h1>
+          <h1 class="govuk-heading-l">Locations X coordinates and Y coordinates</h1>
 
-                  <h3 class="govuk-heading-m">1,320 <p>successfully uploaded</p></h3>
-
-<div class="govuk-!-padding-bottom-3"></div>
-
-<form class="form" action="/v03-1/choosewarnings-default/overview-flood" method="post">
+            <p>Uploaded file <br>
+              <a href="#" class="govuk-link">locations.csv</a>
+            </p>
 
 
 
-<a href="/v03-1/multiple-upload/location-format" class="govuk-link">Add more locations</a>
 
-<div class="govuk-!-padding-bottom-6"></div>
 
 
 <button class="govuk-button" data-module="govuk-button">
-  Continue
+Continue
 </button>
+
+<button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+Delete file
+</button>
+
+
+
+
 
 
 </div>
